@@ -3,7 +3,6 @@ package com.taskable;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -11,28 +10,37 @@ import javax.swing.border.EmptyBorder;
 /**
  * Created by kylemccrosson on 11/3/17.
  */
-public class ProjectOverview extends JFrame implements ActionListener{
-
-  public ProjectOverview(/** Project p */) {
+public class TaskOverview extends JFrame implements ActionListener {
+  public TaskOverview(/** Project p */) {
     this.setLayout(new BorderLayout());
 
     // Labels
     descripLabel = new JLabel("Description:");
-    memberLabel = new JLabel("Members:");
+    memberLabel = new JLabel("Joanne");
     dueDateLabel = new JLabel("Due Date:");
+    dateLabel = new JLabel("12/12/12");
+    description = new JTextArea("This is the description");
+    description.setEditable(false);
+    description.setColumns(30);
+    description.setRows(8);
+    taskName = new JLabel("Task Name");
+    taskName.setFont(new Font("Sans",Font.BOLD, 20));
+    assigneeLabel = new JLabel("Assignee:");
 
     //Buttons
     edit = new JButton("Edit");
     delete = new JButton("Delete");
     complete = new JButton("Complete");
-
-    // List
-    members = new ArrayList<String>();
-    members.add("Oliver Twist");
-    members.add("The Gingerbread Man");
-    members.add("Tom Haverford");
+    ImageIcon img = createImageIcon("icons/img_68687.png");
+    returnAllTasks = new JButton("All Tasks", img);
 
     initComponents();
+  }
+
+  protected static ImageIcon createImageIcon(String path) {
+    java.net.URL imgURL = TaskOverview.class.getResource(path);
+    //error handling omitted for clarity...
+    return new ImageIcon(imgURL);
   }
 
   private void initComponents() {
@@ -41,6 +49,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
     edit.addActionListener(this);
     delete.addActionListener(this);
     complete.addActionListener(this);
+    returnAllTasks.addActionListener(this);
 
     // place items on the screen
     /** set components for top bar */
@@ -49,6 +58,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
 
     JPanel northLeft = new JPanel();
     northLeft.add(edit);
+    northLeft.add(returnAllTasks);
     north.add(northLeft, BorderLayout.WEST);
 
     JPanel northRight = new JPanel();
@@ -64,37 +74,40 @@ public class ProjectOverview extends JFrame implements ActionListener{
 
     JPanel leftSideTop = new JPanel();
     leftSideTop.setLayout(new BorderLayout());
-    leftSideTop.add(descripLabel, BorderLayout.NORTH);
-    JTextArea description = new JTextArea("This is the description");
-    description.setColumns(30);
-    description.setRows(8);
-    description.setEditable(false);
-    leftSideTop.add(description, BorderLayout.SOUTH);
+    leftSideTop.add(taskName, BorderLayout.NORTH);
+    leftSideTop.add(descripLabel, BorderLayout.SOUTH);
     west.add(leftSideTop, BorderLayout.NORTH);
 
     JPanel leftSideBottom = new JPanel();
-    leftSideBottom.add(dueDateLabel);
-    leftSideBottom.add(new JLabel("12/12/12"));
+    leftSideBottom.add(description);
     west.add(leftSideBottom, BorderLayout.WEST);
     this.add(west, BorderLayout.WEST);
 
     /** Set components for right side */
     JPanel center = new JPanel();
     center.setLayout(new BorderLayout());
-    center.setBorder(new EmptyBorder(0,15,0,15));
-    center.add(memberLabel, BorderLayout.NORTH);
+    center.setBorder(new EmptyBorder(25,15,0,15));
 
-    JPanel memberList = new JPanel();
-    memberList.setLayout(new BorderLayout());
-    memberList.setBorder(new EmptyBorder(0,15,0,0));
+    JPanel dueDateStuff = new JPanel();
+    dueDateStuff.setLayout(new BorderLayout());
+    dueDateStuff.add(dueDateLabel, BorderLayout.NORTH);
+    JPanel actualDueDate = new JPanel();
+    actualDueDate.setBorder(new EmptyBorder(0,15,0,15));
+    actualDueDate.add(dateLabel);
+    dueDateStuff.add(actualDueDate, BorderLayout.WEST);
+    center.add(dueDateStuff, BorderLayout.NORTH);
 
-    JPanel memberGrid = new JPanel();
-    memberGrid.setLayout(new GridLayout(0,1));
-    for (String person : members) {
-      memberGrid.add(new JLabel(person));
-    }
-    memberList.add(memberGrid, BorderLayout.NORTH);
-    center.add(memberList, BorderLayout.CENTER);
+    JPanel assigneeStuff = new JPanel();
+    assigneeStuff.setLayout(new BorderLayout());
+    assigneeStuff.setBorder(new EmptyBorder(15,0,0,0));
+
+    assigneeStuff.add(assigneeLabel, BorderLayout.NORTH);
+    JPanel actualAssignee = new JPanel();
+    actualAssignee.setBorder(new EmptyBorder(0,15,0,15));
+    actualAssignee.add(memberLabel);
+    assigneeStuff.add(actualAssignee, BorderLayout.WEST);
+    center.add(assigneeStuff, BorderLayout.WEST);
+
     this.add(center, BorderLayout.CENTER);
 
 
@@ -138,14 +151,17 @@ public class ProjectOverview extends JFrame implements ActionListener{
         // delete the project from the app
       }
     }
+    if (src == returnAllTasks) {
+      // do something
+    }
   }
 
-  private JLabel descripLabel, memberLabel, dueDateLabel, dateLabel;
-  private JButton edit, delete, complete;
-  private ArrayList<String> members;
+  private JLabel descripLabel, memberLabel, dueDateLabel, dateLabel, taskName, assigneeLabel;
+  private JButton edit, delete, complete, returnAllTasks;
+  private JTextArea description;
 
   public static void main(String[] args) {
-    ProjectOverview p = new ProjectOverview();
+    TaskOverview p = new TaskOverview();
     p.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     p.pack();
     p.setVisible(true);
