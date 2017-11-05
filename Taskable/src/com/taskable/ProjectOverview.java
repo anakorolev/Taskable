@@ -3,6 +3,7 @@ package com.taskable;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -24,6 +25,12 @@ public class ProjectOverview extends JFrame implements ActionListener{
     edit = new JButton("Edit");
     delete = new JButton("Delete");
     complete = new JButton("Complete");
+
+    // List
+    members = new ArrayList<String>();
+    members.add("Oliver Twist");
+    members.add("The Gingerbread Man");
+    members.add("Tom Haverford");
 
     initComponents();
   }
@@ -53,6 +60,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
     /** Set components for Left side */
     JPanel west = new JPanel();
     west.setLayout(new BorderLayout());
+    west.setBorder(new EmptyBorder(0,15,0,0));
 
     JPanel leftSideTop = new JPanel();
     leftSideTop.setLayout(new BorderLayout());
@@ -60,6 +68,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
     JTextArea description = new JTextArea("This is the description");
     description.setColumns(30);
     description.setRows(8);
+    description.setEditable(false);
     leftSideTop.add(description, BorderLayout.SOUTH);
     west.add(leftSideTop, BorderLayout.NORTH);
 
@@ -70,11 +79,23 @@ public class ProjectOverview extends JFrame implements ActionListener{
     this.add(west, BorderLayout.WEST);
 
     /** Set components for right side */
-    JPanel memberInfo = new JPanel();
-    memberInfo.setLayout(new BorderLayout());
-    memberInfo.setBorder(new EmptyBorder(0,15,0,0));
-    memberInfo.add(memberLabel, BorderLayout.NORTH);
-    this.add(memberInfo, BorderLayout.CENTER);
+    JPanel center = new JPanel();
+    center.setLayout(new BorderLayout());
+    center.setBorder(new EmptyBorder(0,15,0,15));
+    center.add(memberLabel, BorderLayout.NORTH);
+
+    JPanel memberList = new JPanel();
+    memberList.setLayout(new BorderLayout());
+    memberList.setBorder(new EmptyBorder(0,15,0,0));
+
+    JPanel memberGrid = new JPanel();
+    memberGrid.setLayout(new GridLayout(0,1));
+    for (String person : members) {
+      memberGrid.add(new JLabel(person));
+    }
+    memberList.add(memberGrid, BorderLayout.NORTH);
+    center.add(memberList, BorderLayout.CENTER);
+    this.add(center, BorderLayout.CENTER);
 
 
     pack();
@@ -87,15 +108,32 @@ public class ProjectOverview extends JFrame implements ActionListener{
       // do something
     }
     if (src == complete) {
-      // do something
+      Object[] options = {"Cancel",
+          "Continue"};
+      int n = JOptionPane.showOptionDialog(this,
+          "Are you sure you want to complete this project?", "Complete Project",
+          JOptionPane.YES_NO_OPTION,
+          JOptionPane.QUESTION_MESSAGE,
+          null,
+          options,
+          options[0]);
     }
     if (src == delete) {
-      // do something
+      Object[] options = {"Cancel",
+          "Continue"};
+      int n = JOptionPane.showOptionDialog(this,
+          "Are you sure you want to delete this project?", "Delete Project",
+          JOptionPane.YES_NO_OPTION,
+          JOptionPane.QUESTION_MESSAGE,
+          null,
+          options,
+          options[0]);
     }
   }
 
   private JLabel descripLabel, memberLabel, dueDateLabel, dateLabel;
   private JButton edit, delete, complete;
+  private ArrayList<String> members;
 
   public static void main(String[] args) {
     ProjectOverview p = new ProjectOverview();
