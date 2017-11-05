@@ -8,12 +8,12 @@ public class Task implements ITask{
     private int id;
     private String name;
     private String desc;
-    private IUser user;
+    private String user;
     private Date dueDate;
     private boolean finished;
 
     //constructor
-    public Task(int id, String name, String desc, IUser user, Date dueDate) {
+    public Task(int id, String name, String desc, String user, Date dueDate) {
         this.id = id;
         this.name = name;
         this.desc = desc;
@@ -23,7 +23,7 @@ public class Task implements ITask{
     }
 
     //method
-    public void updateTask(int id, String name, String desc, IUser user, Date dueDate) {
+    public void updateTask(int id, String name, String desc, String user, Date dueDate) {
         this.id = id;
         this.name = name;
         this.desc = desc;
@@ -40,7 +40,7 @@ public class Task implements ITask{
     public void setTaskDesc(String desc) {
         this.desc = desc;
     }
-    public void setTaskUser(IUser user) {
+    public void setTaskUser(String user) {
         this.user = user;
     }
     public void setTaskDueDate(Date dueDate) {
@@ -56,7 +56,7 @@ public class Task implements ITask{
     public String getTaskDesc() {
         return this.desc;
     }
-    public IUser getTaskUser() {
+    public String getTaskUser() {
         return this.user;
     }
     public Date getTaskDueDate() {
