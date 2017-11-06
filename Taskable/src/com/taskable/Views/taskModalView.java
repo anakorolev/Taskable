@@ -1,5 +1,6 @@
 package com.taskable.Views;
 
+import com.taskable.Vendor.CustomizedButtonUI;
 import com.taskable.model.Project;
 import com.taskable.model.Task;
 
@@ -159,9 +160,9 @@ public class taskModalView extends JFrame{
         }
 
         closeButton.setUI(new CustomizedButtonUI(
-                new Color(176, 190, 197),
                 new Color(220, 227, 230),
-                new Color(144, 164, 174),
+                new Color(231, 236, 238),
+                new Color(176, 190, 197),
                 new Font("Arial", Font.BOLD, 14),
                 new Color(50, 55, 56),
                 new Color(50, 55, 56), Color.WHITE));
@@ -171,10 +172,6 @@ public class taskModalView extends JFrame{
                 new Color(0, 94, 119),
                 new Font("Arial", Font.BOLD, 14),
                 Color.WHITE, Color.WHITE, Color.WHITE));
-
-        closeButton.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED, Color.WHITE, Color.WHITE));
-
-        nextStepButton.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED, Color.WHITE, Color.WHITE));
 
 
         closeButton.addActionListener(new ActionListener()
