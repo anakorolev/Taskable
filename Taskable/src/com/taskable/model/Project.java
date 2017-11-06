@@ -14,7 +14,7 @@ public class Project implements IProject{
     private Boolean finished;
 
     //constructor
-    Project(int id, String name, String desc, ArrayList<String> members, ArrayList<ITask> tasks, Date dueDate) {
+    public Project(int id, String name, String desc, ArrayList<String> members, ArrayList<ITask> tasks, Date dueDate) {
         this.id = id;
         this.name = name;
         this.desc = desc;

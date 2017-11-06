@@ -1,14 +1,11 @@
 package com.taskable.Views;
 
 import com.taskable.Vendor.CustomizedButtonUI;
-import com.taskable.Views.memberModalView;
 import com.taskable.model.Project;
-import com.taskable.model.Task;
 import com.taskable.model.User;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
