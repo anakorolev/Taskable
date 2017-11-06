@@ -25,8 +25,11 @@ public class ProjectOverview extends JFrame implements ActionListener{
     user = u;
     project = p;
 
+    initComponents();
+    this.setVisible(true);
+  }
 
-
+  private void initComponents() {
     // Labels
     descripLabel = new JLabel("Description:");
     memberLabel = new JLabel("Members:");
@@ -36,6 +39,9 @@ public class ProjectOverview extends JFrame implements ActionListener{
     int day = dueDate.getDate();
     int month = dueDate.getMonth();
     int year = dueDate.getYear();
+    if(month == 0){
+      month = 12;
+    }
     dateLabel = new JLabel("" + month + "/" + day + "/" + year);
 
 
@@ -51,13 +57,6 @@ public class ProjectOverview extends JFrame implements ActionListener{
 
     // List
     members = project.getProjectMembers();
-
-
-    initComponents();
-    this.setVisible(true);
-  }
-
-  private void initComponents() {
 
     // add action listeners
     edit.addActionListener(this);
@@ -123,13 +122,11 @@ public class ProjectOverview extends JFrame implements ActionListener{
     Object src = e.getSource();
     if (src == edit) {
       // do something
-
+      projectOverviewPanel.removeAll();
       new projectModalView("Edit Project", project, user);
-      projectOverviewPanel = new ProjectOverview(user, project).getProjectOverviewPanel();
-      projectOverviewPanel.setVisible(true);
+      initComponents();
+      projectOverviewPanel.revalidate();
       projectOverviewPanel.repaint();
-      setVisible(true);
-      repaint();
     }
     if (src == complete) {
       if (project.getTasks() != null) {

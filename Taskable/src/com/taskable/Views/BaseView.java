@@ -33,11 +33,15 @@ public class BaseView extends JFrame implements ActionListener {
 
   //empty constructor
   public BaseView(User u) {
-    user = u;
-    BasePanel = new JPanel();
+      user = u;
+      BasePanel = new JPanel();
 
-    BasePanel.setLayout(new BorderLayout());
+      BasePanel.setLayout(new BorderLayout());
 
+      basePanel();
+  }
+
+  public void basePanel() {
     taskableLogo = new JLabel("TASKABLE", JLabel.CENTER);
     taskableLogo.setFont(new Font("TimesRoman",Font.BOLD,20));
     taskableLogo.setPreferredSize(new Dimension(300, 50));
@@ -69,7 +73,7 @@ public class BaseView extends JFrame implements ActionListener {
 
     header.add(menu, BorderLayout.EAST);
 
-    projectSidePanelView projectView = new projectSidePanelView(u);
+    projectSidePanelView projectView = new projectSidePanelView(user);
     JPanel projectPanel = projectView.getProjectPanel();
     baseLeft = new JPanel();
     baseLeft.setPreferredSize(new Dimension(150,0));
@@ -86,7 +90,7 @@ public class BaseView extends JFrame implements ActionListener {
     addNewProjectButton = new JButton("add Project");
     addNewProjectButton.addActionListener(this);
 
-    if(u.getProjectsForUser().size() == 0) {
+    if(user.getProjectsForUser().size() == 0) {
       noPojectPanel.add(addNewProjectButton);
       baseRight.add(noPojectPanel);
     } else {
@@ -101,8 +105,6 @@ public class BaseView extends JFrame implements ActionListener {
         allTasksPanel.setVisible(false);
         baseRight.add(allTasksPanel);
     }
-
-
 
     BasePanel.add(header, BorderLayout.NORTH);
     BasePanel.add(baseLeft, BorderLayout.WEST);
@@ -143,9 +145,11 @@ public class BaseView extends JFrame implements ActionListener {
         addProjectButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                BasePanel.removeAll();
                 new projectModalView("New Project", null, user);
-                setVisible(true);
-                repaint();
+                basePanel();
+                BasePanel.revalidate();
+                BasePanel.repaint();
             }
         });
 
@@ -181,6 +185,10 @@ public class BaseView extends JFrame implements ActionListener {
                 allTasks.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
+                        BasePanel.removeAll();
+                        basePanel();
+                        BasePanel.revalidate();
+                        BasePanel.repaint();
                         projectOverviewPanel.setVisible(false);
                         allTasksPanel.setVisible(true);
                     }
@@ -227,11 +235,11 @@ public class BaseView extends JFrame implements ActionListener {
   @Override
   public void actionPerformed(ActionEvent e) {
     if(e.getSource()==addNewProjectButton){
-      new projectModalView("New Project", null, user);
-      BasePanel.setVisible(true);
-      BasePanel.repaint();
+        BasePanel.removeAll();
+        new projectModalView("New Project", null, user);
+        basePanel();
+        BasePanel.revalidate();
+        BasePanel.repaint();
     }
-
-
   }
 }

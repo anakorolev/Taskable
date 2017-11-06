@@ -49,6 +49,12 @@ public class memberModalView extends JFrame{
         final GridLayout fieldLayout = new GridLayout(0,1,10,10);
         fields.setLayout(fieldLayout);
 
+        JTextField adminField = new JTextField();
+        adminField.setText("Admin");
+        adminField.setEnabled(false);
+        textFields.add(adminField);
+        fields.add(adminField, fieldLayout);
+
         if (project.getProjectMembers().size() > 0) {
             for(int i = 0; i < project.getProjectMembers().size(); i++) {
                 JTextField memberInput = new JTextField();
@@ -99,7 +105,6 @@ public class memberModalView extends JFrame{
 
     private ArrayList getFields() {
         ArrayList<String> membersList = new ArrayList<>();
-        membersList.add("Admin");
         for (int i = 0; i < textFields.size(); i++) {
             if(!textFields.get(i).getText().equals("")) {
                 membersList.add(textFields.get(i).getText());
