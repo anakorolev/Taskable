@@ -19,7 +19,6 @@ public class AllTasksView {
   private static JPanel panel;
   private static Project project;
   private static User user;
-  //private Project project;
 
   //constructor
   public AllTasksView(User u, Project p) {
@@ -45,8 +44,7 @@ public class AllTasksView {
 
     ArrayList<JPanel> listOfPanels = new ArrayList<JPanel>();
 
-    //todo loop through each new task and add a new row
-    for (int i = 0; i < project.getTasks().size(); i ++ ) {//(ITask t : project.getTasks()) {
+    for (int i = 0; i < project.getTasks().size(); i ++ ) {
       Task t = (Task)project.getTasks().get(i);
       JLabel taskDesc = new JLabel(t.getTaskDesc());
       List listAssignees = new List();
@@ -66,7 +64,7 @@ public class AllTasksView {
       listOfPanels.add(newPanel);
     }
 
-    frame.setContentPane(new AllTasksView().panel);
+    frame.setContentPane(new AllTasksView(user, project).panel);
 
     panel.setLayout(new GridLayout(3, 3));
     panel.add(top);
