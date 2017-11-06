@@ -18,8 +18,8 @@ import javax.swing.border.EmptyBorder;
 public class ProjectOverview extends JFrame implements ActionListener{
 
   public ProjectOverview(User u, Project p) {
-
-    this.setLayout(new BorderLayout());
+    projectOverviewPanel = new JPanel();
+    projectOverviewPanel.setLayout(new BorderLayout());
     user = u;
     project = p;
 
@@ -75,7 +75,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
     northRight.add(delete);
     northRight.add(complete);
     north.add(northRight, BorderLayout.EAST);
-    this.add(north, BorderLayout.NORTH);
+    projectOverviewPanel.add(north, BorderLayout.NORTH);
 
     /** Set components for Left side */
     JPanel west = new JPanel();
@@ -94,7 +94,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
     leftSideBottom.add(dueDateLabel);
     leftSideBottom.add(dateLabel);
     west.add(leftSideBottom, BorderLayout.WEST);
-    this.add(west, BorderLayout.WEST);
+    projectOverviewPanel.add(west, BorderLayout.WEST);
 
     /** Set components for right side */
     JPanel center = new JPanel();
@@ -113,10 +113,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
     }
     memberList.add(memberGrid, BorderLayout.NORTH);
     center.add(memberList, BorderLayout.CENTER);
-    this.add(center, BorderLayout.CENTER);
-
-
-    pack();
+    projectOverviewPanel.add(center, BorderLayout.CENTER);
 
   }
 
@@ -132,10 +129,9 @@ public class ProjectOverview extends JFrame implements ActionListener{
       Object[] options = {"Cancel",
           "Continue"};
 
-      int n = JOptionPane.showOptionDialog(this,
-          "Are you sure you want to complete this project?", "Complete Project",
-          JOptionPane.YES_NO_OPTION,
-          JOptionPane.QUESTION_MESSAGE,
+      int n = JOptionPane.showOptionDialog(projectOverviewPanel,
+          "Are you sure you want to complete this project?",
+              "Complete Project", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
           null,
           options,
           options[0]);
@@ -151,7 +147,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
       Object[] options = {"Cancel",
           "Continue"};
 
-      int n = JOptionPane.showOptionDialog(this,
+      int n = JOptionPane.showOptionDialog(projectOverviewPanel,
           "Are you sure you want to delete this project?", "Delete Project",
           JOptionPane.YES_NO_OPTION,
           JOptionPane.QUESTION_MESSAGE,
@@ -169,6 +165,10 @@ public class ProjectOverview extends JFrame implements ActionListener{
     }
   }
 
+  public JPanel getProjectOverviewPanel() {
+    return this.projectOverviewPanel;
+  }
+
   private JLabel descripLabel, memberLabel, dueDateLabel, dateLabel;
   private JButton edit, delete, complete;
   private ArrayList<String> members;
@@ -176,6 +176,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
   private Project project;
   private User user;
   private JTextArea description;
+  private JPanel projectOverviewPanel;
 
 
 }

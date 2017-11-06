@@ -1,5 +1,9 @@
 package com.taskable.Views;
 
+import com.taskable.ProjectOverview;
+import com.taskable.model.Project;
+import com.taskable.model.User;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -22,11 +26,12 @@ public class BaseView extends JFrame implements ActionListener {
   private JPanel BasePanel, baseLeft, baseRight, noPojectPanel;
   private JLabel taskableLogo, addNewProjectPromote ;
   private JButton addNewProjectButton;
+  private User user;
 
 
   //empty constructor
-  public BaseView() {
-
+  public BaseView(User u) {
+    user = u;
     BasePanel = new JPanel();
 
     BasePanel.setLayout(new BorderLayout());
@@ -35,9 +40,11 @@ public class BaseView extends JFrame implements ActionListener {
     taskableLogo.setFont(new Font("TimesRoman",Font.BOLD,20));
     taskableLogo.setPreferredSize(new Dimension(0, 50));
 
+    projectSidePanelView projectView = new projectSidePanelView(u);
+    JPanel projectPanel = projectView.getProjectPanel();
     baseLeft = new JPanel();
     baseLeft.setPreferredSize(new Dimension(150,0));
-    baseLeft.setBackground(Color.blue);
+    baseLeft.add(projectPanel);
 
     baseRight = new JPanel();
 
@@ -48,20 +55,23 @@ public class BaseView extends JFrame implements ActionListener {
     noPojectPanel.add(addNewProjectPromote,CENTER_ALIGNMENT);
 
     addNewProjectButton = new JButton("add Project");
-    noPojectPanel.add(addNewProjectButton);
-    baseRight.add(noPojectPanel);
+    addNewProjectButton.addActionListener(this);
 
-
+    if(u.getProjectsForUser().size() == 0) {
+      noPojectPanel.add(addNewProjectButton);
+      baseRight.add(noPojectPanel);
+    } else {
+      Project currentProj = (Project)u.getProjectsForUser().get(u.getCurrentProjectIdForUser());
+      ProjectOverview projectOverview = new ProjectOverview(u, currentProj);
+      JPanel projectOverviewPanel = projectOverview.getProjectOverviewPanel();
+      baseRight.add(projectOverviewPanel);
+    }
 
 
 
     BasePanel.add(taskableLogo, BorderLayout.NORTH);
     BasePanel.add(baseLeft, BorderLayout.WEST);
     BasePanel.add(baseRight, BorderLayout.CENTER);
-
-
-
-
   }
 
   public JPanel getBasePanel() {
@@ -71,7 +81,8 @@ public class BaseView extends JFrame implements ActionListener {
   @Override
   public void actionPerformed(ActionEvent e) {
     if(e.getSource()==addNewProjectButton){
-      //new project here
+      new projectModalView("New Project", null, user);
+      new BaseView(user);
     }
 
   }

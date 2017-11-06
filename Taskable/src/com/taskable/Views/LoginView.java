@@ -75,19 +75,7 @@ public class LoginView extends JFrame implements ActionListener {
             if(tfname.getText().equals("admin")&&tfpass.getText().equals("1234")){
                 //BaseView here
 
-
-                ArrayList<String> members = new ArrayList<String>();
-                members.add("Bob");
-                members.add("Joe");
-                members.add("Bill");
-
-                Project p = new Project(0, "Name", "Desc", members, null, new Date(2018, 8, 28));
-
-                ArrayList<IProject> projects = new ArrayList<IProject>();
-                projects.add(p);
-
-                User user = new User(projects, 0);
-                new projectSidePanelView(user);
+                LoginPanel.setVisible(false);
 
             }else{
                 JOptionPane.showMessageDialog(this,"User name and password is not matching, please try again");

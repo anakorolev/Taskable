@@ -16,14 +16,12 @@ import java.util.ArrayList;
  */
 public class projectSidePanelView extends JFrame {
     User user;
+    JPanel projectPanel;
 
     public projectSidePanelView(User u) {
         this.user = u;
-        showProjectSidePanel();
-    }
 
-    private void showProjectSidePanel(){
-        JPanel projectPanel = new JPanel();
+        projectPanel = new JPanel();
         BorderLayout projectPanelLayout = new BorderLayout();
         projectPanel.setLayout(projectPanelLayout);
         this.add(projectPanel);
@@ -94,9 +92,10 @@ public class projectSidePanelView extends JFrame {
         }
 
         scrollPanel.add(projectGrid, BorderLayout.NORTH);
+    }
 
-        pack();
-        setVisible(true);
+    public JPanel getProjectPanel() {
+        return this.projectPanel;
     }
 
 }
