@@ -64,8 +64,10 @@ public class AllTasksView {
     for (int i = 0; i < project.getTasks().size(); i ++ ) {
       Task t = (Task)project.getTasks().get(i);
 
-      //make the JLabel for the task description
-      JLabel taskName = new JLabel(t.getTaskName());
+      //make the JButton for the Task name
+      JButton taskName = new JButton(t.getTaskName());
+
+      //make the JLabel for the task assignee
       JLabel taskAssignee = new JLabel(t.getTaskUser());
 
       //get the due date of the Task
