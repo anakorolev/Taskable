@@ -21,9 +21,7 @@ import java.util.Date;
  * Created by akorolev on 11/3/17.
  */
 public class App extends JFrame{
-
-
-
+    private static User user = new User(new ArrayList<IProject>(), 0);
 
     private JPanel basePanel;
     private static JPanel loginView, baseView;
@@ -47,7 +45,7 @@ public class App extends JFrame{
         ArrayList<IProject> projects = new ArrayList<>();
         projects.add(p);
 
-        User user = new User(projects, 0);
+
         LoginView login = new LoginView();
         loginView = login.getLoginPanel();
         loginView.setVisible(true);
@@ -98,6 +96,7 @@ public class App extends JFrame{
 
             @Override
             public void componentShown(ComponentEvent e) {
+
             }
 
             @Override

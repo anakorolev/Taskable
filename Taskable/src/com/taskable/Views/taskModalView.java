@@ -212,8 +212,8 @@ public class taskModalView extends JFrame{
 
     private void updateTask(Task t) {
         Date date = new Date((Integer)inputDropDowns.get(1).getSelectedItem(),
-                inputDropDowns.get(2).getSelectedIndex()+1,
-                inputDropDowns.get(3).getSelectedIndex()+1);
+                inputDropDowns.get(2).getSelectedIndex(),
+                inputDropDowns.get(3).getSelectedIndex());
 
         if (t == null) {
             Task task = new Task(project.getTasks().size(),
