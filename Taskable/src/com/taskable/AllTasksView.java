@@ -1,22 +1,31 @@
 package com.taskable;
 
+import com.taskable.model.ITask;
+import com.taskable.model.Project;
+import com.taskable.model.Task;
+import com.taskable.model.User;
+
 import java.awt.*;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
 /**
- * GridLayout
- * List of all tasks by row.
+ * Created by schou on 11/5/17.
  *
- * have the top thing be at BorderLayout.NORTH
- * each task = a gridLayout - set the rows 0 column 3 - inside a borderlayout??
+ * Class for the All Tasks View.
  */
 public class AllTasksView {
   private static JPanel panel;
+  private static Project project;
+  private static User user;
+  //private Project project;
 
   //constructor
-  public AllTasksView() {
+  public AllTasksView(User u, Project p) {
     panel = new JPanel();
+    project = p;
+    user = u;
   }
 
   //do all of the creating
@@ -34,48 +43,40 @@ public class AllTasksView {
     top.add(assignee);
     top.add(dueDate);
 
+    ArrayList<JPanel> listOfPanels = new ArrayList<JPanel>();
+
     //todo loop through each new task and add a new row
+    for (int i = 0; i < project.getTasks().size(); i ++ ) {//(ITask t : project.getTasks()) {
+      Task t = (Task)project.getTasks().get(i);
+      JLabel taskDesc = new JLabel(t.getTaskDesc());
+      List listAssignees = new List();
+      for (String mem : project.getProjectMembers()) {
+        listAssignees.add(mem);
+      }
+      JComboBox assigneeDropdown = new JComboBox((ComboBoxModel) listAssignees);
 
+      JLabel due = new JLabel(project.getProjectDueDate().toString());
 
-    JLabel taskDesc = new JLabel("Task description goes here");
-    String[] listAssignees = { "None", "Nancy", "Jason", "Sally"}; //TODO get list of members from model
-    JComboBox assigneeDropdown = new JComboBox(listAssignees);
+      JPanel newPanel = new JPanel();
+      newPanel.setLayout(new GridLayout(0, 3));
+      newPanel.add(taskDesc);
+      newPanel.add(assigneeDropdown);
+      newPanel.add(due);
 
-    String[] dueDates = {"11/17/17", "11/18/17", "12/4/17"};
-    JLabel due = new JLabel("Due: " + dueDates[0]); //todo get the duedate from the model
-
-    JPanel mid = new JPanel();
-    mid.setLayout(new GridLayout(0, 3));
-
-    mid.add(taskDesc);
-    mid.add(assigneeDropdown);
-    mid.add(due);
-
-    JLabel taskDesc2 = new JLabel("Next task description");
-    JComboBox assigneeDropdown2 = new JComboBox(listAssignees); //cant use the same dropdown twice?
-    JLabel due2 = new JLabel("Due: " + dueDates[2]);
-
-    JPanel bottom = new JPanel();
-    bottom.setLayout(new GridLayout(0, 3));
-    bottom.add(taskDesc2);
-    bottom.add(assigneeDropdown2);
-    bottom.add(due2);
+      listOfPanels.add(newPanel);
+    }
 
     frame.setContentPane(new AllTasksView().panel);
 
     panel.setLayout(new GridLayout(3, 3));
     panel.add(top);
 
-    JPanel nextPanel = new JPanel();
-    nextPanel.setLayout(new BorderLayout());
-    nextPanel.add(mid, BorderLayout.NORTH);
-
-    JPanel nextPanel2 = new JPanel();
-    nextPanel2.setLayout(new BorderLayout());
-    nextPanel2.add(bottom, BorderLayout.NORTH);
-
-    panel.add(nextPanel);
-    panel.add(nextPanel2);
+    for (int i = 0; i < listOfPanels.size(); i ++) {
+      JPanel anotherPanel = new JPanel();
+      anotherPanel.setLayout(new BorderLayout());
+      anotherPanel.add(listOfPanels.get(i), BorderLayout.NORTH);
+      panel.add(anotherPanel);
+    }
 
     frame.setPreferredSize(new Dimension(700, 300));
 
