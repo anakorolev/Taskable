@@ -14,26 +14,26 @@ public class Project implements IProject{
     private Boolean finished;
 
     //constructor
-    Project(int id, String name, String desc, ArrayList<String> members, ArrayList<ITask> taks, Date dueDate) {
+    Project(int id, String name, String desc, ArrayList<String> members, ArrayList<ITask> tasks, Date dueDate) {
         this.id = id;
         this.name = name;
         this.desc = desc;
         this.members = members;
-        this.tasks = taks;
+        this.tasks = tasks;
         this.dueDate = dueDate;
         this.finished = false;
     }
 
-    public void setPojectId(int id) {
+    public void setProjectId(int id) {
         this.id = id;
     }
-    public void setPojectName(String name) {
+    public void setProjectName(String name) {
         this.name = name;
     }
-    public void setPojectDesc(String desc) {
+    public void setProjectDesc(String desc) {
         this.desc = desc;
     }
-    public void setPojectMembers(ArrayList<String> members) {
+    public void setProjectMembers(ArrayList<String> members) {
         this.members =members;
     }
     public void addAMemberToProject(String user) {
@@ -45,10 +45,10 @@ public class Project implements IProject{
     public void addATaskToProject(ITask task) {
         this.tasks.add(task);
     }
-    public void setTaskDueDate(Date dueDate) {
+    public void setProjectDueDate(Date dueDate) {
         this.dueDate = dueDate;
     }
-    public void finishTask() {
+    public void finishProject() {
         this.finished = true;
     }
 
@@ -64,6 +64,11 @@ public class Project implements IProject{
     public ArrayList<String> getProjectMembers() {
         return this.members;
     }
+
+    public ArrayList<ITask> getTasks() {
+        return this.tasks;
+    }
+
     public Date getProjectDueDate() {
         return this.dueDate;
     }
