@@ -1,14 +1,14 @@
 package com.taskable.Views;
 
 import com.taskable.Vendor.CustomizedButtonUI;
+
 import com.taskable.Views.memberModalView;
+import com.taskable.model.ITask;
 import com.taskable.model.Project;
-import com.taskable.model.Task;
 import com.taskable.model.User;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -153,15 +153,13 @@ public class projectModalView extends JFrame{
                 new Font("Arial", Font.BOLD, 14),
                 Color.WHITE, Color.WHITE, Color.WHITE));
 
-        closeButton.addActionListener(new ActionListener()
-        {
+        closeButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
             }
         });
-        nextStepButton.addActionListener(new ActionListener()
-        {
+        nextStepButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(inputTextField.getText().equals("")){
@@ -191,15 +189,15 @@ public class projectModalView extends JFrame{
 
     private Project updateProject(Project p) {
         Date date = new Date((Integer)inputDropDowns.get(0).getSelectedItem(),
-                inputDropDowns.get(1).getSelectedIndex()+1,
-                inputDropDowns.get(2).getSelectedIndex()+1);
+                inputDropDowns.get(1).getSelectedIndex(),
+                inputDropDowns.get(2).getSelectedIndex());
 
         if (p == null) {
             p = new Project(user.getProjectsForUser().size(),
                     inputTextField.getText(),
                     inputTextArea.getText(),
-                    null,
-                    null,
+                    new ArrayList<String>(),
+                    new ArrayList<ITask>(),
                     date);
             user.addAProjectForUser(p);
             user.setCurrentProjectId(p.getProjectId());
@@ -208,6 +206,8 @@ public class projectModalView extends JFrame{
             p.setProjectDesc(inputTextArea.getText());
             p.setProjectDueDate(date);
         }
+
+        System.out.println(user.getProjectsForUser());
 
         project = p;
 

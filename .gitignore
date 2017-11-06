@@ -2,3 +2,5 @@
 *.xml
 *.iml
 
+Taskable/out/production/*
+Taskable/out/*
