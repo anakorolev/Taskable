@@ -1,9 +1,13 @@
 package com.taskable;
 
+import com.taskable.model.Project;
+import com.taskable.model.User;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -13,28 +17,27 @@ import javax.swing.border.EmptyBorder;
  */
 public class ProjectOverview extends JFrame implements ActionListener{
 
-  public ProjectOverview(/** User u */) {
+  public ProjectOverview(User u, Project p) {
 
     this.setLayout(new BorderLayout());
-    // user = u;
-    // project = user.getProjectsForUser.at(user.getCurrentProjectIdForUser);
+    user = u;
+    project = p;
+
 
 
     // Labels
-    descripLabel = /** new JLabel(p.getProjectDesc()); */ new JLabel("Description:");
+    descripLabel = new JLabel("Description:");
     memberLabel = new JLabel("Members:");
     dueDateLabel = new JLabel("Due Date:");
-    /**
-     * dueDate = p.getProjectDueDate();
-     * int day = dueDate.getDay();
-     * int month = dueDate.getMonth();
-     * int year = dueDate.getYear();
-     * dateLabel = new JLabel("" + month "/" + day + "/" + year);
-     */
-    dateLabel = new JLabel("12/12/12");
+
+    dueDate = project.getProjectDueDate();
+    int day = dueDate.getDay();
+    int month = dueDate.getMonth();
+    int year = dueDate.getYear();
+    dateLabel = new JLabel("" + month + "/" + day + "/" + year);
 
 
-    description = /** new JTextArea(p.getDesc()); */ new JTextArea("This is the description.");
+    description = new JTextArea(project.getProjectDesc());
     description.setColumns(30);
     description.setRows(8);
     description.setEditable(false);
@@ -45,12 +48,11 @@ public class ProjectOverview extends JFrame implements ActionListener{
     complete = new JButton("Complete");
 
     // List
-    members = /** p.getProjectMembers(); */ new ArrayList<String>();
-    members.add("Oliver Twist");
-    members.add("The Gingerbread Man");
-    members.add("Tom Haverford");
+    members = project.getProjectMembers();
+
 
     initComponents();
+    this.setVisible(true);
   }
 
   private void initComponents() {
@@ -122,9 +124,9 @@ public class ProjectOverview extends JFrame implements ActionListener{
     Object src = e.getSource();
     if (src == edit) {
       // do something
-      /**
-       * new projectModalView("Edit Project", project);
-       */
+
+      //new projectModalView("Edit Project", project);
+
     }
     if (src == complete) {
       Object[] options = {"Cancel",
@@ -138,11 +140,9 @@ public class ProjectOverview extends JFrame implements ActionListener{
           options[0]);
 
       if (n == 1) {
-        // move the project to completed section, or get rid of it
-        System.out.println("You completed the project");
-        /**
-         * project.finishTask();
-         */
+
+        project.finishProject();
+
       }
     }
     if (src == delete) {
@@ -161,9 +161,9 @@ public class ProjectOverview extends JFrame implements ActionListener{
       if (n == 1) {
         // delete the project from the app
         // how to get access to the list of projects to edit it
-        /**
-         * user.getProjectsForUser().remove(project);
-         */
+
+        user.getProjectsForUser().remove(project);
+
       }
     }
   }
@@ -171,15 +171,10 @@ public class ProjectOverview extends JFrame implements ActionListener{
   private JLabel descripLabel, memberLabel, dueDateLabel, dateLabel;
   private JButton edit, delete, complete;
   private ArrayList<String> members;
-  // private Date dueDate;
-  // private Project project;
-  // private User user;
+  private Date dueDate;
+  private Project project;
+  private User user;
   private JTextArea description;
 
-  public static void main(String[] args) {
-    ProjectOverview p = new ProjectOverview();
-    p.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    p.pack();
-    p.setVisible(true);
-  }
+
 }
