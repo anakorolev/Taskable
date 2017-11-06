@@ -11,8 +11,10 @@ import javax.swing.border.EmptyBorder;
  * Created by kylemccrosson on 11/3/17.
  */
 public class TaskOverview extends JFrame implements ActionListener {
-  public TaskOverview(/** Project p */) {
+  public TaskOverview(/** User u, Task t */) {
     this.setLayout(new BorderLayout());
+    // user = u;
+    // project = user.getProjectsForUser().at(user.get
 
     // Labels
     descripLabel = new JLabel("Description:");
@@ -119,6 +121,9 @@ public class TaskOverview extends JFrame implements ActionListener {
     Object src = e.getSource();
     if (src == edit) {
       // do something
+      /**
+       * new taskModalView("Edit Task", task, project);
+       */
     }
     if (src == complete) {
       Object[] options = {"Cancel",
@@ -159,6 +164,9 @@ public class TaskOverview extends JFrame implements ActionListener {
   private JLabel descripLabel, memberLabel, dueDateLabel, dateLabel, taskName, assigneeLabel;
   private JButton edit, delete, complete, returnAllTasks;
   private JTextArea description;
+  // private Project project;
+  // private Task task;
+  // private User user;
 
   public static void main(String[] args) {
     TaskOverview p = new TaskOverview();
