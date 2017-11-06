@@ -1,6 +1,7 @@
 package com.taskable;
 
-import com.taskable.Views.projectModalView;
+import com.taskable.Views.*;
+import com.taskable.Views.BaseView;
 import com.taskable.model.Project;
 import com.taskable.model.User;
 import com.taskable.model.Task;
@@ -19,11 +20,12 @@ import javax.swing.border.EmptyBorder;
  */
 public class ProjectOverview extends JFrame implements ActionListener{
 
-  public ProjectOverview(User u, Project p) {
+  public ProjectOverview(User u, Project p, com.taskable.Views.BaseView b) {
     projectOverviewPanel = new JPanel();
     projectOverviewPanel.setLayout(new BorderLayout());
     user = u;
     project = p;
+    baseView = b;
 
     initComponents();
     this.setVisible(true);
@@ -54,6 +56,12 @@ public class ProjectOverview extends JFrame implements ActionListener{
     edit = new JButton("Edit");
     delete = new JButton("Delete");
     complete = new JButton("Complete");
+
+    if (project.getProjectFinished()) {
+      edit.setEnabled(false);
+      delete.setEnabled(false);
+      complete.setEnabled(false);
+    }
 
     // List
     members = project.getProjectMembers();
@@ -179,6 +187,11 @@ public class ProjectOverview extends JFrame implements ActionListener{
         // how to get access to the list of projects to edit it
 
         user.getProjectsForUser().remove(project);
+        baseView.removeAll();
+        baseView.basePanel();
+        baseView.revalidate();
+        baseView.repaint();
+
 
       }
     }
@@ -196,6 +209,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
   private User user;
   private JTextArea description;
   private JPanel projectOverviewPanel;
+  private BaseView baseView;
 
 
 

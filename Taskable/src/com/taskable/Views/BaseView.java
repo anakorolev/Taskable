@@ -95,7 +95,7 @@ public class BaseView extends JFrame implements ActionListener {
       baseRight.add(noPojectPanel);
     } else {
         Project currentProj = (Project)user.getProjectsForUser().get(user.getCurrentProjectIdForUser());
-        ProjectOverview projectOverview = new ProjectOverview(user, currentProj);
+        ProjectOverview projectOverview = new ProjectOverview(user, currentProj, this);
         projectOverviewPanel = projectOverview.getProjectOverviewPanel();
         projectOverviewPanel.setVisible(true);
         baseRight.add(projectOverviewPanel);
@@ -171,7 +171,7 @@ public class BaseView extends JFrame implements ActionListener {
       baseRight.add(noPojectPanel);
     } else {
       Project currentProj = (Project)user.getProjectsForUser().get(user.getCurrentProjectIdForUser());
-      ProjectOverview projectOverview = new ProjectOverview(user, currentProj);
+      ProjectOverview projectOverview = new ProjectOverview(user, currentProj, this);
       projectOverviewPanel = projectOverview.getProjectOverviewPanel();
       projectOverviewPanel.setVisible(true);
       baseRight.add(projectOverviewPanel);
@@ -246,13 +246,34 @@ public class BaseView extends JFrame implements ActionListener {
                 JButton projectOverview = new JButton("Overview");
                 JButton allTasks = new JButton("Tasks");
 
+
+                JPanel buttonPanel = new JPanel();
+                GridLayout buttonPanelLayout = new GridLayout(2, 1);
+                buttonPanel.setLayout(buttonPanelLayout);
+                buttonPanel.add(projectOverview);
+                buttonPanel.add(allTasks);
+                if(user.getCurrentProjectIdForUser() == p.getProjectId()) {
+                    buttonPanel.setVisible(true);
+                } else {
+                    buttonPanel.setVisible(false);
+                }
+                buttonPanel.setBorder( new EmptyBorder(0,15, 0, 0));
+
+                singleProject.add(buttonPanel, BorderLayout.SOUTH);
+
                 projectButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
+                        if(buttonPanel.isVisible()){
+                            buttonPanel.setVisible(false);
+                        } else {
+                            buttonPanel.setVisible(true);
+                        }
                         projectOverviewPanel.setVisible(true);
                         allTasksPanel.setVisible(false);
                     }
                 });
+
                 projectOverview.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
@@ -260,6 +281,7 @@ public class BaseView extends JFrame implements ActionListener {
                         allTasksPanel.setVisible(false);
                     }
                 });
+
                 allTasks.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
@@ -271,28 +293,7 @@ public class BaseView extends JFrame implements ActionListener {
                         allTasksPanel.setVisible(true);
                     }
                 });
-                JPanel buttonPanel = new JPanel();
-                GridLayout buttonPanelLayout = new GridLayout(2, 1);
-                buttonPanel.setLayout(buttonPanelLayout);
 
-                buttonPanel.add(projectOverview);
-                buttonPanel.add(allTasks);
-                buttonPanel.setVisible(false);
-                buttonPanel.setBorder( new EmptyBorder(0,15, 0, 0));
-
-                singleProject.add(buttonPanel, BorderLayout.SOUTH);
-
-                projectButton.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        System.out.println("action performed");
-                        if(buttonPanel.isVisible()){
-                            buttonPanel.setVisible(false);
-                        } else {
-                            buttonPanel.setVisible(true);
-                        }
-                    }
-                });
                 singleProject.add(projectButton, BorderLayout.NORTH);
                 projectGrid.add(singleProject, projectGridLayout);
             }
