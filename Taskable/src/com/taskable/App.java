@@ -9,11 +9,8 @@ import com.taskable.model.User;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -55,7 +52,7 @@ public class App extends JFrame{
         baseView.setVisible(false);
 
         frame = new JFrame("Taskable");
-        frame.setPreferredSize(new Dimension(600,400));
+        frame.setPreferredSize(new Dimension(700,400));
 
         frame.setContentPane(loginView);
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
