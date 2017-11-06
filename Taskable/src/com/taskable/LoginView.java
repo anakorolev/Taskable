@@ -1,9 +1,18 @@
 package com.taskable;
 
+import com.taskable.Views.projectModalView;
+import com.taskable.Views.projectSidePanelView;
+import com.taskable.model.IProject;
+import com.taskable.model.Project;
+import com.taskable.model.User;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.Date;
+
 public class LoginView extends JFrame implements ActionListener {
     private JPanel LoginPanel;
     private JTextField tfname;
@@ -63,6 +72,19 @@ public class LoginView extends JFrame implements ActionListener {
             if(tfname.getText().equals("admin")&&tfpass.getText().equals("1234")){
                 this.setVisible(false);
                 //mainView Here
+
+                ArrayList<String> members = new ArrayList<String>();
+                members.add("Bob");
+                members.add("Joe");
+                members.add("Bill");
+
+                Project p = new Project(0, "Name", "Desc", members, null, new Date(2018, 8, 28));
+
+                ArrayList<IProject> projects = new ArrayList<IProject>();
+                projects.add(p);
+
+                User user = new User(projects, 0);
+                new projectSidePanelView(user);
 
             }else{
                 JOptionPane.showMessageDialog(this,"User name and password is not matching, please try again");

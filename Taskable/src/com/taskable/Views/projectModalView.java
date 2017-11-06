@@ -2,6 +2,7 @@ package com.taskable.Views;
 
 import com.taskable.Vendor.CustomizedButtonUI;
 import com.taskable.Views.memberModalView;
+import com.taskable.model.ITask;
 import com.taskable.model.Project;
 import com.taskable.model.Task;
 import com.taskable.model.User;
@@ -191,15 +192,15 @@ public class projectModalView extends JFrame{
 
     private Project updateProject(Project p) {
         Date date = new Date((Integer)inputDropDowns.get(0).getSelectedItem(),
-                inputDropDowns.get(1).getSelectedIndex()+1,
-                inputDropDowns.get(2).getSelectedIndex()+1);
+                inputDropDowns.get(1).getSelectedIndex(),
+                inputDropDowns.get(2).getSelectedIndex());
 
         if (p == null) {
             p = new Project(user.getProjectsForUser().size(),
                     inputTextField.getText(),
                     inputTextArea.getText(),
-                    null,
-                    null,
+                    new ArrayList<String>(),
+                    new ArrayList<ITask>(),
                     date);
             user.addAProjectForUser(p);
             user.setCurrentProjectId(p.getProjectId());
@@ -208,6 +209,8 @@ public class projectModalView extends JFrame{
             p.setProjectDesc(inputTextArea.getText());
             p.setProjectDueDate(date);
         }
+
+        System.out.println(user.getProjectsForUser());
 
         project = p;
 

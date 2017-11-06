@@ -37,7 +37,7 @@ public class User implements IUser {
     }
 
     public void addAProjectForUser(IProject project) {
-        this.projects.add(0,project);
+        this.projects.add(project);
 
     }
     public void setCurrentProjectId(int id) {

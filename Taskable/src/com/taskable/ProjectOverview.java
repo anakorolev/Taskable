@@ -131,6 +131,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
     if (src == complete) {
       Object[] options = {"Cancel",
           "Continue"};
+
       int n = JOptionPane.showOptionDialog(this,
           "Are you sure you want to complete this project?", "Complete Project",
           JOptionPane.YES_NO_OPTION,
