@@ -2,9 +2,6 @@ package com.taskable;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 
 import javax.swing.*;
 
@@ -45,7 +42,7 @@ public class BaseView {
     JButton members = new JButton("See Members"); //TODO add icon later
 
     //add task should go to the TaskModal
-    JButton addTask = new JButton("Add Tasks"); //TODO add icon later
+    JButton addTask = new JButton("Add a new task"); //TODO add icon later
     //addTask.setPreferredSize(new Dimension(1, 1));
 
     //should have a pop up or drop down of tasks to apply
@@ -64,8 +61,8 @@ public class BaseView {
     buttonPanel.add(addTask, BorderLayout.CENTER);
     buttonPanel.add(actions, BorderLayout.LINE_END);
 
-    JPanel leftSidePanel = new JPanel();
-    leftSidePanel.setLayout(new GridLayout());
+    //JPanel leftSidePanel = new JPanel();
+    //leftSidePanel.setLayout(new GridLayout());
     //leftSidePanel.add(amtMembers, BorderLayout.LINE_START);
 
 
@@ -111,6 +108,7 @@ public class BaseView {
 
     //add the button panel to the top of the main panel
     basePanel.add(buttonPanel, BorderLayout.NORTH);
+    //basePanel.add(leftSidePanel, BorderLayout.WEST);
     basePanel.add(sidePanel, BorderLayout.WEST);
 
     frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);

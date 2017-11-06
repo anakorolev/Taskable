@@ -36,6 +36,7 @@ public class AllTasksView {
 
     //todo loop through each new task and add a new row
 
+
     JLabel taskDesc = new JLabel("Task description goes here");
     String[] listAssignees = { "None", "Nancy", "Jason", "Sally"}; //TODO get list of members from model
     JComboBox assigneeDropdown = new JComboBox(listAssignees);
@@ -61,9 +62,6 @@ public class AllTasksView {
     bottom.add(due2);
 
     frame.setContentPane(new AllTasksView().panel);
-
-//    panel.setLayout(new BorderLayout());
-//    panel.add(top, BorderLayout.NORTH);
 
     panel.setLayout(new GridLayout(3, 3));
     panel.add(top);
