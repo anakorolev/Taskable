@@ -1,18 +1,17 @@
 package com.taskable.Views;
 
-import com.taskable.Vendor.CustomizedButtonUI;
 
-import com.taskable.Views.memberModalView;
 import com.taskable.model.ITask;
 import com.taskable.model.Project;
 import com.taskable.model.User;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Date;
+
+import javax.swing.*;
 
 /**
  * Created by akorolev on 11/4/17.
@@ -139,7 +138,7 @@ public class projectModalView extends JFrame{
         JButton closeButton = new JButton("Cancel");
         JButton nextStepButton = new JButton("Next");
 
-        closeButton.setUI(new CustomizedButtonUI(
+        /**closeButton.setUI(new CustomizedButtonUI(
                 new Color(220, 227, 230),
                 new Color(231, 236, 238),
                 new Color(176, 190, 197),
@@ -151,7 +150,7 @@ public class projectModalView extends JFrame{
                 new Color(91, 203, 235),
                 new Color(0, 94, 119),
                 new Font("Arial", Font.BOLD, 14),
-                Color.WHITE, Color.WHITE, Color.WHITE));
+                Color.WHITE, Color.WHITE, Color.WHITE));*/
 
         closeButton.addActionListener(new ActionListener(){
             @Override

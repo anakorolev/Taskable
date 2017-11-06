@@ -95,7 +95,7 @@ public class BaseView extends JFrame implements ActionListener {
       baseRight.add(noPojectPanel);
     } else {
         Project currentProj = (Project)user.getProjectsForUser().get(user.getCurrentProjectIdForUser());
-        ProjectOverview projectOverview = new ProjectOverview(user, currentProj);
+        ProjectOverview projectOverview = new ProjectOverview(user, currentProj, this);
         projectOverviewPanel = projectOverview.getProjectOverviewPanel();
         projectOverviewPanel.setVisible(true);
         baseRight.add(projectOverviewPanel);
@@ -171,7 +171,7 @@ public class BaseView extends JFrame implements ActionListener {
       baseRight.add(noPojectPanel);
     } else {
       Project currentProj = (Project)user.getProjectsForUser().get(user.getCurrentProjectIdForUser());
-      ProjectOverview projectOverview = new ProjectOverview(user, currentProj);
+      ProjectOverview projectOverview = new ProjectOverview(user, currentProj, this);
       projectOverviewPanel = projectOverview.getProjectOverviewPanel();
       projectOverviewPanel.setVisible(true);
       baseRight.add(projectOverviewPanel);

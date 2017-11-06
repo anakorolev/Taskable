@@ -1,6 +1,5 @@
 package com.taskable.model;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Task implements ITask{
@@ -62,7 +61,8 @@ public class Task implements ITask{
     public Date getTaskDueDate() {
         return this.dueDate;
     }
-    public Boolean getFinished() { return this.finished; }
+
+    public boolean getFinished() {return this.finished; }
 
     public void finishTask() {
         this.finished = true;

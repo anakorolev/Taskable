@@ -1,20 +1,20 @@
 package com.taskable.Views;
 
-import com.taskable.Views.projectModalView;
-import com.taskable.Views.projectSidePanelView;
-import com.taskable.model.IProject;
+import com.taskable.TaskOverview;
+import com.taskable.model.ITask;
 import com.taskable.model.Project;
+import com.taskable.model.Task;
 import com.taskable.model.User;
 
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Date;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+
 public class LoginView extends JFrame implements ActionListener {
     private JPanel LoginPanel;
     private JTextField tfname;
@@ -71,11 +71,26 @@ public class LoginView extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        ArrayList<String> members = new ArrayList<String>();
+        members.add("Bob");
+        members.add("Joe");
+        members.add("Bill");
+
+        Task t = new Task(1, "task", "description", "me", new Date());
+        ArrayList<ITask> taskList = new ArrayList<>();
+        taskList.add(t);
+        Project p = new Project(0, "Name", "Desc", members, taskList, new Date(2018, 8, 28));
+        User user = new User(null, -1);
+
         if(e.getSource()==butlogin){
             if(tfname.getText().equals("admin")&&tfpass.getText().equals("1234")){
                 //BaseView here
-
                 LoginPanel.setVisible(false);
+                this.setVisible(false);
+                //mainView Here
+                this.dispose();
+                new TaskOverview(user, p, t);
+
 
             }else{
                 JOptionPane.showMessageDialog(this,"User name and password is not matching, please try again");

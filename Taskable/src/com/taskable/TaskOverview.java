@@ -68,6 +68,12 @@ public class TaskOverview extends JFrame implements ActionListener {
     complete.addActionListener(this);
     returnAllTasks.addActionListener(this);
 
+    if (task.getFinished()) {
+      edit.setEnabled(false);
+      delete.setEnabled(false);
+      complete.setEnabled(false);
+    }
+
     // place items on the screen
     /** set components for top bar */
     JPanel north = new JPanel();
@@ -171,6 +177,10 @@ public class TaskOverview extends JFrame implements ActionListener {
       if (n == 1) {
         // delete the project from the app
         project.getTasks().remove(task);
+        taskOverviewPanel.removeAll();
+        taskOverviewPanel.add(new AllTasksView(user, project).getAllTasksPanel());
+        taskOverviewPanel.revalidate();
+        taskOverviewPanel.repaint();
       }
     }
     if (src == returnAllTasks) {
