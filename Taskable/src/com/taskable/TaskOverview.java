@@ -1,17 +1,16 @@
 package com.taskable;
 
+import com.taskable.Views.taskModalView;
 import com.taskable.model.Project;
 import com.taskable.model.Task;
 import com.taskable.model.User;
-import com.taskable.Views.taskModalView;
 
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
-
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 
 /**
  * Created by kylemccrosson on 11/3/17.
@@ -29,7 +28,7 @@ public class TaskOverview extends JFrame implements ActionListener {
     descripLabel = new JLabel("Description:");
     memberLabel = new JLabel(task.getTaskUser());
     dueDateLabel = new JLabel("Due Date:");
-    dueDate = project.getProjectDueDate();
+    dueDate = task.getTaskDueDate();
     int day = dueDate.getDate();
     int month = dueDate.getMonth();
     int year = dueDate.getYear();
