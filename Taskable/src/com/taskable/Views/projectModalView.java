@@ -153,15 +153,13 @@ public class projectModalView extends JFrame{
                 new Font("Arial", Font.BOLD, 14),
                 Color.WHITE, Color.WHITE, Color.WHITE));
 
-        closeButton.addActionListener(new ActionListener()
-        {
+        closeButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
             }
         });
-        nextStepButton.addActionListener(new ActionListener()
-        {
+        nextStepButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(inputTextField.getText().equals("")){

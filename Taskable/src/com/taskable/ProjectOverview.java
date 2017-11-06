@@ -1,7 +1,9 @@
 package com.taskable;
 
+import com.taskable.Views.projectModalView;
 import com.taskable.model.Project;
 import com.taskable.model.User;
+import com.taskable.model.Task;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -31,7 +33,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
     dueDateLabel = new JLabel("Due Date:");
 
     dueDate = project.getProjectDueDate();
-    int day = dueDate.getDay();
+    int day = dueDate.getDate();
     int month = dueDate.getMonth();
     int year = dueDate.getYear();
     dateLabel = new JLabel("" + month + "/" + day + "/" + year);
@@ -80,7 +82,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
     /** Set components for Left side */
     JPanel west = new JPanel();
     west.setLayout(new BorderLayout());
-    west.setBorder(new EmptyBorder(30,15,0,0));
+    west.setBorder(new EmptyBorder(30, 15, 0, 0));
 
     JPanel leftSideTop = new JPanel();
     leftSideTop.setLayout(new BorderLayout());
@@ -122,10 +124,24 @@ public class ProjectOverview extends JFrame implements ActionListener{
     if (src == edit) {
       // do something
 
-      //new projectModalView("Edit Project", project);
+      new projectModalView("Edit Project", project, user);
+      dispose();
+      ProjectOverview newView = new ProjectOverview(user, project);
 
     }
     if (src == complete) {
+      if (project.getTasks() != null) {
+        for (int i = 0; i < project.getTasks().size(); i++) {
+
+          Task t = (Task) project.getTasks().get(i);
+          if (!t.getFinished()) {
+            JOptionPane.showMessageDialog(this,
+                "You can't finish this project because there are incomplete tasks!");
+            return;
+          }
+        }
+      }
+
       Object[] options = {"Cancel",
           "Continue"};
 
@@ -139,6 +155,10 @@ public class ProjectOverview extends JFrame implements ActionListener{
       if (n == 1) {
 
         project.finishProject();
+        edit.setEnabled(false);
+        complete.setEnabled(false);
+        delete.setEnabled(false);
+        pack();
 
       }
     }
@@ -177,6 +197,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
   private User user;
   private JTextArea description;
   private JPanel projectOverviewPanel;
+
 
 
 }

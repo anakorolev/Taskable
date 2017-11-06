@@ -24,10 +24,11 @@ public class projectSidePanelView extends JFrame {
         projectPanel = new JPanel();
         BorderLayout projectPanelLayout = new BorderLayout();
         projectPanel.setLayout(projectPanelLayout);
-        this.add(projectPanel);
+        projectPanel.setPreferredSize(new Dimension(150, 310));
 
         JPanel scrollPanel = new JPanel();
         scrollPanel.setLayout(new BorderLayout());
+        scrollPanel.setPreferredSize(new Dimension(130, 100));
 
         JScrollPane scrollPane = new JScrollPane(scrollPanel,
                 JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
@@ -38,6 +39,7 @@ public class projectSidePanelView extends JFrame {
         projectPanel.add(scrollPane, projectPanelLayout.WEST);
 
         JButton addProjectButton = new JButton("+");
+        addProjectButton.setPreferredSize(new Dimension(130, 25));
         projectPanel.add(addProjectButton, projectPanelLayout.SOUTH);
 
         addProjectButton.addActionListener(new ActionListener() {
@@ -61,8 +63,21 @@ public class projectSidePanelView extends JFrame {
                 projectGrid.add(singleProject);
                 Project p = (Project)user.getProjectsForUser().get(i);
                 JButton projectButton = new JButton(p.getProjectName());
-
                 JButton allTasks = new JButton("Tasks");
+
+                projectButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        Container parentPanel = projectPanel.getParent();
+
+                    }
+                });
+                allTasks.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+
+                    }
+                });
                 JButton projectOverview = new JButton("Overview");
                 JPanel buttonPanel = new JPanel();
                 GridLayout buttonPanelLayout = new GridLayout(2, 1);
@@ -96,6 +111,10 @@ public class projectSidePanelView extends JFrame {
 
     public JPanel getProjectPanel() {
         return this.projectPanel;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+
     }
 
 }

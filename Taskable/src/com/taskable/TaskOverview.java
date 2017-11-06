@@ -28,7 +28,7 @@ public class TaskOverview extends JFrame implements ActionListener {
     memberLabel = new JLabel(task.getTaskUser());
     dueDateLabel = new JLabel("Due Date:");
     dueDate = project.getProjectDueDate();
-    int day = dueDate.getDay();
+    int day = dueDate.getDate();
     int month = dueDate.getMonth();
     int year = dueDate.getYear();
     dateLabel = new JLabel("" + month + "/" + day + "/" + year);
@@ -134,6 +134,8 @@ public class TaskOverview extends JFrame implements ActionListener {
     if (src == edit) {
 
       new taskModalView("Edit Task", task, project);
+      this.dispose();
+      new TaskOverview(user, project, task);
 
     }
     if (src == complete) {
@@ -150,6 +152,9 @@ public class TaskOverview extends JFrame implements ActionListener {
       if (n == 1) {
         // move the project to completed section, or get rid of it
         task.finishTask();
+        edit.setEnabled(false);
+        complete.setEnabled(false);
+        delete.setEnabled(false);
       }
     }
     if (src == delete) {
