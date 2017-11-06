@@ -18,10 +18,12 @@ import javax.swing.border.EmptyBorder;
  */
 public class TaskOverview extends JFrame implements ActionListener {
   public TaskOverview(User u, Project p, Task t) {
-    this.setLayout(new BorderLayout());
+
     user = u;
     project = p;
     task = t;
+    taskOverviewPanel = new JPanel();
+    taskOverviewPanel.setLayout(new BorderLayout());
 
     // Labels
     descripLabel = new JLabel("Description:");
@@ -48,7 +50,7 @@ public class TaskOverview extends JFrame implements ActionListener {
     returnAllTasks = new JButton("All Tasks", img);
 
     initComponents();
-    this.setVisible(true);
+    taskOverviewPanel.setVisible(true);
   }
 
   protected static ImageIcon createImageIcon(String path) {
@@ -79,7 +81,7 @@ public class TaskOverview extends JFrame implements ActionListener {
     northRight.add(delete);
     northRight.add(complete);
     north.add(northRight, BorderLayout.EAST);
-    this.add(north, BorderLayout.NORTH);
+    taskOverviewPanel.add(north, BorderLayout.NORTH);
 
     /** Set components for Left side */
     JPanel west = new JPanel();
@@ -95,7 +97,7 @@ public class TaskOverview extends JFrame implements ActionListener {
     JPanel leftSideBottom = new JPanel();
     leftSideBottom.add(description);
     west.add(leftSideBottom, BorderLayout.WEST);
-    this.add(west, BorderLayout.WEST);
+    taskOverviewPanel.add(west, BorderLayout.WEST);
 
     /** Set components for right side */
     JPanel center = new JPanel();
@@ -122,11 +124,8 @@ public class TaskOverview extends JFrame implements ActionListener {
     assigneeStuff.add(actualAssignee, BorderLayout.WEST);
     center.add(assigneeStuff, BorderLayout.WEST);
 
-    this.add(center, BorderLayout.CENTER);
-
-
+    taskOverviewPanel.add(center, BorderLayout.CENTER);
     pack();
-
   }
 
   public void actionPerformed(ActionEvent e) {
@@ -175,7 +174,15 @@ public class TaskOverview extends JFrame implements ActionListener {
     }
     if (src == returnAllTasks) {
       // GO BACK TO THE TASKS VIEW
+      taskOverviewPanel.removeAll();
+      taskOverviewPanel.add(new AllTasksView(user, project).getAllTasksPanel());
+      taskOverviewPanel.revalidate();
+      taskOverviewPanel.repaint();
     }
+  }
+
+  public JPanel getTaskOverviewPanel() {
+    return this.taskOverviewPanel;
   }
 
   private JLabel descripLabel, memberLabel, dueDateLabel, dateLabel, taskName, assigneeLabel;
@@ -185,6 +192,7 @@ public class TaskOverview extends JFrame implements ActionListener {
   private Task task;
   private User user;
   private Date dueDate;
+  private JPanel taskOverviewPanel;
 
 
 }

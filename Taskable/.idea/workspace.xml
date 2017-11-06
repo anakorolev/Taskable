@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdc3a836-580f-44ef-98b5-4036be5c27f3" name="Default" comment="" />
+    <list default="true" id="bdc3a836-580f-44ef-98b5-4036be5c27f3" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/LoginView.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/App.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/App.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/ProjectOverview.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/ProjectOverview.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/BaseView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/BaseView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/AllTasksView.java" afterPath="$PROJECT_DIR$/src/com/taskable/AllTasksView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/TaskOverview.java" afterPath="$PROJECT_DIR$/src/com/taskable/TaskOverview.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,13 +23,16 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Taskable" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="78" column="19" lean-forward="false" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
+            <state relative-caret-position="-413">
+              <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -31,13 +43,59 @@
       <file leaf-file-name="BaseView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/BaseView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="96" column="8" lean-forward="false" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
+            <state relative-caret-position="307">
+              <caret line="265" column="22" selection-start-line="265" selection-start-column="22" selection-end-line="265" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1786#1787#0" expanded="true" />
-                <element signature="e#1837#1838#0" expanded="true" />
+                <element signature="e#4375#4376#0" expanded="true" />
+                <element signature="e#4420#4421#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="taskModalView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskOverview.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/taskable/TaskOverview.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="179" column="32" selection-start-line="179" selection-start-column="32" selection-end-line="179" selection-end-column="32" />
+              <folding>
+                <element signature="e#5757#5758#0" expanded="true" />
+                <element signature="e#5796#5797#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AllTasksView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/taskable/AllTasksView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="92" column="77" selection-start-line="92" selection-start-column="77" selection-end-line="92" selection-end-column="77" />
+              <folding>
+                <element signature="e#4688#4689#0" expanded="true" />
+                <element signature="e#4715#4716#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="memberModalView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/memberModalView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/LoginView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="232">
-              <caret line="77" column="16" lean-forward="false" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="45" />
+              <caret line="77" column="16" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,8 +115,8 @@
       <file leaf-file-name="projectModalView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="216" column="0" lean-forward="true" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
+            <state relative-caret-position="412">
+              <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -67,8 +125,8 @@
       <file leaf-file-name="ProjectOverview.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/ProjectOverview.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="136" column="23" lean-forward="true" selection-start-line="136" selection-start-column="23" selection-end-line="136" selection-end-column="23" />
+            <state relative-caret-position="1860">
+              <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,32 +136,10 @@
         <entry file="file://$PROJECT_DIR$/src/com/taskable/model/Task.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="630">
-              <caret line="58" column="33" lean-forward="true" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+              <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1408#1409#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/taskable/model/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/taskable/model/Project.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -118,6 +154,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -141,6 +180,8 @@
         <option value="$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/model/Task.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/App.java" />
+        <option value="$PROJECT_DIR$/src/com/taskable/AllTasksView.java" />
+        <option value="$PROJECT_DIR$/src/com/taskable/TaskOverview.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" />
       </list>
     </option>
@@ -152,10 +193,19 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="774" />
+    <option name="height" value="711" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -177,6 +227,12 @@
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Taskable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Taskable" />
@@ -271,6 +327,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Taskable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Taskable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="icons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="AndroidView" />
@@ -328,7 +406,7 @@
       <predefined_log_file id="idea.log" enabled="true" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -338,7 +416,7 @@
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="PREFERRED_AVD" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="DEBUGGER_TYPE" value="Java" />
@@ -346,11 +424,7 @@
       <option name="PREFERRED_AVD" value="" />
       <Java />
       <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
         <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -375,11 +449,7 @@
       <option name="PREFERRED_AVD" value="" />
       <Java />
       <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
         <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
       <method />
     </configuration>
@@ -434,6 +504,27 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -525,6 +616,34 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
     <configuration default="false" name="Run Taskable" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="com.taskable.App" />
@@ -549,6 +668,34 @@
         <item index="0" class="java.lang.String" itemvalue="Application.BaseView" />
       </list>
     </recent_temporary>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -570,39 +717,39 @@
     <option name="totallyTimeSpent" value="25588000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="23" width="1280" height="774" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="711" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844576" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271028" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23167156" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23052959" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1930533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19296876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -640,6 +787,14 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -652,31 +807,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/taskable/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taskable/App.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taskable/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/App.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
@@ -691,7 +821,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -699,14 +829,14 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/IProject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/Task.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
-          <caret line="58" column="17" lean-forward="false" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+          <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1408#1409#0" expanded="true" />
@@ -717,14 +847,14 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/ITask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/Project.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -734,7 +864,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/IUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="16" />
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -743,7 +873,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
-          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -753,7 +883,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -763,28 +893,28 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/IProject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/ITask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/IUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="16" />
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/Task.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
-          <caret line="58" column="17" lean-forward="false" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+          <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1408#1409#0" expanded="true" />
@@ -795,7 +925,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -803,7 +933,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/Project.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -813,7 +943,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -824,28 +954,28 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/IProject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/ITask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/IUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
-          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="16" />
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/Project.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -855,7 +985,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/Task.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
-          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1408#1409#0" expanded="true" />
@@ -867,7 +997,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -882,7 +1012,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -904,42 +1034,28 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/IProject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/memberModalView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taskable/TaskOverview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2386">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/ITask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/IUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="16" />
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        <state relative-caret-position="240">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -949,30 +1065,14 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/Vendor/CustomizedButtonUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="216" column="0" lean-forward="true" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taskable/ProjectOverview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="136" column="23" lean-forward="true" selection-start-line="136" selection-start-column="23" selection-end-line="136" selection-end-column="23" />
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -980,7 +1080,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/Task.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
-          <caret line="58" column="33" lean-forward="true" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1408#1409#0" expanded="true" />
@@ -988,10 +1088,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/icons/Hamburger_icon2%.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/LoginView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
-          <caret line="77" column="16" lean-forward="false" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="45" />
+          <caret line="77" column="16" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1000,22 +1105,76 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="78" column="19" lean-forward="false" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
+        <state relative-caret-position="-413">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/ProjectOverview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1860">
+          <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/memberModalView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/AllTasksView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="92" column="77" selection-start-line="92" selection-start-column="77" selection-end-line="92" selection-end-column="77" />
+          <folding>
+            <element signature="e#4688#4689#0" expanded="true" />
+            <element signature="e#4715#4716#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/TaskOverview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="179" column="32" selection-start-line="179" selection-start-column="32" selection-end-line="179" selection-end-column="32" />
+          <folding>
+            <element signature="e#5757#5758#0" expanded="true" />
+            <element signature="e#5796#5797#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/BaseView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="96" column="8" lean-forward="false" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
+        <state relative-caret-position="307">
+          <caret line="265" column="22" selection-start-line="265" selection-start-column="22" selection-end-line="265" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1786#1787#0" expanded="true" />
-            <element signature="e#1837#1838#0" expanded="true" />
+            <element signature="e#4375#4376#0" expanded="true" />
+            <element signature="e#4420#4421#0" expanded="true" />
           </folding>
         </state>
       </provider>

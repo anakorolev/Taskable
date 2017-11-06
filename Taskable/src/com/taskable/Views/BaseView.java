@@ -5,12 +5,12 @@ import com.taskable.ProjectOverview;
 import com.taskable.model.Project;
 import com.taskable.model.User;
 
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 /**
  * Class for the base view of the Taskable app.
@@ -111,6 +111,84 @@ public class BaseView extends JFrame implements ActionListener {
     BasePanel.setVisible(true);
   }
 
+  private void initComponents() {
+    BasePanel = new JPanel();
+
+    BasePanel.setLayout(new BorderLayout());
+
+    taskableLogo = new JLabel("TASKABLE", JLabel.CENTER);
+    taskableLogo.setFont(new Font("TimesRoman",Font.BOLD,20));
+    taskableLogo.setPreferredSize(new Dimension(300, 50));
+
+    profileButton = new JButton("Profile");
+
+    JPanel header = new JPanel();
+    header.setLayout(new BorderLayout());
+    header.setPreferredSize(new Dimension(0, 50));
+    header.add(taskableLogo, BorderLayout.CENTER);
+    //header.add(profileButton, BorderLayout.EAST);
+
+    JMenuBar menu = new JMenuBar();
+
+    JMenu profile = new JMenu("Profile");
+    JMenuItem signOut = new JMenuItem("Logout");
+    profile.add(signOut);
+    menu.add(profile);
+
+    signOut.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        BasePanel.setVisible(false);
+      }
+    });
+
+//    ImageIcon img = createImageIcon("icons/Hamburger_icon2%.png");
+//    profile.setIcon(img);
+
+    header.add(menu, BorderLayout.EAST);
+
+    projectSidePanelView projectView = new projectSidePanelView(user);
+    JPanel projectPanel = projectView.getProjectPanel();
+    baseLeft = new JPanel();
+    baseLeft.setPreferredSize(new Dimension(150,0));
+    baseLeft.add(getProjectPanel());
+
+    baseRight = new JPanel();
+
+
+    noPojectPanel = new JPanel();
+    noPojectPanel.setLayout(new GridLayout(2, 0));
+    addNewProjectPromote = new JLabel("No Project", JLabel.CENTER);
+    noPojectPanel.add(addNewProjectPromote,CENTER_ALIGNMENT);
+
+    addNewProjectButton = new JButton("add Project");
+    addNewProjectButton.addActionListener(this);
+
+    if(user.getProjectsForUser().size() == 0) {
+      noPojectPanel.add(addNewProjectButton);
+      baseRight.add(noPojectPanel);
+    } else {
+      Project currentProj = (Project)user.getProjectsForUser().get(user.getCurrentProjectIdForUser());
+      ProjectOverview projectOverview = new ProjectOverview(user, currentProj);
+      projectOverviewPanel = projectOverview.getProjectOverviewPanel();
+      projectOverviewPanel.setVisible(true);
+      baseRight.add(projectOverviewPanel);
+
+      AllTasksView allTasks = new AllTasksView(user, currentProj);
+      allTasksPanel = allTasks.getAllTasksPanel();
+      allTasksPanel.setVisible(false);
+      baseRight.add(allTasksPanel);
+    }
+
+
+
+    BasePanel.add(header, BorderLayout.NORTH);
+    BasePanel.add(baseLeft, BorderLayout.WEST);
+    BasePanel.add(baseRight, BorderLayout.CENTER);
+
+    BasePanel.setVisible(true);
+  }
+
   protected static ImageIcon createImageIcon(String path) {
     java.net.URL imgURL = BaseView.class.getResource(path);
     //error handling omitted for clarity...
@@ -141,12 +219,15 @@ public class BaseView extends JFrame implements ActionListener {
         projectPanel.add(addProjectButton, projectPanelLayout.SOUTH);
 
         addProjectButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new projectModalView("New Project", null, user);
-                setVisible(true);
-                repaint();
-            }
+          @Override
+          public void actionPerformed(ActionEvent e) {
+            new projectModalView("New Project", null, user);
+            removeAll();
+            initComponents();
+            revalidate();
+            repaint();
+
+          }
         });
 
         JPanel projectGrid = new JPanel();
@@ -181,6 +262,8 @@ public class BaseView extends JFrame implements ActionListener {
                 allTasks.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
+                        BasePanel.removeAll();
+                      
                         projectOverviewPanel.setVisible(false);
                         allTasksPanel.setVisible(true);
                     }
@@ -226,7 +309,8 @@ public class BaseView extends JFrame implements ActionListener {
 
   @Override
   public void actionPerformed(ActionEvent e) {
-    if(e.getSource()==addNewProjectButton){
+    Object src = e.getSource();
+    if(src == addNewProjectButton){
       new projectModalView("New Project", null, user);
       BasePanel.setVisible(true);
       BasePanel.repaint();
