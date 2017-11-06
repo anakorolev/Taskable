@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bdc3a836-580f-44ef-98b5-4036be5c27f3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/App.java" afterPath="$PROJECT_DIR$/src/com/taskable/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/ProjectOverview.java" afterPath="$PROJECT_DIR$/src/com/taskable/ProjectOverview.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/memberModalView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/memberModalView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/TaskOverview.java" afterPath="$PROJECT_DIR$/src/com/taskable/TaskOverview.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BaseView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/BaseView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -65,14 +61,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskOverview.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TaskOverview.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/TaskOverview.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="179" column="32" selection-start-line="179" selection-start-column="32" selection-end-line="179" selection-end-column="32" />
+            <state relative-caret-position="180">
+              <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
               <folding>
-                <element signature="e#5757#5758#0" expanded="true" />
-                <element signature="e#5796#5797#0" expanded="true" />
+                <element signature="e#5791#5792#0" expanded="true" />
+                <element signature="e#5830#5831#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -182,8 +178,8 @@
         <option value="$PROJECT_DIR$/src/com/taskable/model/Task.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/App.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/AllTasksView.java" />
-        <option value="$PROJECT_DIR$/src/com/taskable/TaskOverview.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" />
+        <option value="$PROJECT_DIR$/src/com/taskable/TaskOverview.java" />
       </list>
     </option>
   </component>
@@ -1157,17 +1153,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taskable/TaskOverview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="179" column="32" selection-start-line="179" selection-start-column="32" selection-end-line="179" selection-end-column="32" />
-          <folding>
-            <element signature="e#5757#5758#0" expanded="true" />
-            <element signature="e#5796#5797#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/BaseView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1179,6 +1164,17 @@
             <element signature="e#4482#4483#0" expanded="true" />
             <element signature="e#10843#10844#0" expanded="true" />
             <element signature="e#10874#10875#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/TaskOverview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
+          <folding>
+            <element signature="e#5791#5792#0" expanded="true" />
+            <element signature="e#5830#5831#0" expanded="true" />
           </folding>
         </state>
       </provider>

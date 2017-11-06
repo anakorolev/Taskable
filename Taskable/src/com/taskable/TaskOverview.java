@@ -33,6 +33,7 @@ public class TaskOverview extends JFrame implements ActionListener {
     int day = dueDate.getDate();
     int month = dueDate.getMonth();
     int year = dueDate.getYear();
+    if (month == 0) {month = 12;}
     dateLabel = new JLabel("" + month + "/" + day + "/" + year);
     description = new JTextArea(task.getTaskDesc());
     description.setEditable(false);
