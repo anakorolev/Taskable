@@ -22,33 +22,23 @@ public class AllTasksView {
   private static Project project;
   private static User user;
 
-
-
   //constructor
   public AllTasksView(User u, Project p) {
     panel = new JPanel();
+    project = p;
+    user = u;
 
     ArrayList<String> members = new ArrayList<String>();
     for (int i = 0; i < p.getProjectMembers().size(); i ++) {
       members.add(p.getProjectMembers().get(i));
     }
 
-//    members.add("Bob");
-//    members.add("Joe");
-//    members.add("Bill");
+
     ArrayList<ITask> listTask = new ArrayList<>();
     for (int i = 0; i < p.getTasks().size(); i ++) {
       listTask.add(p.getTasks().get(i));
     }
-//    listTask.add(new Task(1, "Make view", "Task 1", "Bill", new Date(2017, 11, 3)));
-//    listTask.add(new Task(1, "Make model", "Task 2", "Bob", new Date(2017, 12, 3)));
-//    listTask.add(new Task(1, "Make constructor", "Task 3", "Joe", new Date(2017, 12, 4)));
-//    listTask.add(new Task(1, "Make other", "Task 4", "None", new Date(2017, 11, 5)));
-    
-//    project = new Project(0, "Name", "Desc", members, listTask, new Date(2018, 8, 28));
-//    ArrayList<IProject> listProjects = new ArrayList<>();
-//    listProjects.add(project);
-//    user = new User(listProjects, 1);
+
   }
 
   //do all of the creating
@@ -85,7 +75,6 @@ public class AllTasksView {
       int year = d.getYear();
       JLabel due = new JLabel("" + month + "/" + day + "/" + year);
 
-
       //add reminder button
       JButton remind = new JButton("R");
 
@@ -101,15 +90,13 @@ public class AllTasksView {
       listOfPanels.add(newPanel);
     }
 
-    System.out.println("size of proj: " + project.getTasks().size());
-    //set the main panel layout to be a new grid layout and add the top bar
-
+    //set the new panel layout to be a new grid layout and add the top bar
     JPanel bord = new JPanel();
     bord.setLayout(new GridLayout(0, 1));
     bord.add(top);
 
+    //make another panel, set the layout to be border, and add the current panel from list to the new panel at NORTH
     for (int i = 0; i < listOfPanels.size(); i ++) {
-      //make another panel, set the layout to be border, and add the current panel from list to the new panel at NORTH
       JPanel anotherPanel = new JPanel();
       anotherPanel.setLayout(new BorderLayout());
       anotherPanel.add(listOfPanels.get(i), BorderLayout.NORTH);
