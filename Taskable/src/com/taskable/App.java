@@ -1,5 +1,7 @@
 package com.taskable;
 
+import sun.dc.pr.PRError;
+
 import javax.swing.*;
 
 /**
@@ -8,8 +10,10 @@ import javax.swing.*;
 public class App {
 
     private JPanel basePanel;
+    private static JPanel loginView;
 
     public App() {
+        loginView = new LoginView().getLoignPanel();
     }
 
     public static void main(String[] args) {
@@ -19,6 +23,7 @@ public class App {
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+        frame.add(loginView);
     }
 
 }
