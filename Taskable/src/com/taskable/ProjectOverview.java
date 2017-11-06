@@ -125,9 +125,11 @@ public class ProjectOverview extends JFrame implements ActionListener{
       // do something
 
       new projectModalView("Edit Project", project, user);
-      dispose();
-      ProjectOverview newView = new ProjectOverview(user, project);
-
+      projectOverviewPanel = new ProjectOverview(user, project).getProjectOverviewPanel();
+      projectOverviewPanel.setVisible(true);
+      projectOverviewPanel.repaint();
+      setVisible(true);
+      repaint();
     }
     if (src == complete) {
       if (project.getTasks() != null) {

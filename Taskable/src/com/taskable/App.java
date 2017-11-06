@@ -3,6 +3,7 @@ package com.taskable;
 import com.taskable.Views.BaseView;
 import com.taskable.Views.LoginView;
 import com.taskable.model.IProject;
+import com.taskable.model.ITask;
 import com.taskable.model.Project;
 import com.taskable.model.User;
 
@@ -12,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -36,12 +38,21 @@ public class App extends JFrame{
     }
 
     public static void main(String[] args) {
-        User user = new User(new ArrayList<IProject>(), -1);
+        ArrayList<String> members = new ArrayList<String>();
+        members.add("Bob");
+        members.add("Joe");
+        members.add("Bill");
+
+        Project p = new Project(0, "Name", "Desc", members, new ArrayList<ITask>(), new Date(2018, 8, 28));
+        ArrayList<IProject> projects = new ArrayList<>();
+        projects.add(p);
+
+        User user = new User(projects, 0);
         LoginView login = new LoginView();
         loginView = login.getLoginPanel();
         loginView.setVisible(true);
 
-        BaseView base = new BaseView(user, "overview");
+        BaseView base = new BaseView(user);
         baseView = base.getBasePanel();
         baseView.setVisible(false);
 

@@ -39,13 +39,11 @@ public class AllTasksView {
       listTask.add(p.getTasks().get(i));
     }
 
+    allTasksPanel();
   }
 
   //do all of the creating
-  public static void main(String[] args) {
-    JFrame frame = new JFrame("Taskable");
-    frame.setContentPane(new AllTasksView(user, project).panel);
-
+  public void allTasksPanel() {
     JPanel top = new JPanel();
     top.setLayout(new GridLayout(0, 4));
 
@@ -105,12 +103,9 @@ public class AllTasksView {
 
     panel.setLayout(new BorderLayout());
     panel.add(bord);
-
-    frame.setPreferredSize(new Dimension(700, 300));
-
-    frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
-    frame.pack();
-    frame.setVisible(true);
   }
 
+  public JPanel getAllTasksPanel() {
+    return this.panel;
+  }
 }

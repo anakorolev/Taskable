@@ -1,5 +1,6 @@
 package com.taskable.Views;
 
+import com.taskable.AllTasksView;
 import com.taskable.ProjectOverview;
 import com.taskable.model.Project;
 import com.taskable.model.User;
@@ -25,13 +26,13 @@ import java.net.URL;
  */
 public class BaseView extends JFrame implements ActionListener {
 
-  private JPanel BasePanel, baseLeft, baseRight, noPojectPanel, projectPanel;
+  private JPanel BasePanel, baseLeft, baseRight, noPojectPanel, projectPanel, allTasksPanel, projectOverviewPanel;
   private JLabel taskableLogo, addNewProjectPromote ;
   private JButton addNewProjectButton, profileButton;
   private User user;
 
   //empty constructor
-  public BaseView(User u, String view) {
+  public BaseView(User u) {
     user = u;
     BasePanel = new JPanel();
 
@@ -91,12 +92,14 @@ public class BaseView extends JFrame implements ActionListener {
     } else {
         Project currentProj = (Project)user.getProjectsForUser().get(user.getCurrentProjectIdForUser());
         ProjectOverview projectOverview = new ProjectOverview(user, currentProj);
-        JPanel projectOverviewPanel = projectOverview.getProjectOverviewPanel();
+        projectOverviewPanel = projectOverview.getProjectOverviewPanel();
+        projectOverviewPanel.setVisible(true);
         baseRight.add(projectOverviewPanel);
 
-        
-
-        baseRight.add(allTasks);
+        AllTasksView allTasks = new AllTasksView(user, currentProj);
+        allTasksPanel = allTasks.getAllTasksPanel();
+        allTasksPanel.setVisible(false);
+        baseRight.add(allTasksPanel);
     }
 
 
@@ -141,6 +144,7 @@ public class BaseView extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new projectModalView("New Project", null, user);
+                setVisible(true);
                 repaint();
             }
         });
@@ -157,23 +161,30 @@ public class BaseView extends JFrame implements ActionListener {
                 projectGrid.add(singleProject);
                 Project p = (Project)user.getProjectsForUser().get(i);
                 JButton projectButton = new JButton(p.getProjectName());
+                JButton projectOverview = new JButton("Overview");
                 JButton allTasks = new JButton("Tasks");
 
                 projectButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        dispose();
-                        new BaseView(user, "overview");
+                        projectOverviewPanel.setVisible(true);
+                        allTasksPanel.setVisible(false);
+                    }
+                });
+                projectOverview.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        projectOverviewPanel.setVisible(true);
+                        allTasksPanel.setVisible(false);
                     }
                 });
                 allTasks.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        dispose();
-                        new BaseView(user, "tasks");
+                        projectOverviewPanel.setVisible(false);
+                        allTasksPanel.setVisible(true);
                     }
                 });
-                JButton projectOverview = new JButton("Overview");
                 JPanel buttonPanel = new JPanel();
                 GridLayout buttonPanelLayout = new GridLayout(2, 1);
                 buttonPanel.setLayout(buttonPanelLayout);
@@ -211,18 +222,6 @@ public class BaseView extends JFrame implements ActionListener {
   public JPanel getProjectPanel() {
       projectSidePanel();
       return this.projectPanel;
-  }
-
-  public JPanel getMainPanel(String view) {
-      JPanel panel;
-      if(view.equals("overview")){
-
-      } else if (view.equals("tasks")){
-          panel = new JPanel();
-      } else {
-          panel = new JPanel();
-      }
-      return panel;
   }
 
   @Override
