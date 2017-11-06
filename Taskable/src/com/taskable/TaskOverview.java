@@ -1,8 +1,14 @@
 package com.taskable;
 
+import com.taskable.model.Project;
+import com.taskable.model.Task;
+import com.taskable.model.User;
+import com.taskable.Views.taskModalView;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -11,21 +17,26 @@ import javax.swing.border.EmptyBorder;
  * Created by kylemccrosson on 11/3/17.
  */
 public class TaskOverview extends JFrame implements ActionListener {
-  public TaskOverview(/** User u, Task t */) {
+  public TaskOverview(User u, Project p, Task t) {
     this.setLayout(new BorderLayout());
-    // user = u;
-    // project = user.getProjectsForUser().at(user.get
+    user = u;
+    project = p;
+    task = t;
 
     // Labels
     descripLabel = new JLabel("Description:");
-    memberLabel = new JLabel("Joanne");
+    memberLabel = new JLabel(task.getTaskUser());
     dueDateLabel = new JLabel("Due Date:");
-    dateLabel = new JLabel("12/12/12");
-    description = new JTextArea("This is the description");
+    dueDate = project.getProjectDueDate();
+    int day = dueDate.getDay();
+    int month = dueDate.getMonth();
+    int year = dueDate.getYear();
+    dateLabel = new JLabel("" + month + "/" + day + "/" + year);
+    description = new JTextArea(task.getTaskDesc());
     description.setEditable(false);
     description.setColumns(30);
     description.setRows(8);
-    taskName = new JLabel("Task Name");
+    taskName = new JLabel(task.getTaskName());
     taskName.setFont(new Font("Sans",Font.BOLD, 20));
     assigneeLabel = new JLabel("Assignee:");
 
@@ -37,6 +48,7 @@ public class TaskOverview extends JFrame implements ActionListener {
     returnAllTasks = new JButton("All Tasks", img);
 
     initComponents();
+    this.setVisible(true);
   }
 
   protected static ImageIcon createImageIcon(String path) {
@@ -120,16 +132,15 @@ public class TaskOverview extends JFrame implements ActionListener {
   public void actionPerformed(ActionEvent e) {
     Object src = e.getSource();
     if (src == edit) {
-      // do something
-      /**
-       * new taskModalView("Edit Task", task, project);
-       */
+
+      new taskModalView("Edit Task", task, project);
+
     }
     if (src == complete) {
       Object[] options = {"Cancel",
           "Continue"};
       int n = JOptionPane.showOptionDialog(this,
-          "Are you sure you want to complete this project?", "Complete Project",
+          "Are you sure you want to complete this task?", "Complete task",
           JOptionPane.YES_NO_OPTION,
           JOptionPane.QUESTION_MESSAGE,
           null,
@@ -138,7 +149,7 @@ public class TaskOverview extends JFrame implements ActionListener {
 
       if (n == 1) {
         // move the project to completed section, or get rid of it
-        System.out.println("You completed the project");
+        task.finishTask();
       }
     }
     if (src == delete) {
@@ -154,24 +165,21 @@ public class TaskOverview extends JFrame implements ActionListener {
 
       if (n == 1) {
         // delete the project from the app
+        project.getTasks().remove(task);
       }
     }
     if (src == returnAllTasks) {
-      // do something
+      // GO BACK TO THE TASKS VIEW
     }
   }
 
   private JLabel descripLabel, memberLabel, dueDateLabel, dateLabel, taskName, assigneeLabel;
   private JButton edit, delete, complete, returnAllTasks;
   private JTextArea description;
-  // private Project project;
-  // private Task task;
-  // private User user;
+  private Project project;
+  private Task task;
+  private User user;
+  private Date dueDate;
 
-  public static void main(String[] args) {
-    TaskOverview p = new TaskOverview();
-    p.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    p.pack();
-    p.setVisible(true);
-  }
+
 }
