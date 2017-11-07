@@ -125,7 +125,12 @@ public class taskModalView extends JFrame{
                 }
             }
 
-            monthSelect.setSelectedIndex(this.task.getTaskDueDate().getMonth()-1);
+            if (this.task.getTaskDueDate().getMonth() == 0) {
+                monthSelect.setSelectedIndex(12);
+            } else {
+                monthSelect.setSelectedIndex(this.task.getTaskDueDate().getMonth());
+            }
+
             daySelect.setSelectedItem(this.task.getTaskDueDate().getDate());
             yearSelect.setSelectedItem(this.task.getTaskDueDate().getYear());
         }

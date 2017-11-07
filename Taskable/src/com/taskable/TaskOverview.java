@@ -28,11 +28,8 @@ public class TaskOverview extends JFrame implements ActionListener {
     descripLabel = new JLabel("Description:");
     memberLabel = new JLabel(task.getTaskUser());
     dueDateLabel = new JLabel("Due Date:");
-<<<<<<< HEAD
     dueDate = task.getTaskDueDate();
-=======
-    dueDate = t.getTaskDueDate();
->>>>>>> a1b7471cb5bb58cbd9d7173cd951a52efc8a460f
+
     int day = dueDate.getDate();
     int month = dueDate.getMonth();
     int year = dueDate.getYear();
