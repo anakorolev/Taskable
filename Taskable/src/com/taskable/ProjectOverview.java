@@ -56,11 +56,13 @@ public class ProjectOverview extends JFrame implements ActionListener{
     edit = new JButton("Edit");
     delete = new JButton("Delete");
     complete = new JButton("Complete");
+    rem = new JButton("Send a Reminder");
 
     if (project.getProjectFinished()) {
       edit.setEnabled(false);
       delete.setEnabled(false);
       complete.setEnabled(false);
+      rem.setEnabled(false);
     }
 
     // List
@@ -70,6 +72,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
     edit.addActionListener(this);
     delete.addActionListener(this);
     complete.addActionListener(this);
+    rem.addActionListener(this);
 
     // place items on the screen
     /** set components for top bar */
@@ -102,8 +105,10 @@ public class ProjectOverview extends JFrame implements ActionListener{
     JPanel leftSideBottom = new JPanel();
     leftSideBottom.add(dueDateLabel);
     leftSideBottom.add(dateLabel);
+    leftSideBottom.add(rem);
     west.add(leftSideBottom, BorderLayout.WEST);
     projectOverviewPanel.add(west, BorderLayout.WEST);
+
 
     /** Set components for right side */
     JPanel center = new JPanel();
@@ -195,9 +200,17 @@ public class ProjectOverview extends JFrame implements ActionListener{
         baseView.revalidate();
         baseView.repaint();
 
-
-
       }
+    }
+    if (src == rem) {
+      Object[] options = {"Remind!", "Cancel"};
+      int n = JOptionPane.showOptionDialog(projectOverviewPanel,
+              "Would you like to remind everyone in the group about " + project.getProjectName() + "?", "Send Reminder",
+              JOptionPane.YES_NO_OPTION,
+              JOptionPane.QUESTION_MESSAGE,
+              null,
+              options,
+              options[0]);
     }
   }
 
@@ -206,7 +219,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
   }
 
   private JLabel descripLabel, memberLabel, dueDateLabel, dateLabel;
-  private JButton edit, delete, complete;
+  private JButton edit, delete, complete, rem;
   private ArrayList<String> members;
   private Date dueDate;
   private Project project;

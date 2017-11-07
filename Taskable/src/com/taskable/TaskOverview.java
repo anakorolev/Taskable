@@ -48,6 +48,7 @@ public class TaskOverview extends JFrame implements ActionListener {
     edit = new JButton("Edit");
     delete = new JButton("Delete");
     complete = new JButton("Complete");
+    remind = new JButton("Send a Reminder");
     ImageIcon img = createImageIcon("icons/img_68687.png");
     returnAllTasks = new JButton("All Tasks", img);
 
@@ -68,11 +69,13 @@ public class TaskOverview extends JFrame implements ActionListener {
     delete.addActionListener(this);
     complete.addActionListener(this);
     returnAllTasks.addActionListener(this);
+    remind.addActionListener(this);
 
     if (task.getFinished()) {
       edit.setEnabled(false);
       delete.setEnabled(false);
       complete.setEnabled(false);
+      remind.setEnabled(false);
     }
 
     // place items on the screen
@@ -120,6 +123,11 @@ public class TaskOverview extends JFrame implements ActionListener {
     actualDueDate.add(dateLabel);
     dueDateStuff.add(actualDueDate, BorderLayout.WEST);
     center.add(dueDateStuff, BorderLayout.NORTH);
+
+    JPanel reminderPanel = new JPanel();
+    reminderPanel.setLayout(new BorderLayout());
+    reminderPanel.add(remind, BorderLayout.WEST);
+    center.add(remind, BorderLayout.CENTER);
 
     JPanel assigneeStuff = new JPanel();
     assigneeStuff.setLayout(new BorderLayout());
@@ -192,6 +200,17 @@ public class TaskOverview extends JFrame implements ActionListener {
       taskOverviewPanel.revalidate();
       taskOverviewPanel.repaint();
     }
+
+    if (src == remind) {
+      Object[] options = {"Remind!", "Cancel"};
+      int n = JOptionPane.showOptionDialog(this,
+              "Would you like to send a reminder to " + task.getTaskUser().toString()+ "?", "Send a Reminder",
+              JOptionPane.YES_NO_OPTION,
+              JOptionPane.QUESTION_MESSAGE,
+              null,
+              options,
+              options[0]);
+    }
   }
 
   public JPanel getTaskOverviewPanel() {
@@ -199,7 +218,7 @@ public class TaskOverview extends JFrame implements ActionListener {
   }
 
   private JLabel descripLabel, memberLabel, dueDateLabel, dateLabel, taskName, assigneeLabel;
-  private JButton edit, delete, complete, returnAllTasks;
+  private JButton edit, delete, complete, returnAllTasks, remind;
   private JTextArea description;
   private Project project;
   private Task task;
