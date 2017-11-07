@@ -26,7 +26,7 @@ public class AllTasksView implements ActionListener{
   private static JPanel panel;
   private static Project project;
   private static User user;
-  private JButton addTaskButton, memberEditButton;
+  private JButton addTaskButton, memberEditButton, remind;
   private JComboBox<String> actionBox;
   private ArrayList<JCheckBox> group1;
 
@@ -37,6 +37,7 @@ public class AllTasksView implements ActionListener{
     project = p;
     user = u;
     group1 = new ArrayList<>();
+
     addTaskButton = new JButton();
     memberEditButton = new JButton();
 
@@ -142,15 +143,28 @@ public class AllTasksView implements ActionListener{
       JLabel due = new JLabel("" + month + "/" + day + "/" + year);
 
       //add reminder button
-      JButton remind = new JButton();
-      remind.setUI(new CustomizedButtonUI(
+      JButton reminderButton = new JButton();
+      reminderButton.setUI(new CustomizedButtonUI(
               new Color(176, 190, 197), new Color(220, 227, 230),
-              new Color(144, 164, 174), createImageIcon("icons/ic_notifications_black_24dp_1x.png")));
+              new Color(144, 164, 174), createImageIcon("icons/bellWhite.png")));
+      reminderButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          Object[] options = {"Remind!", "Cancel"};
+          int n = JOptionPane.showOptionDialog(getAllTasksPanel(),
+                  "Would you like to send a reminder to " + t.getTaskUser() + "?", "Send a Reminder",
+                  JOptionPane.YES_NO_OPTION,
+                  JOptionPane.QUESTION_MESSAGE,
+                  null,
+                  options,
+                  options[0]);
+        }
+      });
 
       JPanel remindPanel = new JPanel();
       remindPanel.setBorder(new EmptyBorder(0,40,0,40));
       remindPanel.setPreferredSize(new Dimension(35, 35));
-      remindPanel.add(remind);
+      remindPanel.add(reminderButton);
 
       //create a new panel to add the task description, assignee drop down, and due date to
       JPanel newPanel = new JPanel();
@@ -164,6 +178,7 @@ public class AllTasksView implements ActionListener{
       //add the new panel to the list of panels.
       listOfPanels.add(newPanel);
     }
+
 
     //set the new panel layout to be a new grid layout and add the top bar
     JPanel bord = new JPanel();

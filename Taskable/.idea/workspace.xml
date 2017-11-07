@@ -2,6 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdc3a836-580f-44ef-98b5-4036be5c27f3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/Complete.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/addMemberWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/addProject.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/addTaskWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/allTasks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/bellWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/delete1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/edit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/ic_account_circle_black_24dp_1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/ic_add_black_24dp_1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/ic_arrow_back_black_24dp_1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/ic_check_black_24dp_1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/ic_delete_black_24dp_1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/ic_manage_members_1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/ic_mode_edit_black_24dp_1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/ic_notifications_black_24dp_1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/ic_person_add_black_24dp_1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/ic_settings_black_24dp_1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/ic_supervisor_account_black_24dp_1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/managerMembersWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/plusWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/taskable_0.2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/taskable_0.5x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/taskable/icons/taskable_small.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/taskable/BaseView.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/App.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/App.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/ProjectOverview.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/ProjectOverview.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/TaskOverview.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/TaskOverview.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Vendor/CustomizedButtonUI.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Vendor/CustomizedButtonUI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/BaseView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/BaseView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/LoginView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/LoginView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$1.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$2.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$3.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView$1.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView$2.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/taskModalView$1.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/taskModalView$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/taskModalView$2.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/taskModalView$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/taskModalView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/taskModalView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/AllTasksView.java" afterPath="$PROJECT_DIR$/src/com/taskable/AllTasksView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/App.java" afterPath="$PROJECT_DIR$/src/com/taskable/App.java" />
@@ -9,6 +50,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/TaskOverview.java" afterPath="$PROJECT_DIR$/src/com/taskable/TaskOverview.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Vendor/CustomizedButtonUI.java" afterPath="$PROJECT_DIR$/src/com/taskable/Vendor/CustomizedButtonUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/LoginView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/LoginView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/memberModalView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/memberModalView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java" />
@@ -59,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/BaseView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="254">
-              <caret line="99" column="31" lean-forward="true" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
+              <caret line="99" column="31" lean-forward="false" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="taskModalView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="taskModalView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="149" column="36" lean-forward="true" selection-start-line="149" selection-start-column="36" selection-end-line="149" selection-end-column="36" />
+              <caret line="149" column="36" lean-forward="false" selection-start-line="149" selection-start-column="36" selection-end-line="149" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -80,9 +122,14 @@
       <file leaf-file-name="AllTasksView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/AllTasksView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="138" column="31" lean-forward="true" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="164">
+              <caret line="99" column="18" lean-forward="true" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
+              <folding>
+                <element signature="e#1919#1927#0" expanded="true" />
+                <element signature="e#3138#3146#0" expanded="true" />
+                <marker date="1510041219000" expanded="false" signature="9378:9385" ph=" { " />
+                <marker date="1510041219000" expanded="false" signature="9403:9407" ph=" }" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,19 +147,25 @@
       <file leaf-file-name="ProjectOverview.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/ProjectOverview.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="83" column="6" lean-forward="true" selection-start-line="83" selection-start-column="6" selection-end-line="97" selection-end-column="54" />
-              <folding />
+            <state relative-caret-position="294">
+              <caret line="105" column="6" lean-forward="false" selection-start-line="105" selection-start-column="6" selection-end-line="109" selection-end-column="50" />
+              <folding>
+                <element signature="e#9263#9264#0" expanded="true" />
+                <element signature="e#9305#9306#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskOverview.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TaskOverview.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/TaskOverview.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="218" column="56" lean-forward="false" selection-start-line="218" selection-start-column="56" selection-end-line="218" selection-end-column="56" />
-              <folding />
+            <state relative-caret-position="134">
+              <caret line="211" column="36" lean-forward="true" selection-start-line="211" selection-start-column="36" selection-end-line="211" selection-end-column="36" />
+              <folding>
+                <element signature="e#9964#9965#0" expanded="true" />
+                <element signature="e#10003#10004#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -121,7 +174,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="219">
-              <caret line="120" column="55" lean-forward="true" selection-start-line="120" selection-start-column="55" selection-end-line="120" selection-end-column="55" />
+              <caret line="120" column="55" lean-forward="false" selection-start-line="120" selection-start-column="55" selection-end-line="120" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -131,7 +184,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/taskable/Vendor/CustomizedButtonUI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-90">
-              <caret line="30" column="103" lean-forward="true" selection-start-line="30" selection-start-column="103" selection-end-line="30" selection-end-column="103" />
+              <caret line="30" column="103" lean-forward="false" selection-start-line="30" selection-start-column="103" selection-end-line="30" selection-end-column="103" />
               <folding />
             </state>
           </provider>
@@ -154,10 +207,11 @@
       <find>addnewproject</find>
       <find>JButton</find>
       <find>top</find>
-      <find>remind</find>
       <find>No Pr</find>
       <find>footer</find>
       <find>edit</find>
+      <find>remind</find>
+      <find>jpanel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,14 +238,14 @@
         <option value="$PROJECT_DIR$/src/com/taskable/App.form" />
         <option value="$PROJECT_DIR$/src/com/taskable/Views/LoginView.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/Vendor/CustomizedButtonUI.java" />
-        <option value="$PROJECT_DIR$/src/com/taskable/ProjectOverview.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/App.java" />
-        <option value="$PROJECT_DIR$/src/com/taskable/AllTasksView.java" />
-        <option value="$PROJECT_DIR$/src/com/taskable/TaskOverview.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/Views/memberModalView.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java" />
+        <option value="$PROJECT_DIR$/src/com/taskable/ProjectOverview.java" />
+        <option value="$PROJECT_DIR$/src/com/taskable/AllTasksView.java" />
+        <option value="$PROJECT_DIR$/src/com/taskable/TaskOverview.java" />
       </list>
     </option>
   </component>
@@ -237,28 +291,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Taskable" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Taskable" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Taskable" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="taskable" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -986,7 +1018,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
           <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#9263#9264#0" expanded="true" />
+            <element signature="e#9305#9306#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1031,7 +1066,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/Vendor/CustomizedButtonUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-90">
-          <caret line="30" column="103" lean-forward="true" selection-start-line="30" selection-start-column="103" selection-end-line="30" selection-end-column="103" />
+          <caret line="30" column="103" lean-forward="false" selection-start-line="30" selection-start-column="103" selection-end-line="30" selection-end-column="103" />
           <folding />
         </state>
       </provider>
@@ -1046,26 +1081,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taskable/AllTasksView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="138" column="31" lean-forward="true" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taskable/ProjectOverview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="83" column="6" lean-forward="true" selection-start-line="83" selection-start-column="6" selection-end-line="97" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/BaseView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
-          <caret line="99" column="31" lean-forward="true" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
+          <caret line="99" column="31" lean-forward="false" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1080,27 +1099,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taskable/TaskOverview.java">
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="218" column="56" lean-forward="false" selection-start-line="218" selection-start-column="56" selection-end-line="218" selection-end-column="56" />
+        <state relative-caret-position="330">
+          <caret line="149" column="36" lean-forward="false" selection-start-line="149" selection-start-column="36" selection-end-line="149" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/ProjectOverview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="105" column="6" lean-forward="false" selection-start-line="105" selection-start-column="6" selection-end-line="109" selection-end-column="50" />
+          <folding>
+            <element signature="e#9263#9264#0" expanded="true" />
+            <element signature="e#9305#9306#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
-          <caret line="120" column="55" lean-forward="true" selection-start-line="120" selection-start-column="55" selection-end-line="120" selection-end-column="55" />
+          <caret line="120" column="55" lean-forward="false" selection-start-line="120" selection-start-column="55" selection-end-line="120" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java">
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/AllTasksView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="149" column="36" lean-forward="true" selection-start-line="149" selection-start-column="36" selection-end-line="149" selection-end-column="36" />
-          <folding />
+        <state relative-caret-position="164">
+          <caret line="99" column="18" lean-forward="true" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
+          <folding>
+            <element signature="e#1919#1927#0" expanded="true" />
+            <element signature="e#3138#3146#0" expanded="true" />
+            <marker date="1510041219000" expanded="false" signature="9378:9385" ph=" { " />
+            <marker date="1510041219000" expanded="false" signature="9403:9407" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/TaskOverview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="211" column="36" lean-forward="true" selection-start-line="211" selection-start-column="36" selection-end-line="211" selection-end-column="36" />
+          <folding>
+            <element signature="e#9964#9965#0" expanded="true" />
+            <element signature="e#10003#10004#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

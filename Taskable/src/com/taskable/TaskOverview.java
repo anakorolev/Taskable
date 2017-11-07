@@ -74,6 +74,13 @@ public class TaskOverview extends JFrame implements ActionListener {
             new Color(144, 164, 174),
             createImageIcon("icons/allTasks.png")));
     returnAllTasks.setPreferredSize(new Dimension(110, 35));
+    remind = new JButton();
+    remind.setUI(new CustomizedButtonUI(
+            new Color(176, 190, 197),
+            new Color(220, 227, 230),
+            new Color(144, 164, 174),
+            createImageIcon("icons/bellWhite.png")));
+    remind.setPreferredSize(new Dimension(90, 35));
 
     initComponents();
     taskOverviewPanel.setVisible(true);
@@ -92,11 +99,13 @@ public class TaskOverview extends JFrame implements ActionListener {
     delete.addActionListener(this);
     complete.addActionListener(this);
     returnAllTasks.addActionListener(this);
+    remind.addActionListener(this);
 
     if (task.getFinished()) {
       edit.setEnabled(false);
       delete.setEnabled(false);
       complete.setEnabled(false);
+      remind.setEnabled(false);
       edit.setUI(new CustomizedButtonUI(
               new Color(220, 227, 230),
               new Color(220, 227, 230),
@@ -112,6 +121,11 @@ public class TaskOverview extends JFrame implements ActionListener {
               new Color(106, 213, 196),
               new Color(106, 213, 196),
               createImageIcon("icons/Complete.png")));
+      remind.setUI(new CustomizedButtonUI(
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              createImageIcon("icons/edit.png")));
     }
 
     // place items on the screen
@@ -159,6 +173,11 @@ public class TaskOverview extends JFrame implements ActionListener {
     actualDueDate.add(dateLabel);
     dueDateStuff.add(actualDueDate, BorderLayout.WEST);
     center.add(dueDateStuff, BorderLayout.NORTH);
+
+    JPanel reminderPanel = new JPanel();
+    reminderPanel.setLayout(new BorderLayout());
+    reminderPanel.add(remind, BorderLayout.NORTH);
+    dueDateStuff.add(reminderPanel, BorderLayout.EAST);
 
     JPanel assigneeStuff = new JPanel();
     assigneeStuff.setLayout(new BorderLayout());
@@ -217,6 +236,11 @@ public class TaskOverview extends JFrame implements ActionListener {
                 new Color(106, 213, 196),
                 new Color(106, 213, 196),
                 createImageIcon("icons/Complete.png")));
+        remind.setUI(new CustomizedButtonUI(
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                createImageIcon("icons/edit.png")));
       }
     }
     if (src == delete) {
@@ -246,6 +270,17 @@ public class TaskOverview extends JFrame implements ActionListener {
       taskOverviewPanel.revalidate();
       taskOverviewPanel.repaint();
     }
+
+    if (src == remind) {
+      Object[] options = {"Remind!", "Cancel"};
+      int n = JOptionPane.showOptionDialog(this,
+              "Would you like to send a reminder to " + task.getTaskUser().toString()+ "?", "Send a Reminder",
+              JOptionPane.YES_NO_OPTION,
+              JOptionPane.QUESTION_MESSAGE,
+              null,
+              options,
+              options[0]);
+    }
   }
 
   public JPanel getTaskOverviewPanel() {
@@ -253,7 +288,7 @@ public class TaskOverview extends JFrame implements ActionListener {
   }
 
   private JLabel descripLabel, memberLabel, dueDateLabel, dateLabel, taskName, assigneeLabel;
-  private JButton edit, delete, complete, returnAllTasks;
+  private JButton edit, delete, complete, returnAllTasks, remind;
   private JTextArea description;
   private Project project;
   private Task task;
