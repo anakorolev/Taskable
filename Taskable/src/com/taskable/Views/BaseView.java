@@ -2,6 +2,7 @@ package com.taskable.Views;
 
 import com.taskable.AllTasksView;
 import com.taskable.ProjectOverview;
+import com.taskable.Vendor.CustomizedButtonUI;
 import com.taskable.model.IProject;
 import com.taskable.model.Project;
 import com.taskable.model.User;
@@ -46,14 +47,16 @@ public class BaseView extends JFrame implements ActionListener {
   public void basePanel() {
 
 
-    taskableLogo = new JLabel("TASKABLE", createImageIcon("../icons/taskable_0.5x.png"), JLabel.CENTER);
-    taskableLogo.setFont(new Font("TimesRoman",Font.BOLD,20));
+    taskableLogo = new JLabel("TASKABLE", createImageIcon("../icons/taskable_small.png"), JLabel.LEFT);
+    taskableLogo.setForeground(new Color(51,51,51));
+    taskableLogo.setFont(new Font("Arial",Font.BOLD,20));
     taskableLogo.setPreferredSize(new Dimension(300, 50));
 
     profileButton = new JButton("Profile");
 
     JPanel header = new JPanel();
     header.setLayout(new BorderLayout());
+    header.setBackground(new Color(213,213,213));
     header.setPreferredSize(new Dimension(0, 50));
     header.add(taskableLogo, BorderLayout.CENTER);
     //header.add(profileButton, BorderLayout.EAST);
@@ -90,7 +93,14 @@ public class BaseView extends JFrame implements ActionListener {
     addNewProjectPromote = new JLabel("No Project", JLabel.CENTER);
     noPojectPanel.add(addNewProjectPromote,CENTER_ALIGNMENT);
 
-    addNewProjectButton = new JButton("Project", createImageIcon("../icons/ic_add_black_24dp_1x.png"));
+    addNewProjectButton = new JButton("Project");
+    addNewProjectButton.setUI(new CustomizedButtonUI(
+        new Color(7, 176, 221),
+        new Color(91, 203, 235),
+        new Color(0, 94, 119),
+        new Font("Arial", Font.BOLD, 14),
+        Color.WHITE, Color.WHITE, Color.WHITE,
+        createImageIcon("../icons/ic_add_black_24dp_1x.png")));
     addNewProjectButton.addActionListener(this);
 
     if(user.getProjectsForUser().size() == 0) {
@@ -149,7 +159,15 @@ public class BaseView extends JFrame implements ActionListener {
 
         projectPanel.add(scrollPane, projectPanelLayout.WEST);
 
-        JButton addProjectButton = new JButton(createImageIcon("../icons/ic_add_black_24dp_1x.png"));
+        JButton addProjectButton = new JButton();
+        addProjectButton.setUI(new CustomizedButtonUI(
+            new Color(220, 227, 230),
+            new Color(231, 236, 238),
+            new Color(176, 190, 197),
+            new Font("Arial", Font.BOLD, 14),
+            new Color(50, 55, 56),
+            Color.WHITE, new Color(50, 55, 56),
+            createImageIcon("../icons/ic_add_black_24dp_1x.png")));
         addProjectButton.setPreferredSize(new Dimension(130, 25));
         projectPanel.add(addProjectButton, projectPanelLayout.SOUTH);
 

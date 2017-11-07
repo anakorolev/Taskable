@@ -35,7 +35,8 @@ public class LoginView extends JFrame implements ActionListener {
         LoginPanel.setBackground(Color.white);
 
         taskableLogo = new JLabel("TASKABLE", createImageIcon("../icons/taskable_0.5x.png"), JLabel.CENTER);
-        taskableLogo.setFont(new Font("TimesRoman",Font.BOLD,54));
+        taskableLogo.setForeground(new Color(51,51,51));
+        taskableLogo.setFont(new Font("Arial",Font.BOLD,54));
         taskableLogo.setPreferredSize(new Dimension(0, 150));
 
         enteringArea = new JPanel();
@@ -65,7 +66,7 @@ public class LoginView extends JFrame implements ActionListener {
                 new Color(91, 203, 235),
                 new Color(0, 94, 119),
                 new Font("Arial", Font.BOLD, 14),
-                Color.WHITE, Color.WHITE, Color.WHITE));
+                Color.WHITE, Color.WHITE, Color.WHITE, null));
 
 
         LoginPanel.add(taskableLogo, BorderLayout.NORTH);

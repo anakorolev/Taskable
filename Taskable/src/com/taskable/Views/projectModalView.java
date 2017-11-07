@@ -145,13 +145,13 @@ public class projectModalView extends JFrame{
                 new Color(176, 190, 197),
                 new Font("Arial", Font.BOLD, 14),
                 new Color(50, 55, 56),
-                Color.WHITE, new Color(50, 55, 56)));
+                Color.WHITE, new Color(50, 55, 56), null));
         nextStepButton.setUI(new CustomizedButtonUI(
                 new Color(7, 176, 221),
                 new Color(91, 203, 235),
                 new Color(0, 94, 119),
                 new Font("Arial", Font.BOLD, 14),
-                Color.WHITE, Color.WHITE, Color.WHITE));
+                Color.WHITE, Color.WHITE, Color.WHITE, null));
 
         closeButton.addActionListener(new ActionListener(){
             @Override

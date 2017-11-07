@@ -4,13 +4,13 @@ import com.taskable.Vendor.CustomizedButtonUI;
 import com.taskable.model.Project;
 import com.taskable.model.Task;
 
-import javax.swing.*;
-import javax.swing.border.BevelBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Date;
+
+import javax.swing.*;
 
 /**
  * Created by akorolev on 11/4/17.
@@ -170,13 +170,13 @@ public class taskModalView extends JFrame{
                 new Color(176, 190, 197),
                 new Font("Arial", Font.BOLD, 14),
                 new Color(50, 55, 56),
-                Color.WHITE, new Color(50, 55, 56)));
+                Color.WHITE, new Color(50, 55, 56), null));
         nextStepButton.setUI(new CustomizedButtonUI(
                 new Color(7, 176, 221),
                 new Color(91, 203, 235),
                 new Color(0, 94, 119),
                 new Font("Arial", Font.BOLD, 14),
-                Color.WHITE, Color.WHITE, Color.WHITE));
+                Color.WHITE, Color.WHITE, Color.WHITE, null));
 
 
         closeButton.addActionListener(new ActionListener()

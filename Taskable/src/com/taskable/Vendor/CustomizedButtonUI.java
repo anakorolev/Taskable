@@ -1,10 +1,11 @@
 package com.taskable.Vendor;
 
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicButtonUI;
-import java.awt.*;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseEvent;
 
 /**
  * Created by akorolev on 11/5/17.
