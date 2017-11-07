@@ -93,14 +93,14 @@ public class BaseView extends JFrame implements ActionListener {
     addNewProjectPromote = new JLabel("No Project", JLabel.CENTER);
     noPojectPanel.add(addNewProjectPromote,CENTER_ALIGNMENT);
 
-    addNewProjectButton = new JButton("Project");
+    addNewProjectButton = new JButton();
     addNewProjectButton.setUI(new CustomizedButtonUI(
         new Color(7, 176, 221),
         new Color(91, 203, 235),
         new Color(0, 94, 119),
         new Font("Arial", Font.BOLD, 14),
         Color.WHITE, Color.WHITE, Color.WHITE,
-        createImageIcon("../icons/ic_add_black_24dp_1x.png")));
+        createImageIcon("../icons/Complete.png")));
     addNewProjectButton.addActionListener(this);
 
     if(user.getProjectsForUser().size() == 0) {

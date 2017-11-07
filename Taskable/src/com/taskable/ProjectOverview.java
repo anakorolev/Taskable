@@ -1,5 +1,6 @@
 package com.taskable;
 
+import com.taskable.Vendor.CustomizedButtonUI;
 import com.taskable.Views.*;
 import com.taskable.Views.BaseView;
 import com.taskable.model.Project;
@@ -55,7 +56,15 @@ public class ProjectOverview extends JFrame implements ActionListener{
     //Buttons
     edit = new JButton("Edit", createImageIcon("icons/ic_mode_edit_black_24dp_1x.png"));
     delete = new JButton("Delete", createImageIcon("icons/ic_delete_black_24dp_1x.png"));
-    complete = new JButton("Complete", createImageIcon("icons/ic_check_black_24dp_1x.png"));
+    complete = new JButton();
+    complete.setUI(new CustomizedButtonUI(
+        new Color(7, 176, 221),
+        new Color(91, 203, 235),
+        new Color(0, 94, 119),
+        new Font("Arial", Font.BOLD, 14),
+        Color.WHITE, Color.WHITE, Color.WHITE,
+        createImageIcon("icons/Complete.png")));
+
 
     if (project.getProjectFinished()) {
       edit.setEnabled(false);
