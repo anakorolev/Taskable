@@ -1,5 +1,6 @@
 package com.taskable;
 
+import com.taskable.Vendor.CustomizedButtonUI;
 import com.taskable.Views.memberModalView;
 import com.taskable.Views.taskModalView;
 import com.taskable.model.ITask;
@@ -36,8 +37,22 @@ public class AllTasksView implements ActionListener{
     project = p;
     user = u;
     group1 = new ArrayList<>();
-    addTaskButton = new JButton("Task", createImageIcon("icons/ic_add_black_24dp_1x.png"));
-    memberEditButton = new JButton(createImageIcon("icons/ic_manage_members_1x.png"));
+    addTaskButton = new JButton();
+    memberEditButton = new JButton();
+
+    addTaskButton.setUI(new CustomizedButtonUI(
+            new Color(7, 176, 221),
+            new Color(91, 203, 235),
+            new Color(0, 94, 119),
+            createImageIcon("icons/addTaskWhite.png")));
+    addTaskButton.setPreferredSize(new Dimension(80, 35));
+    memberEditButton.setUI(new CustomizedButtonUI(
+            new Color(176, 190, 197),
+            new Color(220, 227, 230),
+            new Color(144, 164, 174),
+            createImageIcon("icons/managerMembersWhite.png")));
+    memberEditButton.setPreferredSize(new Dimension(60, 35));
+
     String[] actions = {"Actions...", "Complete", "Delete"};
     actionBox = new JComboBox<>(actions);
 
@@ -69,7 +84,7 @@ public class AllTasksView implements ActionListener{
   public void allTasksPanel() {
     JPanel top = new JPanel();
     top.setBorder(new EmptyBorder(0,15,0,0));
-    top.setLayout(new GridLayout(0, 4));
+    top.setLayout(new GridLayout(0, 4, 20, 20));
 
     top.add(memberEditButton);
     top.add(addTaskButton);
@@ -95,11 +110,18 @@ public class AllTasksView implements ActionListener{
       //make the JLabel for the task description
       JPanel buttonAndBox = new JPanel();
       JCheckBox checkBox = new JCheckBox();
-      checkBox.setLabel("" + t.getTaskId());
+      checkBox.setName("" + t.getTaskId());
       group1.add(checkBox);
       JButton taskName = new JButton(t.getTaskName());
+      taskName.setUI(new CustomizedButtonUI(
+              new Color(176, 190, 197), new Color(220, 227, 230),
+              new Color(144, 164, 174), new Font("Arial", Font.BOLD, 14),
+              new Color(50, 55, 56), Color.WHITE, new Color(50, 55, 56), null));
+      taskName.setPreferredSize(new Dimension(100, 35));
+
       buttonAndBox.add(checkBox);
       buttonAndBox.add(taskName);
+      buttonAndBox.setBorder(BorderFactory.createEmptyBorder(0,20,0,0));
       taskName.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -120,8 +142,15 @@ public class AllTasksView implements ActionListener{
       JLabel due = new JLabel("" + month + "/" + day + "/" + year);
 
       //add reminder button
-      JButton remind = new JButton(createImageIcon("icons/ic_notifications_black_24dp_1x.png"));
+      JButton remind = new JButton();
+      remind.setUI(new CustomizedButtonUI(
+              new Color(176, 190, 197), new Color(220, 227, 230),
+              new Color(144, 164, 174), createImageIcon("icons/ic_notifications_black_24dp_1x.png")));
 
+      JPanel remindPanel = new JPanel();
+      remindPanel.setBorder(new EmptyBorder(0,40,0,40));
+      remindPanel.setPreferredSize(new Dimension(35, 35));
+      remindPanel.add(remind);
 
       //create a new panel to add the task description, assignee drop down, and due date to
       JPanel newPanel = new JPanel();
@@ -129,7 +158,8 @@ public class AllTasksView implements ActionListener{
       newPanel.add(buttonAndBox);
       newPanel.add(taskAssignee);
       newPanel.add(due);
-      newPanel.add(remind, BorderLayout.LINE_END);
+      newPanel.add(remindPanel, BorderLayout.LINE_END);
+      newPanel.setBorder(BorderFactory.createMatteBorder(1,0,0,0, new Color(177,177,177)));
 
       //add the new panel to the list of panels.
       listOfPanels.add(newPanel);
@@ -188,7 +218,7 @@ public class AllTasksView implements ActionListener{
           for (JCheckBox jcb : group1) {
             if (jcb.isSelected()) {
 
-              int id = Integer.parseInt(jcb.getLabel());
+              int id = Integer.parseInt(jcb.getName());
               ArrayList<ITask> newTaskList = new ArrayList<>(project.getTasks());
               for (ITask task : newTaskList) {
                 Task t = (Task) task;
@@ -217,7 +247,7 @@ public class AllTasksView implements ActionListener{
         if (n == 1) {
           for (JCheckBox jcb : group1) {
             if (jcb.isEnabled()) {
-              int id = Integer.parseInt(jcb.getLabel());
+              int id = Integer.parseInt(jcb.getName());
               for (ITask task : project.getTasks()) {
                 Task t = (Task) task;
                 if (id == t.getTaskId()) {

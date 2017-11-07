@@ -1,5 +1,6 @@
 package com.taskable;
 
+import com.taskable.Vendor.CustomizedButtonUI;
 import com.taskable.Views.taskModalView;
 import com.taskable.model.Project;
 import com.taskable.model.Task;
@@ -45,11 +46,34 @@ public class TaskOverview extends JFrame implements ActionListener {
     assigneeLabel = new JLabel("Assignee:");
 
     //Buttons
-    edit = new JButton("Edit", createImageIcon("icons/ic_mode_edit_black_24dp_1x.png"));
-    delete = new JButton("Delete", createImageIcon("icons/ic_delete_black_24dp_1x.png"));
-    complete = new JButton("Complete", createImageIcon("icons/ic_check_black_24dp_1x.png"));
-    ImageIcon img = createImageIcon("icons/ic_arrow_back_black_24dp_1x.png");
-    returnAllTasks = new JButton("All Tasks", img);
+    edit = new JButton();
+    edit.setUI(new CustomizedButtonUI(
+            new Color(176, 190, 197),
+            new Color(220, 227, 230),
+            new Color(144, 164, 174),
+            createImageIcon("icons/edit.png")));
+    edit.setPreferredSize(new Dimension(90, 35));
+    delete = new JButton();
+    delete.setUI(new CustomizedButtonUI(
+            new Color(231, 73, 70),
+            new Color(245, 124, 122),
+            new Color(207, 44, 41),
+            createImageIcon("icons/delete1x.png")));
+    delete.setPreferredSize(new Dimension(120, 35));
+    complete = new JButton();
+    complete.setUI(new CustomizedButtonUI(
+            new Color(30, 190, 165),
+            new Color(106, 213, 196),
+            new Color(6, 139, 121),
+            createImageIcon("icons/Complete.png")));
+    complete.setPreferredSize(new Dimension(120, 35));
+    returnAllTasks = new JButton();
+    returnAllTasks.setUI(new CustomizedButtonUI(
+            new Color(176, 190, 197),
+            new Color(220, 227, 230),
+            new Color(144, 164, 174),
+            createImageIcon("icons/allTasks.png")));
+    returnAllTasks.setPreferredSize(new Dimension(110, 35));
 
     initComponents();
     taskOverviewPanel.setVisible(true);
@@ -73,6 +97,21 @@ public class TaskOverview extends JFrame implements ActionListener {
       edit.setEnabled(false);
       delete.setEnabled(false);
       complete.setEnabled(false);
+      edit.setUI(new CustomizedButtonUI(
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              createImageIcon("icons/edit.png")));
+      delete.setUI(new CustomizedButtonUI(
+              new Color(245, 124, 122),
+              new Color(245, 124, 122),
+              new Color(245, 124, 122),
+              createImageIcon("icons/delete1x.png")));
+      complete.setUI(new CustomizedButtonUI(
+              new Color(106, 213, 196),
+              new Color(106, 213, 196),
+              new Color(106, 213, 196),
+              createImageIcon("icons/Complete.png")));
     }
 
     // place items on the screen
@@ -163,6 +202,21 @@ public class TaskOverview extends JFrame implements ActionListener {
         edit.setEnabled(false);
         complete.setEnabled(false);
         delete.setEnabled(false);
+        edit.setUI(new CustomizedButtonUI(
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                createImageIcon("icons/edit.png")));
+        delete.setUI(new CustomizedButtonUI(
+                new Color(245, 124, 122),
+                new Color(245, 124, 122),
+                new Color(245, 124, 122),
+                createImageIcon("icons/delete1x.png")));
+        complete.setUI(new CustomizedButtonUI(
+                new Color(106, 213, 196),
+                new Color(106, 213, 196),
+                new Color(106, 213, 196),
+                createImageIcon("icons/Complete.png")));
       }
     }
     if (src == delete) {

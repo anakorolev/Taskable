@@ -54,22 +54,48 @@ public class ProjectOverview extends JFrame implements ActionListener{
     description.setEditable(false);
 
     //Buttons
-    edit = new JButton("Edit", createImageIcon("icons/ic_mode_edit_black_24dp_1x.png"));
-    delete = new JButton("Delete", createImageIcon("icons/ic_delete_black_24dp_1x.png"));
+    edit = new JButton();
+    edit.setUI(new CustomizedButtonUI(
+            new Color(176, 190, 197),
+            new Color(220, 227, 230),
+            new Color(144, 164, 174),
+            createImageIcon("icons/edit.png")));
+    edit.setPreferredSize(new Dimension(90, 35));
+    delete = new JButton();
+    delete.setUI(new CustomizedButtonUI(
+            new Color(231, 73, 70),
+            new Color(245, 124, 122),
+            new Color(207, 44, 41),
+            createImageIcon("icons/delete1x.png")));
+    delete.setPreferredSize(new Dimension(120, 35));
     complete = new JButton();
     complete.setUI(new CustomizedButtonUI(
-        new Color(7, 176, 221),
-        new Color(91, 203, 235),
-        new Color(0, 94, 119),
-        new Font("Arial", Font.BOLD, 14),
-        Color.WHITE, Color.WHITE, Color.WHITE,
+        new Color(30, 190, 165),
+        new Color(106, 213, 196),
+        new Color(6, 139, 121),
         createImageIcon("icons/Complete.png")));
+    complete.setPreferredSize(new Dimension(120, 35));
 
 
     if (project.getProjectFinished()) {
       edit.setEnabled(false);
       delete.setEnabled(false);
       complete.setEnabled(false);
+      edit.setUI(new CustomizedButtonUI(
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              createImageIcon("icons/edit.png")));
+      delete.setUI(new CustomizedButtonUI(
+              new Color(245, 124, 122),
+              new Color(245, 124, 122),
+              new Color(245, 124, 122),
+              createImageIcon("icons/delete1x.png")));
+      complete.setUI(new CustomizedButtonUI(
+              new Color(106, 213, 196),
+              new Color(106, 213, 196),
+              new Color(106, 213, 196),
+              createImageIcon("icons/Complete.png")));
     }
 
     // List
@@ -180,6 +206,22 @@ public class ProjectOverview extends JFrame implements ActionListener{
         edit.setEnabled(false);
         complete.setEnabled(false);
         delete.setEnabled(false);
+        edit.setUI(new CustomizedButtonUI(
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                createImageIcon("icons/edit.png")));
+        delete.setUI(new CustomizedButtonUI(
+                new Color(245, 124, 122),
+                new Color(245, 124, 122),
+                new Color(245, 124, 122),
+                createImageIcon("icons/delete1x.png")));
+        complete.setUI(new CustomizedButtonUI(
+                new Color(106, 213, 196),
+                new Color(106, 213, 196),
+                new Color(106, 213, 196),
+                createImageIcon("icons/Complete.png")));
+        repaint();
         pack();
 
       }

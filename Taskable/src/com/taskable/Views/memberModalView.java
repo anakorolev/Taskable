@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 /**
  * Created by akorolev on 11/4/17.
@@ -26,16 +27,16 @@ public class memberModalView extends JFrame{
     public void showMemberDialog() {
         dialog.setLayout(new BorderLayout());
         JPanel panelLeft = new JPanel();
-        panelLeft.setPreferredSize(new Dimension(100, 300));
+        panelLeft.setPreferredSize(new Dimension(100, 350));
 
         JPanel panelRight = new JPanel();
-        panelRight.setPreferredSize(new Dimension(100, 300));
+        panelRight.setPreferredSize(new Dimension(100, 350));
 
         dialog.add(panelLeft, BorderLayout.WEST);
         dialog.add(setFields(), BorderLayout.CENTER);
         dialog.add(panelRight, BorderLayout.EAST);
         dialog.add(setFooter(), BorderLayout.SOUTH);
-        dialog.setBounds(350, 350, 500, 300);
+        dialog.setBounds(150, 150, 500, 350);
         dialog.setVisible(true);
     }
 
@@ -91,7 +92,14 @@ public class memberModalView extends JFrame{
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
         scrollPane.setOpaque(true);
 
-        final JButton addMemberButton = new JButton(createImageIcon("../icons/ic_person_add_black_24dp_1x.png"));
+        final JButton addMemberButton = new JButton();
+
+        addMemberButton.setUI(new CustomizedButtonUI(
+                new Color(7, 176, 221),
+                new Color(91, 203, 235),
+                new Color(0, 94, 119),
+                new Font("Arial", Font.BOLD, 14),
+                Color.WHITE, Color.WHITE, Color.WHITE, createImageIcon("../icons/addMemberWhite.png")));
 
         addMemberButton.addActionListener(new ActionListener() {
             @Override
@@ -169,6 +177,7 @@ public class memberModalView extends JFrame{
         GridLayout buttonLayout = new GridLayout(1, 0, 20, 20);
 
         footer.setLayout(buttonLayout);
+        footer.setBorder(new EmptyBorder(10,10,10,10));
         footer.add(new JPanel());
         footer.add(new JPanel());
         footer.add(closeButton);

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 /**
  * Created by akorolev on 11/4/17.
@@ -33,14 +34,14 @@ public class taskModalView extends JFrame{
     private void showTaskDialog() {
         setLayout(new BorderLayout());
         JPanel panel = new JPanel();
-        panel.setPreferredSize(new Dimension(50, 300));
+        panel.setPreferredSize(new Dimension(50, 350));
         panel.setLayout(new GridLayout(0,1));
 
         dialog.add(setLabels(), BorderLayout.WEST);
         dialog.add(panel, BorderLayout.CENTER);
         dialog.add(setInputs(), BorderLayout.EAST);
         dialog.add(setFooter(), BorderLayout.SOUTH);
-        dialog.setBounds(350, 350, 500, 300);
+        dialog.setBounds(150, 150, 500, 350);
         dialog.setVisible(true);
     }
 
@@ -140,6 +141,7 @@ public class taskModalView extends JFrame{
         dueDateDropDowns.add(yearSelect, dueDateLayout);
 
         inputs.setLayout(inputLayout);
+        inputs.setBorder(new EmptyBorder(10,0,0,10));
         inputs.add(titleInput, inputLayout);
         inputs.add(descriptionInput, inputLayout);
         inputs.add(assigneeSelect, inputLayout);
@@ -207,6 +209,7 @@ public class taskModalView extends JFrame{
         GridLayout buttonLayout = new GridLayout(1, 0, 20, 20);
 
         footer.setLayout(buttonLayout);
+        footer.setBorder(new EmptyBorder(10,10,10,10));
         footer.add(new JPanel(), buttonLayout);
         footer.add(new JPanel(), buttonLayout);
         footer.add(closeButton, buttonLayout);

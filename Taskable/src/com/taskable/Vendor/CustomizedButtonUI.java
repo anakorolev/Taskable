@@ -27,8 +27,8 @@ public class CustomizedButtonUI extends BasicButtonUI implements MouseListener {
         super();
     }
 
-    public CustomizedButtonUI(Color normalColor, Color hoverColor, Color pressedColor) {
-        this(normalColor, hoverColor, pressedColor, null, Color.BLACK, Color.BLACK, Color.BLACK, new ImageIcon(""));
+    public CustomizedButtonUI(Color normalColor, Color hoverColor, Color pressedColor, ImageIcon icon) {
+        this(normalColor, hoverColor, pressedColor, null, Color.BLACK, Color.BLACK, Color.BLACK, icon);
     }
     public CustomizedButtonUI(Color normalColor, Color hoverColor, Color pressedColor, Font btnFont, Color btnFontColor, Color pressedFontColor, Color hoverFontColor, ImageIcon icon) {
         this.normalColor = normalColor;

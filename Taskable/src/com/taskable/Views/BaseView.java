@@ -90,7 +90,9 @@ public class BaseView extends JFrame implements ActionListener {
 
     noPojectPanel = new JPanel();
     noPojectPanel.setLayout(new GridLayout(2, 0));
-    addNewProjectPromote = new JLabel("No Project", JLabel.CENTER);
+    addNewProjectPromote = new JLabel("No Projects!", JLabel.CENTER);
+    addNewProjectPromote.setFont(new Font("Arial", Font.BOLD, 16));
+
     noPojectPanel.add(addNewProjectPromote,CENTER_ALIGNMENT);
 
     addNewProjectButton = new JButton();
@@ -100,7 +102,8 @@ public class BaseView extends JFrame implements ActionListener {
         new Color(0, 94, 119),
         new Font("Arial", Font.BOLD, 14),
         Color.WHITE, Color.WHITE, Color.WHITE,
-        createImageIcon("../icons/Complete.png")));
+        createImageIcon("../icons/addProject.png")));
+    addNewProjectButton.setPreferredSize(new Dimension(120, 35));
     addNewProjectButton.addActionListener(this);
 
     if(user.getProjectsForUser().size() == 0) {
@@ -194,6 +197,10 @@ public class BaseView extends JFrame implements ActionListener {
                 projectGrid.add(singleProject);
                 Project p = (Project)user.getProjectsForUser().get(i);
                 JButton projectButton = new JButton(p.getProjectName());
+                projectButton.setUI(new CustomizedButtonUI(
+                        new Color(176, 190, 197), new Color(220, 227, 230),
+                        new Color(144, 164, 174), new Font("Arial", Font.BOLD, 14),
+                        new Color(50, 55, 56), Color.WHITE, new Color(50, 55, 56), null));
                 JButton projectOverview = new JButton("Overview");
                 JButton allTasks = new JButton("Tasks");
 
