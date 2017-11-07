@@ -162,11 +162,13 @@ public class memberModalView extends JFrame{
             }
         });
 
-        footer.setLayout(new GridLayout());
-        footer.add(new JPanel(), GridLayout.class);
-        footer.add(new JPanel(), GridLayout.class);
-        footer.add(closeButton, GridLayout.class);
-        footer.add(nextStepButton, GridLayout.class);
+        GridLayout buttonLayout = new GridLayout(1, 0, 20, 20);
+
+        footer.setLayout(buttonLayout);
+        footer.add(new JPanel());
+        footer.add(new JPanel());
+        footer.add(closeButton);
+        footer.add(nextStepButton);
 
         return footer;
     }
