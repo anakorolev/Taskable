@@ -110,6 +110,7 @@ public class AllTasksView implements ActionListener{
       int day = d.getDate();
       int month = d.getMonth();
       int year = d.getYear();
+      if (month == 0) { month = 12;}
       JLabel due = new JLabel("" + month + "/" + day + "/" + year);
 
       //add reminder button
@@ -166,28 +167,56 @@ public class AllTasksView implements ActionListener{
       JComboBox cb = (JComboBox)src;
       String action = (String)cb.getSelectedItem();
       if (action.equals("Delete")) {
-        for (JCheckBox jcb : group1) {
-          if (jcb.isEnabled()) {
-            int id = Integer.parseInt(jcb.getLabel());
-            ArrayList<ITask> newProjectList = new ArrayList<>(project.getTasks());
-            for ( ITask task : newProjectList) {
-              Task t = (Task)task;
-              if (id == t.getTaskId()) {
-                int index = project.getTasks().indexOf(t);
-                project.getTasks().remove(index);
+        Object[] options = {"Cancel",
+            "Continue"};
+
+        int n = JOptionPane.showOptionDialog(getAllTasksPanel(),
+            "Are you sure you want to delete all selected tasks?", "Delete Tasks",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE,
+            null,
+            options,
+            options[0]);
+
+        if (n == 1) {
+          for (JCheckBox jcb : group1) {
+            if (jcb.isSelected()) {
+
+              int id = Integer.parseInt(jcb.getLabel());
+              ArrayList<ITask> newTaskList = new ArrayList<>(project.getTasks());
+              for (ITask task : newTaskList) {
+                Task t = (Task) task;
+                if (id == t.getTaskId()) {
+                  System.out.println(t.getTaskId());
+                  System.out.println(id);
+                  int index = project.getTasks().indexOf(t);
+                  project.getTasks().remove(index);
+                }
               }
             }
           }
         }
       }
       if (action.equals("Complete")) {
-        for (JCheckBox jcb : group1) {
-          if (jcb.isEnabled()) {
-            int id = Integer.parseInt(jcb.getLabel());
-            for (ITask task : project.getTasks()) {
-              Task t = (Task)task;
-              if (id == t.getTaskId()) {
-                t.finishTask();
+        Object[] options = {"Cancel",
+            "Continue"};
+
+        int n = JOptionPane.showOptionDialog(getAllTasksPanel(),
+            "Are you sure you want to complete all selected tasks?", "Complete Tasks",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE,
+            null,
+            options,
+            options[0]);
+        if (n == 1) {
+          for (JCheckBox jcb : group1) {
+            if (jcb.isEnabled()) {
+              int id = Integer.parseInt(jcb.getLabel());
+              for (ITask task : project.getTasks()) {
+                Task t = (Task) task;
+                if (id == t.getTaskId()) {
+                  t.finishTask();
+                }
               }
             }
           }
