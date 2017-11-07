@@ -93,7 +93,7 @@ public class LoginView extends JFrame implements ActionListener {
 
 
             }else{
-                JOptionPane.showMessageDialog(this,"User name and password is not matching, please try again");
+                JOptionPane.showMessageDialog(this,"Incorrect username and password, please try again");
             }
         }
     }
