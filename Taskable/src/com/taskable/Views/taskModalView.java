@@ -4,13 +4,14 @@ import com.taskable.Vendor.CustomizedButtonUI;
 import com.taskable.model.Project;
 import com.taskable.model.Task;
 
-import javax.swing.*;
-import javax.swing.border.BevelBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Date;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 /**
  * Created by akorolev on 11/4/17.
@@ -33,14 +34,14 @@ public class taskModalView extends JFrame{
     private void showTaskDialog() {
         setLayout(new BorderLayout());
         JPanel panel = new JPanel();
-        panel.setPreferredSize(new Dimension(50, 300));
+        panel.setPreferredSize(new Dimension(50, 350));
         panel.setLayout(new GridLayout(0,1));
 
         dialog.add(setLabels(), BorderLayout.WEST);
         dialog.add(panel, BorderLayout.CENTER);
         dialog.add(setInputs(), BorderLayout.EAST);
         dialog.add(setFooter(), BorderLayout.SOUTH);
-        dialog.setBounds(350, 350, 500, 300);
+        dialog.setBounds(150, 150, 500, 350);
         dialog.setVisible(true);
     }
 
@@ -140,6 +141,7 @@ public class taskModalView extends JFrame{
         dueDateDropDowns.add(yearSelect, dueDateLayout);
 
         inputs.setLayout(inputLayout);
+        inputs.setBorder(new EmptyBorder(10,0,0,10));
         inputs.add(titleInput, inputLayout);
         inputs.add(descriptionInput, inputLayout);
         inputs.add(assigneeSelect, inputLayout);
@@ -170,13 +172,13 @@ public class taskModalView extends JFrame{
                 new Color(176, 190, 197),
                 new Font("Arial", Font.BOLD, 14),
                 new Color(50, 55, 56),
-                Color.WHITE, new Color(50, 55, 56)));
+                Color.WHITE, new Color(50, 55, 56), null));
         nextStepButton.setUI(new CustomizedButtonUI(
                 new Color(7, 176, 221),
                 new Color(91, 203, 235),
                 new Color(0, 94, 119),
                 new Font("Arial", Font.BOLD, 14),
-                Color.WHITE, Color.WHITE, Color.WHITE));
+                Color.WHITE, Color.WHITE, Color.WHITE, null));
 
 
         closeButton.addActionListener(new ActionListener()
@@ -207,6 +209,7 @@ public class taskModalView extends JFrame{
         GridLayout buttonLayout = new GridLayout(1, 0, 20, 20);
 
         footer.setLayout(buttonLayout);
+        footer.setBorder(new EmptyBorder(10,10,10,10));
         footer.add(new JPanel(), buttonLayout);
         footer.add(new JPanel(), buttonLayout);
         footer.add(closeButton, buttonLayout);

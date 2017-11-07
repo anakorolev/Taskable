@@ -42,7 +42,7 @@ public class App extends JFrame{
         baseView.setVisible(false);
 
         frame = new JFrame("Taskable");
-        frame.setPreferredSize(new Dimension(700,400));
+        frame.setPreferredSize(new Dimension(800,400));
 
         frame.setContentPane(loginView);
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);

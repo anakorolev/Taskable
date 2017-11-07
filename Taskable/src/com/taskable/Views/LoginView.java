@@ -1,6 +1,7 @@
 package com.taskable.Views;
 
 import com.taskable.TaskOverview;
+import com.taskable.Vendor.CustomizedButtonUI;
 import com.taskable.model.ITask;
 import com.taskable.model.Project;
 import com.taskable.model.Task;
@@ -33,8 +34,9 @@ public class LoginView extends JFrame implements ActionListener {
         LoginPanel.setLayout(new BorderLayout());
         LoginPanel.setBackground(Color.white);
 
-        taskableLogo = new JLabel("TASKABLE", JLabel.CENTER);
-        taskableLogo.setFont(new Font("TimesRoman",Font.BOLD,54));
+        taskableLogo = new JLabel("TASKABLE", createImageIcon("../icons/taskable_0.5x.png"), JLabel.CENTER);
+        taskableLogo.setForeground(new Color(51,51,51));
+        taskableLogo.setFont(new Font("Arial",Font.BOLD,54));
         taskableLogo.setPreferredSize(new Dimension(0, 150));
 
         enteringArea = new JPanel();
@@ -59,11 +61,24 @@ public class LoginView extends JFrame implements ActionListener {
         buttonArea.setPreferredSize(new Dimension(0, 80));
         buttonArea.add(butlogin);
 
+        butlogin.setUI(new CustomizedButtonUI(
+                new Color(7, 176, 221),
+                new Color(91, 203, 235),
+                new Color(0, 94, 119),
+                new Font("Arial", Font.BOLD, 14),
+                Color.WHITE, Color.WHITE, Color.WHITE, null));
+
 
         LoginPanel.add(taskableLogo, BorderLayout.NORTH);
         LoginPanel.add(enteringArea, BorderLayout.CENTER);
         LoginPanel.add(buttonArea, BorderLayout.SOUTH);
 
+    }
+
+    protected static ImageIcon createImageIcon(String path) {
+        java.net.URL imgURL = LoginView.class.getResource(path);
+        //error handling omitted for clarity...
+        return new ImageIcon(imgURL);
     }
 
     public JPanel getLoginPanel() {
@@ -93,7 +108,7 @@ public class LoginView extends JFrame implements ActionListener {
 
 
             }else{
-                JOptionPane.showMessageDialog(this,"User name and password is not matching, please try again");
+                JOptionPane.showMessageDialog(this,"Incorrect username and password, please try again");
             }
         }
     }

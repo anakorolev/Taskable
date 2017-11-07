@@ -1,5 +1,6 @@
 package com.taskable;
 
+import com.taskable.Vendor.CustomizedButtonUI;
 import com.taskable.Views.taskModalView;
 import com.taskable.model.Project;
 import com.taskable.model.Task;
@@ -45,12 +46,41 @@ public class TaskOverview extends JFrame implements ActionListener {
     assigneeLabel = new JLabel("Assignee:");
 
     //Buttons
-    edit = new JButton("Edit");
-    delete = new JButton("Delete");
-    complete = new JButton("Complete");
-    remind = new JButton("Send a Reminder");
-    ImageIcon img = createImageIcon("icons/img_68687.png");
-    returnAllTasks = new JButton("All Tasks", img);
+    edit = new JButton();
+    edit.setUI(new CustomizedButtonUI(
+            new Color(176, 190, 197),
+            new Color(220, 227, 230),
+            new Color(144, 164, 174),
+            createImageIcon("icons/edit.png")));
+    edit.setPreferredSize(new Dimension(90, 35));
+    delete = new JButton();
+    delete.setUI(new CustomizedButtonUI(
+            new Color(231, 73, 70),
+            new Color(245, 124, 122),
+            new Color(207, 44, 41),
+            createImageIcon("icons/delete1x.png")));
+    delete.setPreferredSize(new Dimension(120, 35));
+    complete = new JButton();
+    complete.setUI(new CustomizedButtonUI(
+            new Color(30, 190, 165),
+            new Color(106, 213, 196),
+            new Color(6, 139, 121),
+            createImageIcon("icons/Complete.png")));
+    complete.setPreferredSize(new Dimension(120, 35));
+    returnAllTasks = new JButton();
+    returnAllTasks.setUI(new CustomizedButtonUI(
+            new Color(176, 190, 197),
+            new Color(220, 227, 230),
+            new Color(144, 164, 174),
+            createImageIcon("icons/allTasks.png")));
+    returnAllTasks.setPreferredSize(new Dimension(110, 35));
+    remind = new JButton();
+    remind.setUI(new CustomizedButtonUI(
+            new Color(176, 190, 197),
+            new Color(220, 227, 230),
+            new Color(144, 164, 174),
+            createImageIcon("icons/bellWhite.png")));
+    remind.setPreferredSize(new Dimension(90, 35));
 
     initComponents();
     taskOverviewPanel.setVisible(true);
@@ -76,6 +106,26 @@ public class TaskOverview extends JFrame implements ActionListener {
       delete.setEnabled(false);
       complete.setEnabled(false);
       remind.setEnabled(false);
+      edit.setUI(new CustomizedButtonUI(
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              createImageIcon("icons/edit.png")));
+      delete.setUI(new CustomizedButtonUI(
+              new Color(245, 124, 122),
+              new Color(245, 124, 122),
+              new Color(245, 124, 122),
+              createImageIcon("icons/delete1x.png")));
+      complete.setUI(new CustomizedButtonUI(
+              new Color(106, 213, 196),
+              new Color(106, 213, 196),
+              new Color(106, 213, 196),
+              createImageIcon("icons/Complete.png")));
+      remind.setUI(new CustomizedButtonUI(
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              createImageIcon("icons/edit.png")));
     }
 
     // place items on the screen
@@ -126,8 +176,8 @@ public class TaskOverview extends JFrame implements ActionListener {
 
     JPanel reminderPanel = new JPanel();
     reminderPanel.setLayout(new BorderLayout());
-    reminderPanel.add(remind, BorderLayout.WEST);
-    center.add(remind, BorderLayout.CENTER);
+    reminderPanel.add(remind, BorderLayout.NORTH);
+    dueDateStuff.add(reminderPanel, BorderLayout.EAST);
 
     JPanel assigneeStuff = new JPanel();
     assigneeStuff.setLayout(new BorderLayout());
@@ -171,6 +221,26 @@ public class TaskOverview extends JFrame implements ActionListener {
         edit.setEnabled(false);
         complete.setEnabled(false);
         delete.setEnabled(false);
+        edit.setUI(new CustomizedButtonUI(
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                createImageIcon("icons/edit.png")));
+        delete.setUI(new CustomizedButtonUI(
+                new Color(245, 124, 122),
+                new Color(245, 124, 122),
+                new Color(245, 124, 122),
+                createImageIcon("icons/delete1x.png")));
+        complete.setUI(new CustomizedButtonUI(
+                new Color(106, 213, 196),
+                new Color(106, 213, 196),
+                new Color(106, 213, 196),
+                createImageIcon("icons/Complete.png")));
+        remind.setUI(new CustomizedButtonUI(
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                createImageIcon("icons/edit.png")));
       }
     }
     if (src == delete) {

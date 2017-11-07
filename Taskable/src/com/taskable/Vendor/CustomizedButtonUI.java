@@ -1,10 +1,11 @@
 package com.taskable.Vendor;
 
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicButtonUI;
-import java.awt.*;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseEvent;
 
 /**
  * Created by akorolev on 11/5/17.
@@ -26,10 +27,10 @@ public class CustomizedButtonUI extends BasicButtonUI implements MouseListener {
         super();
     }
 
-    public CustomizedButtonUI(Color normalColor, Color hoverColor, Color pressedColor) {
-        this(normalColor, hoverColor, pressedColor, null, Color.BLACK, Color.BLACK, Color.BLACK);
+    public CustomizedButtonUI(Color normalColor, Color hoverColor, Color pressedColor, ImageIcon icon) {
+        this(normalColor, hoverColor, pressedColor, null, Color.BLACK, Color.BLACK, Color.BLACK, icon);
     }
-    public CustomizedButtonUI(Color normalColor, Color hoverColor, Color pressedColor, Font btnFont, Color btnFontColor, Color pressedFontColor, Color hoverFontColor) {
+    public CustomizedButtonUI(Color normalColor, Color hoverColor, Color pressedColor, Font btnFont, Color btnFontColor, Color pressedFontColor, Color hoverFontColor, ImageIcon icon) {
         this.normalColor = normalColor;
         this.hoverColor = hoverColor;
         this.pressedColor = pressedColor;
@@ -37,6 +38,7 @@ public class CustomizedButtonUI extends BasicButtonUI implements MouseListener {
         this.btnFontColor = btnFontColor;
         this.pressedFontColor = pressedFontColor;
         this.hoverFontColor = hoverFontColor;
+        this.normalIcon = icon;
     }
 
     public CustomizedButtonUI(ImageIcon normalIcon, ImageIcon hoverIcon, ImageIcon pressedIcon) {
@@ -85,13 +87,13 @@ public class CustomizedButtonUI extends BasicButtonUI implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e)
     {
-        changeButtonStyle((JButton) e.getComponent(), this.pressedColor, this.pressedIcon, this.pressedFontColor);
+        changeButtonStyle((JButton) e.getComponent(), this.pressedColor, this.normalIcon, this.pressedFontColor);
     }
 
     @Override
     public void mousePressed(MouseEvent e)
     {
-        changeButtonStyle((JButton) e.getComponent(), this.pressedColor, this.pressedIcon, this.pressedFontColor);
+        changeButtonStyle((JButton) e.getComponent(), this.pressedColor, this.normalIcon, this.pressedFontColor);
     }
 
     @Override
@@ -103,7 +105,7 @@ public class CustomizedButtonUI extends BasicButtonUI implements MouseListener {
     @Override
     public void mouseEntered(MouseEvent e)
     {
-        changeButtonStyle((JButton) e.getComponent(), this.hoverColor, this.hoverIcon, this.hoverFontColor);
+        changeButtonStyle((JButton) e.getComponent(), this.hoverColor, this.normalIcon, this.hoverFontColor);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.taskable;
 
+import com.taskable.Vendor.CustomizedButtonUI;
 import com.taskable.Views.*;
 import com.taskable.Views.BaseView;
 import com.taskable.model.Project;
@@ -53,16 +54,60 @@ public class ProjectOverview extends JFrame implements ActionListener{
     description.setEditable(false);
 
     //Buttons
-    edit = new JButton("Edit");
-    delete = new JButton("Delete");
-    complete = new JButton("Complete");
-    rem = new JButton("Send a Reminder");
+    edit = new JButton();
+    edit.setUI(new CustomizedButtonUI(
+            new Color(176, 190, 197),
+            new Color(220, 227, 230),
+            new Color(144, 164, 174),
+            createImageIcon("icons/edit.png")));
+    edit.setPreferredSize(new Dimension(90, 35));
+    delete = new JButton();
+    delete.setUI(new CustomizedButtonUI(
+            new Color(231, 73, 70),
+            new Color(245, 124, 122),
+            new Color(207, 44, 41),
+            createImageIcon("icons/delete1x.png")));
+    delete.setPreferredSize(new Dimension(120, 35));
+    complete = new JButton();
+    complete.setUI(new CustomizedButtonUI(
+        new Color(30, 190, 165),
+        new Color(106, 213, 196),
+        new Color(6, 139, 121),
+        createImageIcon("icons/Complete.png")));
+    complete.setPreferredSize(new Dimension(120, 35));
+    rem = new JButton();
+    rem.setUI(new CustomizedButtonUI(
+              new Color(176, 190, 197),
+              new Color(220, 227, 230),
+              new Color(144, 164, 174),
+              createImageIcon("icons/bellWhite.png")));
+    rem.setPreferredSize(new Dimension(90, 35));
 
     if (project.getProjectFinished()) {
       edit.setEnabled(false);
       delete.setEnabled(false);
       complete.setEnabled(false);
       rem.setEnabled(false);
+      edit.setUI(new CustomizedButtonUI(
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              createImageIcon("icons/edit.png")));
+      delete.setUI(new CustomizedButtonUI(
+              new Color(245, 124, 122),
+              new Color(245, 124, 122),
+              new Color(245, 124, 122),
+              createImageIcon("icons/delete1x.png")));
+      complete.setUI(new CustomizedButtonUI(
+              new Color(106, 213, 196),
+              new Color(106, 213, 196),
+              new Color(106, 213, 196),
+              createImageIcon("icons/Complete.png")));
+      rem.setUI(new CustomizedButtonUI(
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              createImageIcon("icons/edit.png")));
     }
 
     // List
@@ -131,6 +176,12 @@ public class ProjectOverview extends JFrame implements ActionListener{
 
   }
 
+  protected static ImageIcon createImageIcon(String path) {
+    java.net.URL imgURL = TaskOverview.class.getResource(path);
+    //error handling omitted for clarity...
+    return new ImageIcon(imgURL);
+  }
+
   public void actionPerformed(ActionEvent e) {
     Object src = e.getSource();
     if (src == edit) {
@@ -170,6 +221,27 @@ public class ProjectOverview extends JFrame implements ActionListener{
         edit.setEnabled(false);
         complete.setEnabled(false);
         delete.setEnabled(false);
+        edit.setUI(new CustomizedButtonUI(
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                createImageIcon("icons/edit.png")));
+        delete.setUI(new CustomizedButtonUI(
+                new Color(245, 124, 122),
+                new Color(245, 124, 122),
+                new Color(245, 124, 122),
+                createImageIcon("icons/delete1x.png")));
+        complete.setUI(new CustomizedButtonUI(
+                new Color(106, 213, 196),
+                new Color(106, 213, 196),
+                new Color(106, 213, 196),
+                createImageIcon("icons/Complete.png")));
+        rem.setUI(new CustomizedButtonUI(
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                createImageIcon("icons/edit.png")));
+        repaint();
         pack();
 
       }
