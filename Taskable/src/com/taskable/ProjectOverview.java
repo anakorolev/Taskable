@@ -20,7 +20,7 @@ import javax.swing.border.EmptyBorder;
  */
 public class ProjectOverview extends JFrame implements ActionListener{
 
-  public ProjectOverview(User u, Project p, com.taskable.Views.BaseView b) {
+  public ProjectOverview(User u, Project p, JPanel b) {
     projectOverviewPanel = new JPanel();
     projectOverviewPanel.setLayout(new BorderLayout());
     user = u;
@@ -185,12 +185,16 @@ public class ProjectOverview extends JFrame implements ActionListener{
       if (n == 1) {
         // delete the project from the app
         // how to get access to the list of projects to edit it
-
         user.getProjectsForUser().remove(project);
+
+        user.setCurrentProjectId(0);
+
+        System.out.println(user.getProjectsForUser());
         baseView.removeAll();
-        baseView.basePanel();
+        baseView.add(new BaseView(user).getBasePanel());
         baseView.revalidate();
         baseView.repaint();
+
 
 
       }
@@ -209,7 +213,7 @@ public class ProjectOverview extends JFrame implements ActionListener{
   private User user;
   private JTextArea description;
   private JPanel projectOverviewPanel;
-  private BaseView baseView;
+  private JPanel baseView;
 
 
 
