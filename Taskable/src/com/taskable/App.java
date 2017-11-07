@@ -33,16 +33,6 @@ public class App extends JFrame{
     }
 
     public static void main(String[] args) {
-        ArrayList<String> members = new ArrayList<String>();
-        members.add("Bob");
-        members.add("Joe");
-        members.add("Bill");
-
-        Project p = new Project(0, "Name", "Desc", members, new ArrayList<ITask>(), new Date(2018, 8, 28));
-        ArrayList<IProject> projects = new ArrayList<>();
-        projects.add(p);
-
-
         LoginView login = new LoginView();
         loginView = login.getLoginPanel();
         loginView.setVisible(true);

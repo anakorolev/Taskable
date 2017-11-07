@@ -269,28 +269,30 @@ public class BaseView extends JFrame implements ActionListener {
                         } else {
                             buttonPanel.setVisible(true);
                         }
-                        projectOverviewPanel.setVisible(true);
-                        allTasksPanel.setVisible(false);
+                        baseRight.removeAll();
+                        baseRight.add(new ProjectOverview(user, p, new BaseView(user)).getProjectOverviewPanel());
+                        baseRight.revalidate();
+                        baseRight.repaint();
                     }
                 });
 
                 projectOverview.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        projectOverviewPanel.setVisible(true);
-                        allTasksPanel.setVisible(false);
+                        baseRight.removeAll();
+                        baseRight.add(new ProjectOverview(user, p, new BaseView(user)).getProjectOverviewPanel());
+                        baseRight.revalidate();
+                        baseRight.repaint();
                     }
                 });
 
                 allTasks.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        BasePanel.removeAll();
-                        basePanel();
-                        BasePanel.revalidate();
-                        BasePanel.repaint();
-                        projectOverviewPanel.setVisible(false);
-                        allTasksPanel.setVisible(true);
+                        baseRight.removeAll();
+                        baseRight.add(new AllTasksView(user, p).getAllTasksPanel());
+                        baseRight.revalidate();
+                        baseRight.repaint();
                     }
                 });
 
