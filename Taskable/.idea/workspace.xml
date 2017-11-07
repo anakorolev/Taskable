@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdc3a836-580f-44ef-98b5-4036be5c27f3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/App.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/App.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/ProjectOverview.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/ProjectOverview.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/LoginView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/LoginView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView$1.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView$2.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/model/Task.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/model/Task.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/TaskOverview.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/TaskOverview.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/BaseView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/BaseView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$1.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$2.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$3.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/ProjectOverview.java" afterPath="$PROJECT_DIR$/src/com/taskable/ProjectOverview.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/AllTasksView.java" afterPath="$PROJECT_DIR$/src/com/taskable/AllTasksView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/TaskOverview.java" afterPath="$PROJECT_DIR$/src/com/taskable/TaskOverview.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/LoginView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/LoginView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/model/Task.java" afterPath="$PROJECT_DIR$/src/com/taskable/model/Task.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,11 +32,15 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/App.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
             <state relative-caret-position="306">
               <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
 =======
             <state relative-caret-position="-518">
+=======
+            <state relative-caret-position="465">
+>>>>>>> Stashed changes
               <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
 >>>>>>> a1b7471cb5bb58cbd9d7173cd951a52efc8a460f
               <folding>
@@ -60,8 +60,8 @@
       <file leaf-file-name="BaseView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/BaseView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="97" column="87" selection-start-line="97" selection-start-column="87" selection-end-line="97" selection-end-column="87" />
+            <state relative-caret-position="135">
+              <caret line="260" column="0" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,8 +82,8 @@
       <file leaf-file-name="TaskOverview.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/TaskOverview.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="73" column="31" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="31" />
+            <state relative-caret-position="322">
+              <caret line="144" column="34" selection-start-line="144" selection-start-column="34" selection-end-line="144" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -92,11 +92,9 @@
       <file leaf-file-name="AllTasksView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/AllTasksView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="92" column="77" selection-start-line="92" selection-start-column="77" selection-end-line="92" selection-end-column="77" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="2370">
+              <caret line="175" column="23" selection-start-line="175" selection-start-column="23" selection-end-line="175" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,15 +102,9 @@
       <file leaf-file-name="memberModalView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/memberModalView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1336#1337#0" expanded="false" />
-                <element signature="e#1376#1377#0" expanded="false" />
-                <element signature="e#4844#4845#0" expanded="false" />
-                <element signature="e#4885#4886#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="375">
+              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,7 +112,7 @@
       <file leaf-file-name="ProjectOverview.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/ProjectOverview.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="735">
               <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
 >>>>>>> a1b7471cb5bb58cbd9d7173cd951a52efc8a460f
               <folding />
@@ -166,6 +158,7 @@
         <option value="$PROJECT_DIR$/src/com/taskable/Views/LoginView.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/model/Task.java" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/src/com/taskable/AllTasksView.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" />
 <<<<<<< HEAD
@@ -174,6 +167,12 @@
 =======
         <option value="$PROJECT_DIR$/src/com/taskable/ProjectOverview.java" />
 >>>>>>> a1b7471cb5bb58cbd9d7173cd951a52efc8a460f
+=======
+        <option value="$PROJECT_DIR$/src/com/taskable/App.java" />
+        <option value="$PROJECT_DIR$/src/com/taskable/ProjectOverview.java" />
+        <option value="$PROJECT_DIR$/src/com/taskable/AllTasksView.java" />
+        <option value="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" />
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/src/com/taskable/TaskOverview.java" />
       </list>
     </option>
@@ -261,12 +260,17 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       <pane id="Scope" />
 =======
       <pane id="PackagesPane" />
       <pane id="Scratches" />
+=======
+>>>>>>> Stashed changes
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
 >>>>>>> a1b7471cb5bb58cbd9d7173cd951a52efc8a460f
     </panes>
@@ -772,10 +776,13 @@
 =======
         <state relative-caret-position="150">
           <caret line="11" column="27" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="27" />
+<<<<<<< Updated upstream
 >>>>>>> a1b7471cb5bb58cbd9d7173cd951a52efc8a460f
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -787,8 +794,11 @@
 =======
         <state relative-caret-position="645">
           <caret line="63" column="56" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
+<<<<<<< Updated upstream
           <folding />
 >>>>>>> a1b7471cb5bb58cbd9d7173cd951a52efc8a460f
+=======
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -871,8 +881,11 @@
           </folding>
 =======
           <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+<<<<<<< Updated upstream
           <folding />
 >>>>>>> a1b7471cb5bb58cbd9d7173cd951a52efc8a460f
+=======
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -887,10 +900,14 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/Project.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
+<<<<<<< Updated upstream
           <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -929,10 +946,14 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/Project.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
+<<<<<<< Updated upstream
           <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -947,8 +968,11 @@
           </folding>
 =======
           <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+<<<<<<< Updated upstream
           <folding />
 >>>>>>> a1b7471cb5bb58cbd9d7173cd951a52efc8a460f
+=======
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -1009,10 +1033,14 @@
     <entry file="file://$PROJECT_DIR$/src/com/taskable/model/Project.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
+<<<<<<< Updated upstream
           <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -1043,8 +1071,11 @@
 =======
         <state relative-caret-position="615">
           <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+<<<<<<< Updated upstream
           <folding />
 >>>>>>> a1b7471cb5bb58cbd9d7173cd951a52efc8a460f
+=======
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -1083,6 +1114,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/memberModalView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1108,6 +1140,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/src/com/taskable/LoginView.java" />
     <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1155,7 +1189,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-518">
+        <state relative-caret-position="465">
           <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
 >>>>>>> a1b7471cb5bb58cbd9d7173cd951a52efc8a460f
           <folding>
@@ -1164,6 +1198,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
@@ -1196,19 +1231,45 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/ProjectOverview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+          <folding />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taskable/ProjectOverview.java">
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/memberModalView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+        <state relative-caret-position="375">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/AllTasksView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2370">
+          <caret line="175" column="23" selection-start-line="175" selection-start-column="23" selection-end-line="175" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/BaseView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="260" column="0" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/TaskOverview.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         <state relative-caret-position="303">
           <caret line="39" column="27" lean-forward="true" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
@@ -1216,6 +1277,10 @@
         <state relative-caret-position="270">
           <caret line="73" column="31" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="31" />
 >>>>>>> a1b7471cb5bb58cbd9d7173cd951a52efc8a460f
+=======
+        <state relative-caret-position="322">
+          <caret line="144" column="34" selection-start-line="144" selection-start-column="34" selection-end-line="144" selection-end-column="34" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>

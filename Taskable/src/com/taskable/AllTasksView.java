@@ -27,21 +27,23 @@ public class AllTasksView implements ActionListener{
   private static User user;
   private JButton addTaskButton, memberEditButton;
   private JComboBox<String> actionBox;
-  private int numMems;
+  private ArrayList<JCheckBox> group1;
+
 
   //constructor
   public AllTasksView(User u, Project p) {
     panel = new JPanel();
     project = p;
     user = u;
+    group1 = new ArrayList<>();
     addTaskButton = new JButton("+ Task");
     memberEditButton = new JButton("Members...");
     String[] actions = {"Actions...", "Complete", "Delete"};
     actionBox = new JComboBox<>(actions);
-    numMems = p.getProjectMembers().size();
 
     addTaskButton.addActionListener(this);
     memberEditButton.addActionListener(this);
+    actionBox.addActionListener(this);
 
     ArrayList<String> members = new ArrayList<String>();
     for (int i = 0; i < p.getProjectMembers().size(); i ++) {
@@ -85,7 +87,13 @@ public class AllTasksView implements ActionListener{
       Task t = (Task)project.getTasks().get(i);
 
       //make the JLabel for the task description
+      JPanel buttonAndBox = new JPanel();
+      JCheckBox checkBox = new JCheckBox();
+      checkBox.setLabel("" + t.getTaskId());
+      group1.add(checkBox);
       JButton taskName = new JButton(t.getTaskName());
+      buttonAndBox.add(checkBox);
+      buttonAndBox.add(taskName);
       taskName.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -111,7 +119,7 @@ public class AllTasksView implements ActionListener{
       //create a new panel to add the task description, assignee drop down, and due date to
       JPanel newPanel = new JPanel();
       newPanel.setLayout(new GridLayout(0, 4));
-      newPanel.add(taskName);
+      newPanel.add(buttonAndBox);
       newPanel.add(taskAssignee);
       newPanel.add(due);
       newPanel.add(remind, BorderLayout.LINE_END);
@@ -150,6 +158,42 @@ public class AllTasksView implements ActionListener{
     if (src == memberEditButton) {
       panel.removeAll();
       new memberModalView(project).setTitle("Edit Members");
+      allTasksPanel();
+      panel.revalidate();
+      panel.repaint();
+    }
+    if (src == actionBox) {
+      JComboBox cb = (JComboBox)src;
+      String action = (String)cb.getSelectedItem();
+      if (action.equals("Delete")) {
+        for (JCheckBox jcb : group1) {
+          if (jcb.isEnabled()) {
+            int id = Integer.parseInt(jcb.getLabel());
+            ArrayList<ITask> newProjectList = new ArrayList<>(project.getTasks());
+            for ( ITask task : newProjectList) {
+              Task t = (Task)task;
+              if (id == t.getTaskId()) {
+                int index = project.getTasks().indexOf(t);
+                project.getTasks().remove(index);
+              }
+            }
+          }
+        }
+      }
+      if (action.equals("Complete")) {
+        for (JCheckBox jcb : group1) {
+          if (jcb.isEnabled()) {
+            int id = Integer.parseInt(jcb.getLabel());
+            for (ITask task : project.getTasks()) {
+              Task t = (Task)task;
+              if (id == t.getTaskId()) {
+                t.finishTask();
+              }
+            }
+          }
+        }
+      }
+      panel.removeAll();
       allTasksPanel();
       panel.revalidate();
       panel.repaint();

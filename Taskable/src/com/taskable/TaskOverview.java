@@ -5,12 +5,13 @@ import com.taskable.model.Project;
 import com.taskable.model.Task;
 import com.taskable.model.User;
 
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 /**
  * Created by kylemccrosson on 11/3/17.
@@ -28,11 +29,7 @@ public class TaskOverview extends JFrame implements ActionListener {
     descripLabel = new JLabel("Description:");
     memberLabel = new JLabel(task.getTaskUser());
     dueDateLabel = new JLabel("Due Date:");
-<<<<<<< HEAD
     dueDate = task.getTaskDueDate();
-=======
-    dueDate = t.getTaskDueDate();
->>>>>>> a1b7471cb5bb58cbd9d7173cd951a52efc8a460f
     int day = dueDate.getDate();
     int month = dueDate.getMonth();
     int year = dueDate.getYear();
@@ -141,10 +138,11 @@ public class TaskOverview extends JFrame implements ActionListener {
   public void actionPerformed(ActionEvent e) {
     Object src = e.getSource();
     if (src == edit) {
-
+      taskOverviewPanel.removeAll();
       new taskModalView("Edit Task", task, project);
-      this.dispose();
-      new TaskOverview(user, project, task);
+      taskOverviewPanel.add(new TaskOverview(user, project, task).getTaskOverviewPanel());
+      taskOverviewPanel.revalidate();
+      taskOverviewPanel.repaint();
 
     }
     if (src == complete) {
