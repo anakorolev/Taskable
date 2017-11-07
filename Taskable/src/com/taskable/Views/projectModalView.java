@@ -1,6 +1,7 @@
 package com.taskable.Views;
 
 
+import com.taskable.Vendor.CustomizedButtonUI;
 import com.taskable.model.ITask;
 import com.taskable.model.Project;
 import com.taskable.model.User;
@@ -138,7 +139,7 @@ public class projectModalView extends JFrame{
         JButton closeButton = new JButton("Cancel");
         JButton nextStepButton = new JButton("Next");
 
-        /**closeButton.setUI(new CustomizedButtonUI(
+        closeButton.setUI(new CustomizedButtonUI(
                 new Color(220, 227, 230),
                 new Color(231, 236, 238),
                 new Color(176, 190, 197),
@@ -150,7 +151,7 @@ public class projectModalView extends JFrame{
                 new Color(91, 203, 235),
                 new Color(0, 94, 119),
                 new Font("Arial", Font.BOLD, 14),
-                Color.WHITE, Color.WHITE, Color.WHITE));*/
+                Color.WHITE, Color.WHITE, Color.WHITE));
 
         closeButton.addActionListener(new ActionListener(){
             @Override
@@ -177,11 +178,13 @@ public class projectModalView extends JFrame{
             }
         });
 
-        footer.setLayout(new GridLayout());
-        footer.add(new JPanel(), GridLayout.class);
-        footer.add(new JPanel(), GridLayout.class);
-        footer.add(closeButton, GridLayout.class);
-        footer.add(nextStepButton, GridLayout.class);
+        GridLayout buttonLayout = new GridLayout(1, 0, 20, 20);
+
+        footer.setLayout(buttonLayout);
+        footer.add(new JPanel());
+        footer.add(new JPanel());
+        footer.add(closeButton);
+        footer.add(nextStepButton);
 
         return footer;
     }

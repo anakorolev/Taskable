@@ -1,6 +1,7 @@
 package com.taskable.Views;
 
 import com.taskable.TaskOverview;
+import com.taskable.Vendor.CustomizedButtonUI;
 import com.taskable.model.ITask;
 import com.taskable.model.Project;
 import com.taskable.model.Task;
@@ -58,6 +59,13 @@ public class LoginView extends JFrame implements ActionListener {
         butlogin.addActionListener(this);
         buttonArea.setPreferredSize(new Dimension(0, 80));
         buttonArea.add(butlogin);
+
+        butlogin.setUI(new CustomizedButtonUI(
+                new Color(7, 176, 221),
+                new Color(91, 203, 235),
+                new Color(0, 94, 119),
+                new Font("Arial", Font.BOLD, 14),
+                Color.WHITE, Color.WHITE, Color.WHITE));
 
 
         LoginPanel.add(taskableLogo, BorderLayout.NORTH);
