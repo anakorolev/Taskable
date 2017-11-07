@@ -19,8 +19,9 @@ public class memberModalView extends JFrame{
     private final JDialog dialog = new JDialog(this, "", Dialog.ModalityType.APPLICATION_MODAL);
     private ArrayList<JTextField> textFields = new ArrayList<JTextField>();
 
-    public memberModalView(Project proj) {
+    public memberModalView(Project proj, String title) {
         this.project = proj;
+        this.dialog.setTitle(title);
         showMemberDialog();
     }
 
@@ -41,7 +42,7 @@ public class memberModalView extends JFrame{
     }
 
     public void setTitle(String title) {
-        dialog.setTitle("title");
+        dialog.setTitle(title);
     }
 
     private JScrollPane setFields() {
@@ -143,6 +144,9 @@ public class memberModalView extends JFrame{
         JPanel footer = new JPanel();
         JButton closeButton = new JButton("Cancel");
         JButton nextStepButton = new JButton("Create");
+        if(dialog.getTitle().equals("Edit Members")){
+            nextStepButton.setText("Update");
+        }
 
         closeButton.setUI(new CustomizedButtonUI(
                 new Color(220, 227, 230),

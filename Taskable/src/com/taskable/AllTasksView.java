@@ -209,7 +209,7 @@ public class AllTasksView implements ActionListener{
     }
     if (src == memberEditButton) {
       panel.removeAll();
-      new memberModalView(project).setTitle("Edit Members");
+      new memberModalView(project, "Edit Members");
       allTasksPanel();
       panel.revalidate();
       panel.repaint();

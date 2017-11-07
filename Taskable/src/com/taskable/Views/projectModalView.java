@@ -175,7 +175,12 @@ public class projectModalView extends JFrame{
                 } else {
                     dispose();
                     Project p = updateProject(project);
-                    new memberModalView(p);
+                    if (dialog.getTitle().equals("Edit Project")){
+                        new memberModalView(p, "Edit Members");
+                    } else {
+                        new memberModalView(p, "Add Members");
+                    }
+
                 }
             }
         });
