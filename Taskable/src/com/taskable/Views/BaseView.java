@@ -46,7 +46,7 @@ public class BaseView extends JFrame implements ActionListener {
   public void basePanel() {
 
 
-    taskableLogo = new JLabel("TASKABLE", JLabel.CENTER);
+    taskableLogo = new JLabel("TASKABLE", createImageIcon("../icons/taskable_0.5x.png"), JLabel.CENTER);
     taskableLogo.setFont(new Font("TimesRoman",Font.BOLD,20));
     taskableLogo.setPreferredSize(new Dimension(300, 50));
 
@@ -60,7 +60,8 @@ public class BaseView extends JFrame implements ActionListener {
 
     JMenuBar menu = new JMenuBar();
 
-    JMenu profile = new JMenu("Profile");
+    JMenu profile = new JMenu();
+    profile.setIcon(createImageIcon("../icons/ic_account_circle_black_24dp_1x.png"));
     JMenuItem signOut = new JMenuItem("Logout");
     profile.add(signOut);
     menu.add(profile);
@@ -89,7 +90,7 @@ public class BaseView extends JFrame implements ActionListener {
     addNewProjectPromote = new JLabel("No Project", JLabel.CENTER);
     noPojectPanel.add(addNewProjectPromote,CENTER_ALIGNMENT);
 
-    addNewProjectButton = new JButton("add Project");
+    addNewProjectButton = new JButton("Project", createImageIcon("../icons/ic_add_black_24dp_1x.png"));
     addNewProjectButton.addActionListener(this);
 
     if(user.getProjectsForUser().size() == 0) {
@@ -148,7 +149,7 @@ public class BaseView extends JFrame implements ActionListener {
 
         projectPanel.add(scrollPane, projectPanelLayout.WEST);
 
-        JButton addProjectButton = new JButton("+");
+        JButton addProjectButton = new JButton(createImageIcon("../icons/ic_add_black_24dp_1x.png"));
         addProjectButton.setPreferredSize(new Dimension(130, 25));
         projectPanel.add(addProjectButton, projectPanelLayout.SOUTH);
 

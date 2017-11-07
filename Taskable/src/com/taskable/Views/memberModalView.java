@@ -3,13 +3,12 @@ package com.taskable.Views;
 import com.taskable.Vendor.CustomizedButtonUI;
 import com.taskable.model.Project;
 
-import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.*;
 import java.util.ArrayList;
+
+import javax.swing.*;
 
 /**
  * Created by akorolev on 11/4/17.
@@ -92,7 +91,7 @@ public class memberModalView extends JFrame{
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
         scrollPane.setOpaque(true);
 
-        final JButton addMemberButton = new JButton("Add Member");
+        final JButton addMemberButton = new JButton(createImageIcon("../icons/ic_person_add_black_24dp_1x.png"));
 
         addMemberButton.addActionListener(new ActionListener() {
             @Override
@@ -114,6 +113,11 @@ public class memberModalView extends JFrame{
         fields.add(addMemberButton, fieldLayout);
 
         return scrollPane;
+    }
+    protected static ImageIcon createImageIcon(String path) {
+        java.net.URL imgURL = memberModalView.class.getResource(path);
+        //error handling omitted for clarity...
+        return new ImageIcon(imgURL);
     }
 
     private ArrayList getFields() {

@@ -36,8 +36,8 @@ public class AllTasksView implements ActionListener{
     project = p;
     user = u;
     group1 = new ArrayList<>();
-    addTaskButton = new JButton("+ Task");
-    memberEditButton = new JButton("Members...");
+    addTaskButton = new JButton("Task", createImageIcon("icons/ic_add_black_24dp_1x.png"));
+    memberEditButton = new JButton(createImageIcon("icons/ic_manage_members_1x.png"));
     String[] actions = {"Actions...", "Complete", "Delete"};
     actionBox = new JComboBox<>(actions);
 
@@ -59,6 +59,12 @@ public class AllTasksView implements ActionListener{
     allTasksPanel();
   }
 
+  protected static ImageIcon createImageIcon(String path) {
+    java.net.URL imgURL = TaskOverview.class.getResource(path);
+    //error handling omitted for clarity...
+    return new ImageIcon(imgURL);
+  }
+
   //do all of the creating
   public void allTasksPanel() {
     JPanel top = new JPanel();
@@ -71,10 +77,10 @@ public class AllTasksView implements ActionListener{
     top.add(new JLabel("" + project.getProjectMembers().size() + " Members"));
 
 
-    JLabel task = new JLabel("Task");
-    JLabel assignee = new JLabel("Assignee");
-    JLabel dueDate = new JLabel("Due Date");
-    JLabel rem = new JLabel("Remind");
+    JLabel task = new JLabel("Task", JLabel.LEFT);
+    JLabel assignee = new JLabel("Assignee", JLabel.LEFT);
+    JLabel dueDate = new JLabel("Due Date", JLabel.LEFT);
+    JLabel rem = new JLabel("Remind", JLabel.LEFT);
     top.add(task);
     top.add(assignee);
     top.add(dueDate);
@@ -114,7 +120,7 @@ public class AllTasksView implements ActionListener{
       JLabel due = new JLabel("" + month + "/" + day + "/" + year);
 
       //add reminder button
-      JButton remind = new JButton("R");
+      JButton remind = new JButton(createImageIcon("icons/ic_notifications_black_24dp_1x.png"));
 
 
       //create a new panel to add the task description, assignee drop down, and due date to

@@ -53,9 +53,9 @@ public class ProjectOverview extends JFrame implements ActionListener{
     description.setEditable(false);
 
     //Buttons
-    edit = new JButton("Edit");
-    delete = new JButton("Delete");
-    complete = new JButton("Complete");
+    edit = new JButton("Edit", createImageIcon("icons/ic_mode_edit_black_24dp_1x.png"));
+    delete = new JButton("Delete", createImageIcon("icons/ic_delete_black_24dp_1x.png"));
+    complete = new JButton("Complete", createImageIcon("icons/ic_check_black_24dp_1x.png"));
 
     if (project.getProjectFinished()) {
       edit.setEnabled(false);
@@ -124,6 +124,12 @@ public class ProjectOverview extends JFrame implements ActionListener{
     center.add(memberList, BorderLayout.CENTER);
     projectOverviewPanel.add(center, BorderLayout.CENTER);
 
+  }
+
+  protected static ImageIcon createImageIcon(String path) {
+    java.net.URL imgURL = TaskOverview.class.getResource(path);
+    //error handling omitted for clarity...
+    return new ImageIcon(imgURL);
   }
 
   public void actionPerformed(ActionEvent e) {

@@ -45,10 +45,10 @@ public class TaskOverview extends JFrame implements ActionListener {
     assigneeLabel = new JLabel("Assignee:");
 
     //Buttons
-    edit = new JButton("Edit");
-    delete = new JButton("Delete");
-    complete = new JButton("Complete");
-    ImageIcon img = createImageIcon("icons/img_68687.png");
+    edit = new JButton("Edit", createImageIcon("icons/ic_mode_edit_black_24dp_1x.png"));
+    delete = new JButton("Delete", createImageIcon("icons/ic_delete_black_24dp_1x.png"));
+    complete = new JButton("Complete", createImageIcon("icons/ic_check_black_24dp_1x.png"));
+    ImageIcon img = createImageIcon("icons/ic_arrow_back_black_24dp_1x.png");
     returnAllTasks = new JButton("All Tasks", img);
 
     initComponents();

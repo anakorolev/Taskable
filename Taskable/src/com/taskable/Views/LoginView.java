@@ -34,7 +34,7 @@ public class LoginView extends JFrame implements ActionListener {
         LoginPanel.setLayout(new BorderLayout());
         LoginPanel.setBackground(Color.white);
 
-        taskableLogo = new JLabel("TASKABLE", JLabel.CENTER);
+        taskableLogo = new JLabel("TASKABLE", createImageIcon("../icons/taskable_0.5x.png"), JLabel.CENTER);
         taskableLogo.setFont(new Font("TimesRoman",Font.BOLD,54));
         taskableLogo.setPreferredSize(new Dimension(0, 150));
 
@@ -72,6 +72,12 @@ public class LoginView extends JFrame implements ActionListener {
         LoginPanel.add(enteringArea, BorderLayout.CENTER);
         LoginPanel.add(buttonArea, BorderLayout.SOUTH);
 
+    }
+
+    protected static ImageIcon createImageIcon(String path) {
+        java.net.URL imgURL = LoginView.class.getResource(path);
+        //error handling omitted for clarity...
+        return new ImageIcon(imgURL);
     }
 
     public JPanel getLoginPanel() {
