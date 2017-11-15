@@ -3,8 +3,6 @@ package com.taskable;
 import com.taskable.Views.BaseView;
 import com.taskable.Views.LoginView;
 import com.taskable.model.IProject;
-import com.taskable.model.ITask;
-import com.taskable.model.Project;
 import com.taskable.model.User;
 
 import javax.swing.*;
@@ -12,7 +10,6 @@ import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by akorolev on 11/3/17.

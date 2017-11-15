@@ -100,7 +100,7 @@ public class memberModalView extends JFrame{
                 new Color(91, 203, 235),
                 new Color(0, 94, 119),
                 new Font("Arial", Font.BOLD, 14),
-                Color.WHITE, Color.WHITE, Color.WHITE, createImageIcon("../icons/addMemberWhite.png")));
+                Color.WHITE, Color.WHITE, Color.WHITE, new ImageIcon("resources/addMemberWhite.png")));
 
         addMemberButton.addActionListener(new ActionListener() {
             @Override
@@ -122,11 +122,6 @@ public class memberModalView extends JFrame{
         fields.add(addMemberButton, fieldLayout);
 
         return scrollPane;
-    }
-    protected static ImageIcon createImageIcon(String path) {
-        java.net.URL imgURL = memberModalView.class.getResource(path);
-        //error handling omitted for clarity...
-        return new ImageIcon(imgURL);
     }
 
     private ArrayList getFields() {

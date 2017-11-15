@@ -1,8 +1,6 @@
-package com.taskable;
+package com.taskable.Views;
 
 import com.taskable.Vendor.CustomizedButtonUI;
-import com.taskable.Views.memberModalView;
-import com.taskable.Views.taskModalView;
 import com.taskable.model.ITask;
 import com.taskable.model.Project;
 import com.taskable.model.Task;
@@ -45,13 +43,13 @@ public class AllTasksView implements ActionListener{
             new Color(7, 176, 221),
             new Color(91, 203, 235),
             new Color(0, 94, 119),
-            createImageIcon("icons/addTaskWhite.png")));
+            new ImageIcon("resources/addTaskWhite.png")));
     addTaskButton.setPreferredSize(new Dimension(80, 35));
     memberEditButton.setUI(new CustomizedButtonUI(
             new Color(176, 190, 197),
             new Color(220, 227, 230),
             new Color(144, 164, 174),
-            createImageIcon("icons/managerMembersWhite.png")));
+            new ImageIcon("resources/managerMembersWhite.png")));
     memberEditButton.setPreferredSize(new Dimension(60, 35));
 
     String[] actions = {"Actions...", "Complete", "Delete"};
@@ -73,12 +71,6 @@ public class AllTasksView implements ActionListener{
     }
 
     allTasksPanel();
-  }
-
-  protected static ImageIcon createImageIcon(String path) {
-    java.net.URL imgURL = TaskOverview.class.getResource(path);
-    //error handling omitted for clarity...
-    return new ImageIcon(imgURL);
   }
 
   //do all of the creating
@@ -146,7 +138,7 @@ public class AllTasksView implements ActionListener{
       JButton reminderButton = new JButton();
       reminderButton.setUI(new CustomizedButtonUI(
               new Color(176, 190, 197), new Color(220, 227, 230),
-              new Color(144, 164, 174), createImageIcon("icons/bellWhite.png")));
+              new Color(144, 164, 174), new ImageIcon("resources/bellWhite.png")));
       reminderButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {

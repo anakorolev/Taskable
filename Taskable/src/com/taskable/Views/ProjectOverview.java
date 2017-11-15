@@ -1,8 +1,6 @@
-package com.taskable;
+package com.taskable.Views;
 
 import com.taskable.Vendor.CustomizedButtonUI;
-import com.taskable.Views.*;
-import com.taskable.Views.BaseView;
 import com.taskable.model.Project;
 import com.taskable.model.User;
 import com.taskable.model.Task;
@@ -59,28 +57,28 @@ public class ProjectOverview extends JPanel implements ActionListener{
             new Color(176, 190, 197),
             new Color(220, 227, 230),
             new Color(144, 164, 174),
-            createImageIcon("icons/edit.png")));
+            new ImageIcon("resources/edit.png")));
     edit.setPreferredSize(new Dimension(90, 35));
     delete = new JButton();
     delete.setUI(new CustomizedButtonUI(
             new Color(231, 73, 70),
             new Color(245, 124, 122),
             new Color(207, 44, 41),
-            createImageIcon("icons/delete1x.png")));
+            new ImageIcon("resources/delete1x.png")));
     delete.setPreferredSize(new Dimension(120, 35));
     complete = new JButton();
     complete.setUI(new CustomizedButtonUI(
         new Color(30, 190, 165),
         new Color(106, 213, 196),
         new Color(6, 139, 121),
-        createImageIcon("icons/Complete.png")));
+            new ImageIcon("resources/Complete.png")));
     complete.setPreferredSize(new Dimension(120, 35));
     rem = new JButton();
     rem.setUI(new CustomizedButtonUI(
               new Color(176, 190, 197),
               new Color(220, 227, 230),
               new Color(144, 164, 174),
-              createImageIcon("icons/bellWhite.png")));
+              new ImageIcon("resources/bellWhite.png")));
     rem.setPreferredSize(new Dimension(90, 35));
 
     if (project.getProjectFinished()) {
@@ -92,22 +90,22 @@ public class ProjectOverview extends JPanel implements ActionListener{
               new Color(220, 227, 230),
               new Color(220, 227, 230),
               new Color(220, 227, 230),
-              createImageIcon("icons/edit.png")));
+              new ImageIcon("resources/edit.png")));
       delete.setUI(new CustomizedButtonUI(
               new Color(245, 124, 122),
               new Color(245, 124, 122),
               new Color(245, 124, 122),
-              createImageIcon("icons/delete1x.png")));
+              new ImageIcon("resources/delete1x.png")));
       complete.setUI(new CustomizedButtonUI(
               new Color(106, 213, 196),
               new Color(106, 213, 196),
               new Color(106, 213, 196),
-              createImageIcon("icons/Complete.png")));
+              new ImageIcon("resources/Complete.png")));
       rem.setUI(new CustomizedButtonUI(
               new Color(220, 227, 230),
               new Color(220, 227, 230),
               new Color(220, 227, 230),
-              createImageIcon("icons/edit.png")));
+              new ImageIcon("resources/bellWhite.png")));
     }
 
     // List
@@ -176,12 +174,6 @@ public class ProjectOverview extends JPanel implements ActionListener{
 
   }
 
-  protected static ImageIcon createImageIcon(String path) {
-    java.net.URL imgURL = TaskOverview.class.getResource(path);
-    //error handling omitted for clarity...
-    return new ImageIcon(imgURL);
-  }
-
   public void actionPerformed(ActionEvent e) {
     Object src = e.getSource();
     if (src == edit) {
@@ -225,22 +217,22 @@ public class ProjectOverview extends JPanel implements ActionListener{
                 new Color(220, 227, 230),
                 new Color(220, 227, 230),
                 new Color(220, 227, 230),
-                createImageIcon("icons/edit.png")));
+                new ImageIcon("resources/edit.png")));
         delete.setUI(new CustomizedButtonUI(
                 new Color(245, 124, 122),
                 new Color(245, 124, 122),
                 new Color(245, 124, 122),
-                createImageIcon("icons/delete1x.png")));
+                new ImageIcon("resources/delete1x.png")));
         complete.setUI(new CustomizedButtonUI(
                 new Color(106, 213, 196),
                 new Color(106, 213, 196),
                 new Color(106, 213, 196),
-                createImageIcon("icons/Complete.png")));
+                new ImageIcon("resources/Complete.png")));
         rem.setUI(new CustomizedButtonUI(
                 new Color(220, 227, 230),
                 new Color(220, 227, 230),
                 new Color(220, 227, 230),
-                createImageIcon("icons/edit.png")));
+                new ImageIcon("resources/edit.png")));
         repaint();
       }
     }
