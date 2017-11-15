@@ -7,49 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdc3a836-580f-44ef-98b5-4036be5c27f3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/ProjectOverview.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/TaskOverview.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/icons/img_68687.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/taskable/AllTasksView.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/ProjectOverview.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/ProjectOverview.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/TaskOverview.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/TaskOverview.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/Complete.png" afterPath="$PROJECT_DIR$/resources/Complete.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/Hamburger_icon2%.png" afterPath="$PROJECT_DIR$/resources/Hamburger_icon2%.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/addMemberWhite.png" afterPath="$PROJECT_DIR$/resources/addMemberWhite.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/addProject.png" afterPath="$PROJECT_DIR$/resources/addProject.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/addTaskWhite.png" afterPath="$PROJECT_DIR$/resources/addTaskWhite.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/allTasks.png" afterPath="$PROJECT_DIR$/resources/allTasks.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/bellWhite.png" afterPath="$PROJECT_DIR$/resources/bellWhite.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/delete1x.png" afterPath="$PROJECT_DIR$/resources/delete1x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/edit.png" afterPath="$PROJECT_DIR$/resources/edit.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/ic_account_circle_black_24dp_1x.png" afterPath="$PROJECT_DIR$/resources/ic_account_circle_black_24dp_1x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/ic_add_black_24dp_1x.png" afterPath="$PROJECT_DIR$/resources/ic_add_black_24dp_1x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/ic_arrow_back_black_24dp_1x.png" afterPath="$PROJECT_DIR$/resources/ic_arrow_back_black_24dp_1x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/ic_check_black_24dp_1x.png" afterPath="$PROJECT_DIR$/resources/ic_check_black_24dp_1x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/ic_delete_black_24dp_1x.png" afterPath="$PROJECT_DIR$/resources/ic_delete_black_24dp_1x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/ic_manage_members_1x.png" afterPath="$PROJECT_DIR$/resources/ic_manage_members_1x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/ic_mode_edit_black_24dp_1x.png" afterPath="$PROJECT_DIR$/resources/ic_mode_edit_black_24dp_1x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/ic_notifications_black_24dp_1x.png" afterPath="$PROJECT_DIR$/resources/ic_notifications_black_24dp_1x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/ic_person_add_black_24dp_1x.png" afterPath="$PROJECT_DIR$/resources/ic_person_add_black_24dp_1x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/ic_settings_black_24dp_1x.png" afterPath="$PROJECT_DIR$/resources/ic_settings_black_24dp_1x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/ic_supervisor_account_black_24dp_1x.png" afterPath="$PROJECT_DIR$/resources/ic_supervisor_account_black_24dp_1x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/img_68687.png" afterPath="$PROJECT_DIR$/resources/img_68687.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/managerMembersWhite.png" afterPath="$PROJECT_DIR$/resources/managerMembersWhite.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/plusWhite.png" afterPath="$PROJECT_DIR$/resources/plusWhite.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/taskable_0.2x.png" afterPath="$PROJECT_DIR$/resources/taskable_0.2x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/taskable_0.5x.png" afterPath="$PROJECT_DIR$/resources/taskable_0.5x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/taskable/icons/taskable_small.png" afterPath="$PROJECT_DIR$/resources/taskable_small.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/App.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/App.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/BaseView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/BaseView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/LoginView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/LoginView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Taskable.iml" afterPath="$PROJECT_DIR$/Taskable.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/App.java" afterPath="$PROJECT_DIR$/src/com/taskable/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/LoginView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/LoginView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/memberModalView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/memberModalView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Taskable.jar" afterPath="$PROJECT_DIR$/src/Taskable.jar" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
