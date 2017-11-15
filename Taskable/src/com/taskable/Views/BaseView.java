@@ -26,7 +26,7 @@ import javax.swing.border.EmptyBorder;
  * TabLayout
  *    when clicking on a button, for Tasks and Overview (or two smaller buttons)
  */
-public class BaseView extends JFrame implements ActionListener {
+public class BaseView extends JPanel implements ActionListener {
 
   private JPanel BasePanel, baseLeft, baseRight, noPojectPanel, projectPanel, allTasksPanel, projectOverviewPanel;
   private JLabel taskableLogo, addNewProjectPromote ;

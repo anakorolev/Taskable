@@ -17,7 +17,7 @@ import javax.swing.border.EmptyBorder;
 /**
  * Created by kylemccrosson on 11/3/17.
  */
-public class TaskOverview extends JFrame implements ActionListener {
+public class TaskOverview extends JPanel implements ActionListener {
   public TaskOverview(User u, Project p, Task t) {
 
     user = u;
@@ -191,7 +191,7 @@ public class TaskOverview extends JFrame implements ActionListener {
     center.add(assigneeStuff, BorderLayout.WEST);
 
     taskOverviewPanel.add(center, BorderLayout.CENTER);
-    pack();
+    repaint();
   }
 
   public void actionPerformed(ActionEvent e) {

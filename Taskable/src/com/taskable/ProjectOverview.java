@@ -19,7 +19,7 @@ import javax.swing.border.EmptyBorder;
 /**
  * Created by kylemccrosson on 11/3/17.
  */
-public class ProjectOverview extends JFrame implements ActionListener{
+public class ProjectOverview extends JPanel implements ActionListener{
 
   public ProjectOverview(User u, Project p, JPanel b) {
     projectOverviewPanel = new JPanel();
@@ -242,8 +242,6 @@ public class ProjectOverview extends JFrame implements ActionListener{
                 new Color(220, 227, 230),
                 createImageIcon("icons/edit.png")));
         repaint();
-        pack();
-
       }
     }
     if (src == delete) {
