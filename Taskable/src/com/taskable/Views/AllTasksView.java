@@ -189,14 +189,7 @@ public class AllTasksView implements ActionListener{
         }
       });
 
-      if(t.getFinished()){
-        reminderButton.setEnabled(false);
-        reminderButton.setUI(new CustomizedButtonUI(
-                new Color(220, 227, 230),
-                new Color(220, 227, 230),
-                new Color(220, 227, 230),
-                new ImageIcon("resources/bellWhite.png")));
-      }
+
 
       JPanel remindPanel = new JPanel();
       remindPanel.setBorder(new EmptyBorder(0,40,0,40));
@@ -211,6 +204,18 @@ public class AllTasksView implements ActionListener{
       newPanel.add(due);
       newPanel.add(remindPanel, BorderLayout.LINE_END);
       newPanel.setBorder(BorderFactory.createMatteBorder(1,0,0,0, new Color(177,177,177)));
+
+      if(t.getFinished()){
+        reminderButton.setEnabled(false);
+        reminderButton.setUI(new CustomizedButtonUI(
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                new ImageIcon("resources/bellWhite.png")));
+        remindPanel.setBackground(new Color(106, 213, 196));
+        buttonAndBox.setBackground(new Color(106, 213, 196));
+        newPanel.setBackground(new Color(106, 213, 196));
+      }
 
       //add the new panel to the list of panels.
       listOfPanels.add(newPanel);
@@ -247,6 +252,7 @@ public class AllTasksView implements ActionListener{
   @Override
   public void actionPerformed(ActionEvent e) {
     Object src = e.getSource();
+    System.out.println(src);
     if (src == addTaskButton) {
       panel.removeAll();
       new taskModalView("New Task", null, project);
@@ -264,7 +270,7 @@ public class AllTasksView implements ActionListener{
     if (src == actionBox) {
       JComboBox cb = (JComboBox)src;
       String action = (String)cb.getSelectedItem();
-      if (action.equals("Delete")) {
+      if (action.equals("   Delete")) {
         Object[] options = {"Cancel",
             "Continue"};
 
@@ -293,7 +299,7 @@ public class AllTasksView implements ActionListener{
           }
         }
       }
-      if (action.equals("Complete")) {
+      if (action.equals("   Complete")) {
         Object[] options = {"Cancel",
             "Continue"};
 
