@@ -38,8 +38,8 @@ public class TaskOverview extends JPanel implements ActionListener {
     dateLabel = new JLabel("" + month + "/" + day + "/" + year);
     description = new JTextArea(task.getTaskDesc());
     description.setEditable(false);
-    description.setColumns(30);
-    description.setRows(8);
+    description.setColumns(40);
+    description.setRows(15);
     taskName = new JLabel(task.getTaskName());
     taskName.setFont(new Font("Sans",Font.BOLD, 20));
     assigneeLabel = new JLabel("Assignee:");
@@ -72,14 +72,14 @@ public class TaskOverview extends JPanel implements ActionListener {
             new Color(220, 227, 230),
             new Color(144, 164, 174),
             new ImageIcon("resources/allTasks.png")));
-    returnAllTasks.setPreferredSize(new Dimension(110, 35));
+    returnAllTasks.setPreferredSize(new Dimension(120, 35));
     remind = new JButton();
     remind.setUI(new CustomizedButtonUI(
             new Color(176, 190, 197),
             new Color(220, 227, 230),
             new Color(144, 164, 174),
             new ImageIcon("resources/bellWhite.png")));
-    remind.setPreferredSize(new Dimension(90, 35));
+    remind.setPreferredSize(new Dimension(60, 35));
 
     initComponents();
     taskOverviewPanel.setVisible(true);
@@ -94,9 +94,8 @@ public class TaskOverview extends JPanel implements ActionListener {
     returnAllTasks.addActionListener(this);
     remind.addActionListener(this);
 
-    if (task.getFinished()) {
+    if (task.getFinished() || project.getProjectFinished()) {
       edit.setEnabled(false);
-      delete.setEnabled(false);
       complete.setEnabled(false);
       remind.setEnabled(false);
       edit.setUI(new CustomizedButtonUI(
@@ -104,11 +103,6 @@ public class TaskOverview extends JPanel implements ActionListener {
               new Color(220, 227, 230),
               new Color(220, 227, 230),
               new ImageIcon("resources/edit.png")));
-      delete.setUI(new CustomizedButtonUI(
-              new Color(245, 124, 122),
-              new Color(245, 124, 122),
-              new Color(245, 124, 122),
-              new ImageIcon("resources/delete1x.png")));
       complete.setUI(new CustomizedButtonUI(
               new Color(106, 213, 196),
               new Color(106, 213, 196),
@@ -118,7 +112,7 @@ public class TaskOverview extends JPanel implements ActionListener {
               new Color(220, 227, 230),
               new Color(220, 227, 230),
               new Color(220, 227, 230),
-              new ImageIcon("resources/edit.png")));
+              new ImageIcon("resources/bellWhite.png")));
     }
 
     // place items on the screen
@@ -135,12 +129,18 @@ public class TaskOverview extends JPanel implements ActionListener {
     northRight.add(delete);
     northRight.add(complete);
     north.add(northRight, BorderLayout.EAST);
+
+    JPanel northCenter = new JPanel();
+    northCenter.setPreferredSize(new Dimension(100, 0));
+    north.add(northCenter, BorderLayout.CENTER);
+
     taskOverviewPanel.add(north, BorderLayout.NORTH);
 
     /** Set components for Left side */
     JPanel west = new JPanel();
     west.setLayout(new BorderLayout());
     west.setBorder(new EmptyBorder(0,15,0,0));
+    west.setPreferredSize(new Dimension(500, 300));
 
     JPanel leftSideTop = new JPanel();
     leftSideTop.setLayout(new BorderLayout());
@@ -156,7 +156,7 @@ public class TaskOverview extends JPanel implements ActionListener {
     /** Set components for right side */
     JPanel center = new JPanel();
     center.setLayout(new BorderLayout());
-    center.setBorder(new EmptyBorder(25,15,0,15));
+    center.setBorder(new EmptyBorder(25,45,0,15));
 
     JPanel dueDateStuff = new JPanel();
     dueDateStuff.setLayout(new BorderLayout());
@@ -213,17 +213,11 @@ public class TaskOverview extends JPanel implements ActionListener {
         task.finishTask();
         edit.setEnabled(false);
         complete.setEnabled(false);
-        delete.setEnabled(false);
         edit.setUI(new CustomizedButtonUI(
                 new Color(220, 227, 230),
                 new Color(220, 227, 230),
                 new Color(220, 227, 230),
                 new ImageIcon("resources/edit.png")));
-        delete.setUI(new CustomizedButtonUI(
-                new Color(245, 124, 122),
-                new Color(245, 124, 122),
-                new Color(245, 124, 122),
-                new ImageIcon("resources/delete1x.png")));
         complete.setUI(new CustomizedButtonUI(
                 new Color(106, 213, 196),
                 new Color(106, 213, 196),
@@ -233,7 +227,7 @@ public class TaskOverview extends JPanel implements ActionListener {
                 new Color(220, 227, 230),
                 new Color(220, 227, 230),
                 new Color(220, 227, 230),
-                new ImageIcon("resources/edit.png")));
+                new ImageIcon("resources/bellWhite.png")));
       }
     }
     if (src == delete) {

@@ -115,15 +115,15 @@ public class BaseView extends JPanel implements ActionListener {
 
         ProjectOverview projectOverview = new ProjectOverview(user, currentProj, this.getBasePanel());
         projectOverviewPanel = projectOverview.getProjectOverviewPanel();
-        projectOverviewPanel.setVisible(true);
+        projectOverviewPanel.setVisible(false);
         baseRight.add(projectOverviewPanel);
 
         AllTasksView allTasks = new AllTasksView(user, currentProj);
         allTasksPanel = allTasks.getAllTasksPanel();
-        allTasksPanel.setVisible(false);
+        allTasksPanel.setVisible(true);
         baseRight.add(allTasksPanel);
 
-        baseLeft.setPreferredSize(new Dimension(150,0));
+        baseLeft.setPreferredSize(new Dimension(200,0));
         baseLeft.add(getProjectPanel());
     }
 
@@ -139,7 +139,6 @@ public class BaseView extends JPanel implements ActionListener {
         projectPanel = new JPanel();
         BorderLayout projectPanelLayout = new BorderLayout();
         projectPanel.setLayout(projectPanelLayout);
-        projectPanel.setPreferredSize(new Dimension(150, 310));
 
         JPanel scrollPanel = new JPanel();
         scrollPanel.setLayout(new BorderLayout());
@@ -149,7 +148,7 @@ public class BaseView extends JPanel implements ActionListener {
         scrollPane.setViewportView(scrollPanel);
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
         scrollPane.setOpaque(true);
-        scrollPane.setPreferredSize(new Dimension(150, 100));
+        scrollPane.setPreferredSize(new Dimension(200, 480));
 
         projectPanel.add(scrollPane, projectPanelLayout.WEST);
 
@@ -162,7 +161,7 @@ public class BaseView extends JPanel implements ActionListener {
                 Color.WHITE, Color.WHITE, Color.WHITE,
                 new ImageIcon("resources/addProject.png")));
 
-        addProjectButton.setPreferredSize(new Dimension(100, 30));
+        addProjectButton.setPreferredSize(new Dimension(200, 30));
         projectPanel.add(addProjectButton, projectPanelLayout.SOUTH);
 
         addProjectButton.addActionListener(new ActionListener() {
@@ -177,12 +176,10 @@ public class BaseView extends JPanel implements ActionListener {
         });
 
         JPanel projectGrid = new JPanel();
-        GridLayout projectGridLayout = new GridLayout(4,1);
+        GridLayout projectGridLayout = new GridLayout(0,1);
         projectGrid.setLayout(projectGridLayout);
         if(user.getProjectsForUser() != null){
-            System.out.println("inside if");
             for(int i = 0; i < user.getProjectsForUser().size(); i++) {
-                System.out.println("inside for loop");
                 JPanel singleProject = new JPanel();
                 singleProject.setLayout(new BorderLayout());
                 projectGrid.add(singleProject);
@@ -205,6 +202,13 @@ public class BaseView extends JPanel implements ActionListener {
                         new Color(176, 190, 197), new Font("Arial", Font.BOLD, 14),
                         new Color(50, 55, 56), Color.WHITE, new Color(50, 55, 56), null));
 
+                if(p.getProjectFinished()){
+                    projectButton.setUI(new CustomizedButtonUI(
+                            new Color(30, 190, 165),
+                            new Color(106, 213, 196),
+                            new Color(6, 139, 121), new Font("Arial", Font.BOLD, 14),
+                            Color.WHITE, Color.WHITE, Color.WHITE, null));
+                }
 
                 JPanel buttonPanel = new JPanel();
                 GridLayout buttonPanelLayout = new GridLayout(2, 1);
@@ -239,9 +243,7 @@ public class BaseView extends JPanel implements ActionListener {
                 projectOverview.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        System.out.println(user.getCurrentProjectIdForUser());
                         user.setCurrentProjectId(p.getProjectId());
-                        System.out.println(user.getCurrentProjectIdForUser());
                         baseRight.removeAll();
                         baseRight.add(new ProjectOverview(user, p, new BaseView(user).getBasePanel()).getProjectOverviewPanel());
                         baseRight.revalidate();

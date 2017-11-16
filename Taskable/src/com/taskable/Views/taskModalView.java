@@ -192,14 +192,22 @@ public class taskModalView extends JFrame{
         {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Date date = new Date();
                 if(inputTextField.getText().equals("")){
-                    JOptionPane.showMessageDialog(dialog,"Project Name is Required");
+                    JOptionPane.showMessageDialog(dialog,"Task Name is Required");
                 } else if(inputDropDowns.get(2).getSelectedItem().toString().equals("Month")){
                     JOptionPane.showMessageDialog(dialog,"Month is Required");
                 } else if(inputDropDowns.get(3).getSelectedItem().toString().equals("Day")){
                     JOptionPane.showMessageDialog(dialog,"Day is Required");
                 } else if(inputDropDowns.get(1).getSelectedItem().toString().equals("Year")) {
                     JOptionPane.showMessageDialog(dialog, "Year is Required");
+                } else if(inputDropDowns.get(1).getSelectedIndex() == 1 &&
+                        inputDropDowns.get(2).getSelectedIndex() < date.getMonth()+1) {
+                    JOptionPane.showMessageDialog(dialog, "Cannot Select a Past Date!");
+                } else if(inputDropDowns.get(1).getSelectedIndex() == 1 &&
+                        inputDropDowns.get(2).getSelectedIndex() == date.getMonth()+1 &&
+                        inputDropDowns.get(3).getSelectedIndex() <= date.getDate()) {
+                    JOptionPane.showMessageDialog(dialog, "Cannot Select a Past Date!");
                 } else {
                     dispose();
                     updateTask(task);

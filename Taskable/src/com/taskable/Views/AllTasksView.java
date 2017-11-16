@@ -48,6 +48,7 @@ public class AllTasksView implements ActionListener{
             new Color(0, 94, 119),
             new ImageIcon("resources/addTaskWhite.png")));
     addTaskButton.setPreferredSize(new Dimension(80, 35));
+
     memberEditButton.setUI(new CustomizedButtonUI(
             new Color(176, 190, 197),
             new Color(220, 227, 230),
@@ -70,6 +71,23 @@ public class AllTasksView implements ActionListener{
     addTaskButton.addActionListener(this);
     memberEditButton.addActionListener(this);
     actionBox.addActionListener(this);
+
+    if(p.getProjectFinished()){
+      addTaskButton.setEnabled(false);
+      memberEditButton.setEnabled(false);
+      actionBox.setEnabled(false);
+
+      addTaskButton.setUI(new CustomizedButtonUI(
+              new Color(91, 203, 235),
+              new Color(91, 203, 235),
+              new Color(91, 203, 235),
+              new ImageIcon("resources/addTaskWhite.png")));
+      memberEditButton.setUI(new CustomizedButtonUI(
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              new Color(220, 227, 230),
+              new ImageIcon("resources/managerMembersWhite.png")));
+    }
 
     ArrayList<String> members = new ArrayList<String>();
     for (int i = 0; i < p.getProjectMembers().size(); i ++) {
@@ -171,6 +189,15 @@ public class AllTasksView implements ActionListener{
         }
       });
 
+      if(t.getFinished()){
+        reminderButton.setEnabled(false);
+        reminderButton.setUI(new CustomizedButtonUI(
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                new Color(220, 227, 230),
+                new ImageIcon("resources/bellWhite.png")));
+      }
+
       JPanel remindPanel = new JPanel();
       remindPanel.setBorder(new EmptyBorder(0,40,0,40));
       remindPanel.setPreferredSize(new Dimension(35, 35));
@@ -211,7 +238,7 @@ public class AllTasksView implements ActionListener{
     scrollPane.setViewportView(scrollPanel);
     scrollPane.setBorder(BorderFactory.createEmptyBorder());
     scrollPane.setOpaque(true);
-    scrollPane.setPreferredSize(new Dimension(620, 310));
+    scrollPane.setPreferredSize(new Dimension(800, 510));
 
     panel.setLayout(new BorderLayout());
     panel.add(scrollPane, BorderLayout.NORTH);
@@ -258,8 +285,6 @@ public class AllTasksView implements ActionListener{
               for (ITask task : newTaskList) {
                 Task t = (Task) task;
                 if (id == t.getTaskId()) {
-                  System.out.println(t.getTaskId());
-                  System.out.println(id);
                   int index = project.getTasks().indexOf(t);
                   project.getTasks().remove(index);
                 }

@@ -47,8 +47,8 @@ public class ProjectOverview extends JPanel implements ActionListener{
 
 
     description = new JTextArea(project.getProjectDesc());
-    description.setColumns(30);
-    description.setRows(8);
+    description.setColumns(40);
+    description.setRows(15);
     description.setEditable(false);
 
     //Buttons
@@ -83,7 +83,6 @@ public class ProjectOverview extends JPanel implements ActionListener{
 
     if (project.getProjectFinished()) {
       edit.setEnabled(false);
-      delete.setEnabled(false);
       complete.setEnabled(false);
       rem.setEnabled(false);
       edit.setUI(new CustomizedButtonUI(
@@ -91,11 +90,6 @@ public class ProjectOverview extends JPanel implements ActionListener{
               new Color(220, 227, 230),
               new Color(220, 227, 230),
               new ImageIcon("resources/edit.png")));
-      delete.setUI(new CustomizedButtonUI(
-              new Color(245, 124, 122),
-              new Color(245, 124, 122),
-              new Color(245, 124, 122),
-              new ImageIcon("resources/delete1x.png")));
       complete.setUI(new CustomizedButtonUI(
               new Color(106, 213, 196),
               new Color(106, 213, 196),
@@ -130,12 +124,18 @@ public class ProjectOverview extends JPanel implements ActionListener{
     northRight.add(delete);
     northRight.add(complete);
     north.add(northRight, BorderLayout.EAST);
+
+    JPanel northCenter = new JPanel();
+    northCenter.setPreferredSize(new Dimension(100, 0));
+    north.add(northCenter, BorderLayout.CENTER);
+
     projectOverviewPanel.add(north, BorderLayout.NORTH);
 
     /** Set components for Left side */
     JPanel west = new JPanel();
     west.setLayout(new BorderLayout());
     west.setBorder(new EmptyBorder(30, 15, 0, 0));
+    west.setPreferredSize(new Dimension(500, 400));
 
     JPanel leftSideTop = new JPanel();
     leftSideTop.setLayout(new BorderLayout());
@@ -156,7 +156,7 @@ public class ProjectOverview extends JPanel implements ActionListener{
     /** Set components for right side */
     JPanel center = new JPanel();
     center.setLayout(new BorderLayout());
-    center.setBorder(new EmptyBorder(30,15,0,15));
+    center.setBorder(new EmptyBorder(30,45,0,15));
     center.add(memberLabel, BorderLayout.NORTH);
 
     JPanel memberList = new JPanel();
@@ -212,17 +212,11 @@ public class ProjectOverview extends JPanel implements ActionListener{
         project.finishProject();
         edit.setEnabled(false);
         complete.setEnabled(false);
-        delete.setEnabled(false);
         edit.setUI(new CustomizedButtonUI(
                 new Color(220, 227, 230),
                 new Color(220, 227, 230),
                 new Color(220, 227, 230),
                 new ImageIcon("resources/edit.png")));
-        delete.setUI(new CustomizedButtonUI(
-                new Color(245, 124, 122),
-                new Color(245, 124, 122),
-                new Color(245, 124, 122),
-                new ImageIcon("resources/delete1x.png")));
         complete.setUI(new CustomizedButtonUI(
                 new Color(106, 213, 196),
                 new Color(106, 213, 196),
@@ -232,7 +226,7 @@ public class ProjectOverview extends JPanel implements ActionListener{
                 new Color(220, 227, 230),
                 new Color(220, 227, 230),
                 new Color(220, 227, 230),
-                new ImageIcon("resources/edit.png")));
+                new ImageIcon("resources/bellWhite.png")));
         repaint();
       }
     }
@@ -256,7 +250,6 @@ public class ProjectOverview extends JPanel implements ActionListener{
 
         user.setCurrentProjectId(0);
 
-        System.out.println(user.getProjectsForUser());
         baseView.removeAll();
         baseView.add(new BaseView(user).getBasePanel());
         baseView.revalidate();

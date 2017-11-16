@@ -164,6 +164,7 @@ public class projectModalView extends JFrame{
         nextStepButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
+                Date date = new Date();
                 if(inputTextField.getText().equals("")){
                     JOptionPane.showMessageDialog(dialog,"Project Name is Required");
                 } else if(inputDropDowns.get(1).getSelectedItem().toString().equals("Month")){
@@ -172,6 +173,13 @@ public class projectModalView extends JFrame{
                     JOptionPane.showMessageDialog(dialog,"Day is Required");
                 } else if(inputDropDowns.get(0).getSelectedItem().toString().equals("Year")) {
                     JOptionPane.showMessageDialog(dialog, "Year is Required");
+                } else if(inputDropDowns.get(0).getSelectedIndex() == 1 &&
+                        inputDropDowns.get(1).getSelectedIndex() < date.getMonth()+1) {
+                    JOptionPane.showMessageDialog(dialog, "Cannot Select a Past Date!");
+                } else if(inputDropDowns.get(0).getSelectedIndex() == 1 &&
+                        inputDropDowns.get(1).getSelectedIndex() == date.getMonth()+1 &&
+                        inputDropDowns.get(2).getSelectedIndex() <= date.getDate()) {
+                    JOptionPane.showMessageDialog(dialog, "Cannot Select a Past Date!");
                 } else {
                     dispose();
                     Project p = updateProject(project);
@@ -216,8 +224,6 @@ public class projectModalView extends JFrame{
             p.setProjectDesc(inputTextArea.getText());
             p.setProjectDueDate(date);
         }
-
-        System.out.println(user.getProjectsForUser());
 
         project = p;
 
