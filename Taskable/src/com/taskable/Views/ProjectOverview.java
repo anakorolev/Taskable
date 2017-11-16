@@ -19,7 +19,7 @@ import javax.swing.border.EmptyBorder;
  */
 public class ProjectOverview extends JPanel implements ActionListener{
 
-  public ProjectOverview(User u, Project p, JPanel b) {
+  public ProjectOverview(User u, Project p, BaseView b) {
     projectOverviewPanel = new JPanel();
     projectOverviewPanel.setLayout(new BorderLayout());
     user = u;
@@ -107,7 +107,7 @@ public class ProjectOverview extends JPanel implements ActionListener{
 
     // add action listeners
     edit.addActionListener(this);
-    delete.addActionListener(this);
+    delete.addActionListener(baseView);
     complete.addActionListener(this);
     rem.addActionListener(this);
 
@@ -174,12 +174,17 @@ public class ProjectOverview extends JPanel implements ActionListener{
 
   }
 
+  static public JButton getDelete() { return delete; }
+
   public void actionPerformed(ActionEvent e) {
     Object src = e.getSource();
     if (src == edit) {
       // do something
       projectOverviewPanel.removeAll();
-      new projectModalView("Edit Project", project, user);
+      projectModalView popUp = new projectModalView("Edit Project", project, user);
+      popUp.setLocationRelativeTo(baseView);
+
+
       initComponents();
       projectOverviewPanel.revalidate();
       projectOverviewPanel.repaint();
@@ -228,35 +233,39 @@ public class ProjectOverview extends JPanel implements ActionListener{
                 new Color(220, 227, 230),
                 new ImageIcon("resources/bellWhite.png")));
         repaint();
-      }
-    }
-    if (src == delete) {
-
-      Object[] options = {"Cancel",
-          "Continue"};
-
-      int n = JOptionPane.showOptionDialog(projectOverviewPanel,
-          "Are you sure you want to delete this project?", "Delete Project",
-          JOptionPane.YES_NO_OPTION,
-          JOptionPane.QUESTION_MESSAGE,
-          null,
-          options,
-          options[0]);
-
-      if (n == 1) {
-        // delete the project from the app
-        // how to get access to the list of projects to edit it
-        user.getProjectsForUser().remove(project);
-
-        user.setCurrentProjectId(0);
-
         baseView.removeAll();
         baseView.add(new BaseView(user).getBasePanel());
         baseView.revalidate();
         baseView.repaint();
-
       }
     }
+//    if (src == delete) {
+//
+//      Object[] options = {"Cancel",
+//          "Continue"};
+//
+//      int n = JOptionPane.showOptionDialog(projectOverviewPanel,
+//          "Are you sure you want to delete this project?", "Delete Project",
+//          JOptionPane.YES_NO_OPTION,
+//          JOptionPane.QUESTION_MESSAGE,
+//          null,
+//          options,
+//          options[0]);
+//
+//      if (n == 1) {
+//        // delete the project from the app
+//        // how to get access to the list of projects to edit it
+//        user.getProjectsForUser().remove(project);
+//
+//        user.setCurrentProjectId(0);
+//
+//        baseView.removeAll();
+//        baseView.add(new BaseView(user).getBasePanel());
+//        baseView.revalidate();
+//        baseView.repaint();
+//
+//      }
+//    }
     if (src == rem) {
       Object[] options = {"Remind!", "Cancel"};
       int n = JOptionPane.showOptionDialog(projectOverviewPanel,
@@ -274,14 +283,14 @@ public class ProjectOverview extends JPanel implements ActionListener{
   }
 
   private JLabel descripLabel, memberLabel, dueDateLabel, dateLabel;
-  private JButton edit, delete, complete, rem;
+  static private JButton edit, delete, complete, rem;
   private ArrayList<String> members;
   private Date dueDate;
   private Project project;
   private User user;
   private JTextArea description;
   private JPanel projectOverviewPanel;
-  private JPanel baseView;
+  private BaseView baseView;
 
 
 

@@ -149,6 +149,8 @@ public class taskModalView extends JFrame{
 
         inputTextField = titleInput;
         inputTextArea = descriptionInput;
+        inputTextArea.setLineWrap(true);
+        inputTextArea.setWrapStyleWord(true);
         inputDropDowns.add(assigneeSelect);
         inputDropDowns.add(yearSelect);
         inputDropDowns.add(monthSelect);

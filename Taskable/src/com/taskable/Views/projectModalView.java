@@ -129,6 +129,8 @@ public class projectModalView extends JFrame{
 
         inputTextField = titleInput;
         inputTextArea = descriptionInput;
+        inputTextArea.setLineWrap(true);
+        inputTextArea.setWrapStyleWord(true);
         inputDropDowns.add(yearSelect);
         inputDropDowns.add(monthSelect);
         inputDropDowns.add(daySelect);

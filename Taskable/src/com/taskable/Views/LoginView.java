@@ -38,6 +38,9 @@ public class LoginView extends JFrame implements ActionListener {
         taskableLogo.setFont(new Font("Arial",Font.BOLD,54));
         taskableLogo.setPreferredSize(new Dimension(0, 150));
 
+        JPanel enteringAreaEnvelope = new JPanel();
+        enteringAreaEnvelope.setLayout(new BorderLayout());
+
         enteringArea = new JPanel();
         enteringArea.setLayout(new GridLayout(4,1));
         enteringArea.setBorder(new EmptyBorder(20,150,20,150));
@@ -54,6 +57,8 @@ public class LoginView extends JFrame implements ActionListener {
         enteringArea.add(labpass);
         enteringArea.add(tfpass);
 
+        enteringAreaEnvelope.add(enteringArea, BorderLayout.NORTH);
+
         buttonArea= new JPanel();
         butlogin = new JButton("SIGN-IN");
         butlogin.addActionListener(this);
@@ -69,7 +74,7 @@ public class LoginView extends JFrame implements ActionListener {
 
 
         LoginPanel.add(taskableLogo, BorderLayout.NORTH);
-        LoginPanel.add(enteringArea, BorderLayout.CENTER);
+        LoginPanel.add(enteringAreaEnvelope, BorderLayout.CENTER);
         LoginPanel.add(buttonArea, BorderLayout.SOUTH);
 
     }

@@ -30,6 +30,7 @@ public class BaseView extends JPanel implements ActionListener {
   private JLabel taskableLogo, addNewProjectPromote ;
   private JButton addNewProjectButton, profileButton;
   private User user;
+  private ProjectOverview projectOverview;
 
   //empty constructor
   public BaseView(User u) {
@@ -113,9 +114,11 @@ public class BaseView extends JPanel implements ActionListener {
           }
         }
 
-        ProjectOverview projectOverview = new ProjectOverview(user, currentProj, this.getBasePanel());
+        projectOverview = new ProjectOverview(user, currentProj, this);
+
         projectOverviewPanel = projectOverview.getProjectOverviewPanel();
         projectOverviewPanel.setVisible(false);
+        projectOverview.getDelete().addActionListener(this);
         baseRight.add(projectOverviewPanel);
 
         AllTasksView allTasks = new AllTasksView(user, currentProj);
@@ -234,7 +237,7 @@ public class BaseView extends JPanel implements ActionListener {
                         }
                         user.setCurrentProjectId(p.getProjectId());
                         baseRight.removeAll();
-                        baseRight.add(new ProjectOverview(user, p, new BaseView(user).getBasePanel()).getProjectOverviewPanel());
+                        baseRight.add(new ProjectOverview(user, p, new BaseView(user)).getProjectOverviewPanel());
                         baseRight.revalidate();
                         baseRight.repaint();
                     }
@@ -245,7 +248,7 @@ public class BaseView extends JPanel implements ActionListener {
                     public void actionPerformed(ActionEvent e) {
                         user.setCurrentProjectId(p.getProjectId());
                         baseRight.removeAll();
-                        baseRight.add(new ProjectOverview(user, p, new BaseView(user).getBasePanel()).getProjectOverviewPanel());
+                        baseRight.add(new ProjectOverview(user, p, new BaseView(user)).getProjectOverviewPanel());
                         baseRight.revalidate();
                         baseRight.repaint();
                     }
@@ -282,12 +285,46 @@ public class BaseView extends JPanel implements ActionListener {
   @Override
   public void actionPerformed(ActionEvent e) {
     Object src = e.getSource();
-    if(src==addNewProjectButton){
+    if (src == addNewProjectButton) {
+      BasePanel.removeAll();
+      new projectModalView("New Project", null, user);
+      basePanel();
+      BasePanel.revalidate();
+      BasePanel.repaint();
+    }
+    if (src == projectOverview.getDelete()) {
+      Object[] options = {"Cancel",
+          "Continue"};
+
+      int n = JOptionPane.showOptionDialog(projectOverviewPanel,
+          "Are you sure you want to delete this project?", "Delete Project",
+          JOptionPane.YES_NO_OPTION,
+          JOptionPane.QUESTION_MESSAGE,
+          null,
+          options,
+          options[0]);
+
+      if (n == 1) {
+        // delete the project from the app
+        // how to get access to the list of projects to edit it
+        Project currentProj = (Project)user.getProjectsForUser().get(0);
+        int currentId = user.getCurrentProjectIdForUser();
+        for (IProject p : user.getProjectsForUser()) {
+          Project proj = (Project)p;
+          if (proj.getProjectId() == currentId) {
+            currentProj = proj;
+          }
+        }
+        user.getProjectsForUser().remove(currentProj);
+
+        user.setCurrentProjectId(0);
+
         BasePanel.removeAll();
-        new projectModalView("New Project", null, user);
-        basePanel();
+
+        BasePanel.add(new BaseView(user));
         BasePanel.revalidate();
         BasePanel.repaint();
+      }
     }
   }
 }
