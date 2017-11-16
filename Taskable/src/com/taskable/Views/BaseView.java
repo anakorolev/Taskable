@@ -316,12 +316,12 @@ public class BaseView extends JPanel implements ActionListener {
           }
         }
         user.getProjectsForUser().remove(currentProj);
+        System.out.println(user.getProjectsForUser());
 
         user.setCurrentProjectId(0);
-
+        removeAll();
         BasePanel.removeAll();
-
-        BasePanel.add(new BaseView(user));
+        basePanel();
         BasePanel.revalidate();
         BasePanel.repaint();
       }

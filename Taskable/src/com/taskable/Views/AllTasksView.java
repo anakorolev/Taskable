@@ -14,7 +14,6 @@ import java.util.Date;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.basic.BasicArrowButton;
 import javax.swing.plaf.basic.BasicComboBoxUI;
 
@@ -312,7 +311,7 @@ public class AllTasksView implements ActionListener{
             options[0]);
         if (n == 1) {
           for (JCheckBox jcb : group1) {
-            if (jcb.isEnabled()) {
+            if (jcb.isSelected()) {
               int id = Integer.parseInt(jcb.getName());
               for (ITask task : project.getTasks()) {
                 Task t = (Task) task;
