@@ -77,10 +77,9 @@ public class BaseView extends JPanel implements ActionListener {
     header.add(menu, BorderLayout.EAST);
 
     baseLeft = new JPanel();
-    baseLeft.setPreferredSize(new Dimension(150,0));
-    baseLeft.add(getProjectPanel());
 
     baseRight = new JPanel();
+    baseRight.setPreferredSize(new Dimension(800,0));
 
 
     noPojectPanel = new JPanel();
@@ -123,6 +122,9 @@ public class BaseView extends JPanel implements ActionListener {
         allTasksPanel = allTasks.getAllTasksPanel();
         allTasksPanel.setVisible(false);
         baseRight.add(allTasksPanel);
+
+        baseLeft.setPreferredSize(new Dimension(150,0));
+        baseLeft.add(getProjectPanel());
     }
 
     BasePanel.add(header, BorderLayout.NORTH);
@@ -141,26 +143,26 @@ public class BaseView extends JPanel implements ActionListener {
 
         JPanel scrollPanel = new JPanel();
         scrollPanel.setLayout(new BorderLayout());
-        scrollPanel.setPreferredSize(new Dimension(130, 100));
 
         JScrollPane scrollPane = new JScrollPane(scrollPanel,
                 JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setViewportView(scrollPanel);
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
         scrollPane.setOpaque(true);
+        scrollPane.setPreferredSize(new Dimension(150, 100));
 
         projectPanel.add(scrollPane, projectPanelLayout.WEST);
 
         JButton addProjectButton = new JButton();
         addProjectButton.setUI(new CustomizedButtonUI(
-            new Color(220, 227, 230),
-            new Color(231, 236, 238),
-            new Color(176, 190, 197),
-            new Font("Arial", Font.BOLD, 14),
-            new Color(50, 55, 56),
-            Color.WHITE, new Color(50, 55, 56),
-                new ImageIcon("resources/ic_add_black_24dp_1x.png")));
-        addProjectButton.setPreferredSize(new Dimension(130, 25));
+                new Color(7, 176, 221),
+                new Color(91, 203, 235),
+                new Color(0, 94, 119),
+                new Font("Arial", Font.BOLD, 14),
+                Color.WHITE, Color.WHITE, Color.WHITE,
+                new ImageIcon("resources/addProject.png")));
+
+        addProjectButton.setPreferredSize(new Dimension(100, 30));
         projectPanel.add(addProjectButton, projectPanelLayout.SOUTH);
 
         addProjectButton.addActionListener(new ActionListener() {
@@ -192,6 +194,16 @@ public class BaseView extends JPanel implements ActionListener {
                         new Color(50, 55, 56), Color.WHITE, new Color(50, 55, 56), null));
                 JButton projectOverview = new JButton("Overview");
                 JButton allTasks = new JButton("Tasks");
+
+                projectOverview.setUI(new CustomizedButtonUI(
+                        new Color(220, 227, 230), new Color(231, 236, 238),
+                        new Color(176, 190, 197), new Font("Arial", Font.BOLD, 14),
+                        new Color(50, 55, 56), Color.WHITE, new Color(50, 55, 56), null));
+
+                allTasks.setUI(new CustomizedButtonUI(
+                        new Color(220, 227, 230), new Color(231, 236, 238),
+                        new Color(176, 190, 197), new Font("Arial", Font.BOLD, 14),
+                        new Color(50, 55, 56), Color.WHITE, new Color(50, 55, 56), null));
 
 
                 JPanel buttonPanel = new JPanel();

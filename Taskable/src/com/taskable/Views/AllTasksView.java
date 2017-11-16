@@ -14,6 +14,9 @@ import java.util.Date;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.ColorUIResource;
+import javax.swing.plaf.basic.BasicArrowButton;
+import javax.swing.plaf.basic.BasicComboBoxUI;
 
 /**
  * Created by schou on 11/5/17.
@@ -52,8 +55,17 @@ public class AllTasksView implements ActionListener{
             new ImageIcon("resources/managerMembersWhite.png")));
     memberEditButton.setPreferredSize(new Dimension(60, 35));
 
-    String[] actions = {"Actions...", "Complete", "Delete"};
+    String[] actions = {"   Actions", "   Complete", "   Delete"};
     actionBox = new JComboBox<>(actions);
+    actionBox.setBackground(new Color(176, 190, 197));
+    actionBox.setForeground(Color.WHITE);
+
+    actionBox.setUI(new BasicComboBoxUI(){
+      protected JButton createArrowButton() {
+        BasicArrowButton arrowButton = new BasicArrowButton(BasicArrowButton.SOUTH, new Color(176, 190, 197), new Color(176, 190, 197), Color.WHITE, new Color(176, 190, 197));
+        return arrowButton;
+      }
+    });
 
     addTaskButton.addActionListener(this);
     memberEditButton.addActionListener(this);
@@ -76,13 +88,19 @@ public class AllTasksView implements ActionListener{
   //do all of the creating
   public void allTasksPanel() {
     JPanel top = new JPanel();
-    top.setBorder(new EmptyBorder(0,15,0,0));
+    top.setBorder(new EmptyBorder(0,10,0,0));
     top.setLayout(new GridLayout(0, 4, 20, 20));
+
+    JLabel numMembers = new JLabel("" + project.getProjectMembers().size() + " Members");
+    JPanel numMembersPanel = new JPanel();
+    numMembersPanel.setBorder(new EmptyBorder(0,0,0,60));
+    numMembersPanel.setLayout(new BorderLayout());
+    numMembersPanel.add(numMembers, BorderLayout.CENTER);
 
     top.add(memberEditButton);
     top.add(addTaskButton);
     top.add(actionBox);
-    top.add(new JLabel("" + project.getProjectMembers().size() + " Members"));
+    top.add(numMembersPanel);
 
 
     JLabel task = new JLabel("Task", JLabel.LEFT);
@@ -184,9 +202,19 @@ public class AllTasksView implements ActionListener{
       anotherPanel.add(listOfPanels.get(i), BorderLayout.NORTH);
       bord.add(anotherPanel);
     }
+    JPanel scrollPanel = new JPanel();
+    scrollPanel.setLayout(new BorderLayout());
+    scrollPanel.add(bord, BorderLayout.NORTH);
+
+    final JScrollPane scrollPane = new JScrollPane(scrollPanel,
+            JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+    scrollPane.setViewportView(scrollPanel);
+    scrollPane.setBorder(BorderFactory.createEmptyBorder());
+    scrollPane.setOpaque(true);
+    scrollPane.setPreferredSize(new Dimension(620, 310));
 
     panel.setLayout(new BorderLayout());
-    panel.add(bord);
+    panel.add(scrollPane, BorderLayout.NORTH);
   }
 
   @Override
