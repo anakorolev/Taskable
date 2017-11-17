@@ -1,21 +1,17 @@
 package com.taskable.Views;
 
 import com.taskable.Vendor.CustomizedButtonUI;
-import com.taskable.model.ITask;
-import com.taskable.model.Project;
-import com.taskable.model.Task;
-import com.taskable.model.User;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Date;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-public class LoginView extends JFrame implements ActionListener {
+public class LoginView extends JFrame implements ActionListener, KeyListener {
     private JPanel LoginPanel;
     private JTextField tfname;
     private JLabel labname;
@@ -29,6 +25,7 @@ public class LoginView extends JFrame implements ActionListener {
 
 
     public LoginView() {
+
         LoginPanel = new JPanel();
         LoginPanel.setLayout(new BorderLayout());
         LoginPanel.setBackground(Color.white);
@@ -50,6 +47,8 @@ public class LoginView extends JFrame implements ActionListener {
         tfpass = new JPasswordField(10);
         enteringArea.setPreferredSize(new Dimension(0, 150));
 
+        tfname.addKeyListener(this);
+        tfpass.addKeyListener(this);
 
 
         enteringArea.add(labname);
@@ -62,6 +61,7 @@ public class LoginView extends JFrame implements ActionListener {
         buttonArea= new JPanel();
         butlogin = new JButton("SIGN-IN");
         butlogin.addActionListener(this);
+
         buttonArea.setPreferredSize(new Dimension(0, 80));
         buttonArea.add(butlogin);
 
@@ -84,17 +84,6 @@ public class LoginView extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        ArrayList<String> members = new ArrayList<String>();
-        members.add("Bob");
-        members.add("Joe");
-        members.add("Bill");
-
-        Task t = new Task(1, "task", "description", "me", new Date());
-        ArrayList<ITask> taskList = new ArrayList<>();
-        taskList.add(t);
-        Project p = new Project(0, "Name", "Desc", members, taskList, new Date(2018, 8, 28));
-        User user = new User(null, -1);
-
         if(e.getSource()==butlogin){
             if(tfname.getText().equals("admin")&&tfpass.getText().equals("1234")){
                 //BaseView here
@@ -102,10 +91,29 @@ public class LoginView extends JFrame implements ActionListener {
                 this.setVisible(false);
                 //mainView Here
                 this.dispose();
-                new TaskOverview(user, p, t);
+            }
+            else {
+                JOptionPane.showMessageDialog(this,"Incorrect username and password, please try again");
+            }
 
+        }
+    }
 
-            }else{
+    public void keyReleased(KeyEvent e) {
+
+    }
+
+    public void keyTyped(KeyEvent e) {}
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            if(tfname.getText().equals("admin") && tfpass.getText().equals("1234")){
+                //BaseView here
+                LoginPanel.setVisible(false);
+                this.setVisible(false);
+                //mainView Here
+                this.dispose();
+            }
+            else {
                 JOptionPane.showMessageDialog(this,"Incorrect username and password, please try again");
             }
         }

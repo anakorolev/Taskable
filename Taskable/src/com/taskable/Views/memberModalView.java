@@ -6,6 +6,8 @@ import com.taskable.model.Project;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 import javax.swing.*;
@@ -14,7 +16,7 @@ import javax.swing.border.EmptyBorder;
 /**
  * Created by akorolev on 11/4/17.
  */
-public class memberModalView extends JFrame{
+public class memberModalView extends JFrame implements KeyListener {
     private final Project project;
     private final JDialog dialog = new JDialog(this, "", Dialog.ModalityType.APPLICATION_MODAL);
     private ArrayList<JTextField> textFields = new ArrayList<JTextField>();
@@ -54,6 +56,7 @@ public class memberModalView extends JFrame{
             for(int i = 0; i < project.getProjectMembers().size(); i++) {
                 JTextField memberInput = new JTextField();
                 memberInput.setText(project.getProjectMembers().get(i));
+                memberInput.addKeyListener(this);
                 if(project.getProjectMembers().get(i).equals("Admin")) {
                     memberInput.setEnabled(false);
                 }
@@ -81,6 +84,7 @@ public class memberModalView extends JFrame{
             int count = 0;
             while (count < 3) {
                 JTextField memberInput = new JTextField();
+                memberInput.addKeyListener(this);
                 textFields.add(memberInput);
                 fields.add(memberInput, fieldLayout);
                 count++;
@@ -92,6 +96,8 @@ public class memberModalView extends JFrame{
         scrollPane.setViewportView(fields);
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
         scrollPane.setOpaque(true);
+
+        scrollPane.addKeyListener(this);
 
         final JButton addMemberButton = new JButton();
 
@@ -184,4 +190,14 @@ public class memberModalView extends JFrame{
 
         return footer;
     }
+
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            dispose();
+            project.setProjectMembers(getFields());
+        }
+    }
+
+    public void keyReleased(KeyEvent e) {}
+    public void keyTyped(KeyEvent e) {}
 }

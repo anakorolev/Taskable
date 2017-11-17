@@ -114,9 +114,10 @@ public class AllTasksView implements ActionListener{
     numMembersPanel.setLayout(new BorderLayout());
     numMembersPanel.add(numMembers, BorderLayout.CENTER);
 
-    top.add(memberEditButton);
-    top.add(addTaskButton);
     top.add(actionBox);
+    top.add(addTaskButton);
+    top.add(memberEditButton);
+
     top.add(numMembersPanel);
 
 

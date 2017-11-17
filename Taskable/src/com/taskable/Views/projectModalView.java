@@ -9,6 +9,8 @@ import com.taskable.model.User;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -18,7 +20,7 @@ import javax.swing.border.EmptyBorder;
 /**
  * Created by akorolev on 11/4/17.
  */
-public class projectModalView extends JFrame{
+public class projectModalView extends JFrame implements KeyListener{
     Project project;
     User user;
     JDialog dialog = new JDialog(this, "", Dialog.ModalityType.APPLICATION_MODAL);
@@ -75,15 +77,20 @@ public class projectModalView extends JFrame{
         GridLayout dueDateLayout = new GridLayout(1,3,5,5);
 
         JTextField titleInput = new JTextField();
+        titleInput.addKeyListener(this);
         titleInput.setSize(100, 20);
         titleInput.setMaximumSize(new Dimension(100, 20));
 
         JTextArea descriptionInput = new JTextArea();
+        descriptionInput.addKeyListener(this);
 
         JPanel dueDateDropDowns = new JPanel();
         JComboBox monthSelect = new JComboBox();
+        monthSelect.addKeyListener(this);
         JComboBox daySelect = new JComboBox();
+        daySelect.addKeyListener(this);
         JComboBox yearSelect = new JComboBox();
+        yearSelect.addKeyListener(this);
 
         monthSelect.addItem("Month");
         monthSelect.addItem("January");
@@ -121,10 +128,22 @@ public class projectModalView extends JFrame{
         dueDateDropDowns.add(daySelect, dueDateLayout);
         dueDateDropDowns.add(yearSelect, dueDateLayout);
 
+        JScrollPane scrollPane = new JScrollPane(descriptionInput,
+            JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setViewportView(descriptionInput);
+        scrollPane.setBorder(BorderFactory.createEmptyBorder());
+        scrollPane.setOpaque(true);
+
+        JScrollPane scrollPane2 = new JScrollPane(titleInput,
+            JScrollPane.VERTICAL_SCROLLBAR_NEVER, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        scrollPane2.setViewportView(titleInput);
+        scrollPane2.setBorder(BorderFactory.createEmptyBorder());
+        scrollPane2.setOpaque(true);
+
         inputs.setLayout(inputLayout);
         inputs.setBorder(new EmptyBorder(10,0,0,10));
-        inputs.add(titleInput, inputLayout);
-        inputs.add(descriptionInput, inputLayout);
+        inputs.add(scrollPane2, inputLayout);
+        inputs.add(scrollPane, inputLayout);
         inputs.add(dueDateDropDowns, inputLayout);
 
         inputTextField = titleInput;
@@ -230,5 +249,39 @@ public class projectModalView extends JFrame{
         project = p;
 
         return p;
+    }
+
+    public void keyReleased(KeyEvent e) {}
+    public void keyTyped(KeyEvent e) {}
+
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            Date date = new Date();
+            if(inputTextField.getText().equals("")){
+                JOptionPane.showMessageDialog(dialog,"Project Name is Required");
+            } else if(inputDropDowns.get(1).getSelectedItem().toString().equals("Month")){
+                JOptionPane.showMessageDialog(dialog,"Month is Required");
+            } else if(inputDropDowns.get(2).getSelectedItem().toString().equals("Day")){
+                JOptionPane.showMessageDialog(dialog,"Day is Required");
+            } else if(inputDropDowns.get(0).getSelectedItem().toString().equals("Year")) {
+                JOptionPane.showMessageDialog(dialog, "Year is Required");
+            } else if(inputDropDowns.get(0).getSelectedIndex() == 1 &&
+                inputDropDowns.get(1).getSelectedIndex() < date.getMonth()+1) {
+                JOptionPane.showMessageDialog(dialog, "Cannot Select a Past Date!");
+            } else if(inputDropDowns.get(0).getSelectedIndex() == 1 &&
+                inputDropDowns.get(1).getSelectedIndex() == date.getMonth()+1 &&
+                inputDropDowns.get(2).getSelectedIndex() <= date.getDate()) {
+                JOptionPane.showMessageDialog(dialog, "Cannot Select a Past Date!");
+            } else {
+                dispose();
+                Project p = updateProject(project);
+                if (dialog.getTitle().equals("Edit Project")){
+                    new memberModalView(p, "Edit Members");
+                } else {
+                    new memberModalView(p, "Add Members");
+                }
+
+            }
+        }
     }
 }
