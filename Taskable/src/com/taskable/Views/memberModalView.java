@@ -43,7 +43,7 @@ public class memberModalView extends JFrame implements KeyListener {
         dialog.add(setFields(), BorderLayout.CENTER);
         dialog.add(panelRight, BorderLayout.EAST);
         dialog.add(setFooter(), BorderLayout.SOUTH);
-        dialog.setBounds(150, 150, 500, 350);
+        dialog.setBounds(250, 125, 500, 350);
         dialog.setVisible(true);
     }
 
