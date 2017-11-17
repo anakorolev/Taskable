@@ -333,8 +333,9 @@ public class BaseView extends JPanel implements ActionListener {
   public void actionPerformed(ActionEvent e) {
     Object src = e.getSource();
     if (src == addNewProjectButton) {
-      new projectModalView("New Project", null, user);
 
+      new projectModalView("New Project", null, user);
+      BasePanel.removeAll();
       basePanel();
       BasePanel.revalidate();
       BasePanel.repaint();
