@@ -11,7 +11,7 @@
       <foreground color="-3750458"/>
       <minimumSize width="600" height="400"/>
       <opaque value="false"/>
-      <preferredSize width="600" height="400"/>
+      <preferredSize width="800" height="400"/>
     </properties>
     <border type="none">
       <title-color color="-4473925"/>
