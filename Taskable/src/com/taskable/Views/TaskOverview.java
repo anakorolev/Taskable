@@ -234,7 +234,7 @@ public class TaskOverview extends JPanel implements ActionListener {
       Object[] options = {"Cancel",
           "Continue"};
       int n = JOptionPane.showOptionDialog(this,
-          "Are you sure you want to delete this project?", "Delete Project",
+          "Are you sure you want to delete this task? It cannot be undone!", "Delete Project",
           JOptionPane.YES_NO_OPTION,
           JOptionPane.QUESTION_MESSAGE,
           null,

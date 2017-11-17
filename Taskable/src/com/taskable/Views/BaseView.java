@@ -170,11 +170,8 @@ public class BaseView extends JPanel implements ActionListener {
         addProjectButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                BasePanel.removeAll();
                 new projectModalView("New Project", null, user);
-                basePanel();
-                BasePanel.revalidate();
-                BasePanel.repaint();
+                resetView();
             }
         });
 
@@ -281,23 +278,26 @@ public class BaseView extends JPanel implements ActionListener {
       projectSidePanel();
       return this.projectPanel;
   }
+  private void resetView() {
+    BasePanel.removeAll();
+    basePanel();
+    BasePanel.revalidate();
+    BasePanel.repaint();
+  }
 
   @Override
   public void actionPerformed(ActionEvent e) {
     Object src = e.getSource();
     if (src == addNewProjectButton) {
-      BasePanel.removeAll();
       new projectModalView("New Project", null, user);
-      basePanel();
-      BasePanel.revalidate();
-      BasePanel.repaint();
+      resetView();
     }
     if (src == projectOverview.getDelete()) {
       Object[] options = {"Cancel",
           "Continue"};
 
       int n = JOptionPane.showOptionDialog(projectOverviewPanel,
-          "Are you sure you want to delete this project?", "Delete Project",
+          "Are you sure you want to delete this project? It cannot be undone!", "Delete Project",
           JOptionPane.YES_NO_OPTION,
           JOptionPane.QUESTION_MESSAGE,
           null,
@@ -319,11 +319,7 @@ public class BaseView extends JPanel implements ActionListener {
         System.out.println(user.getProjectsForUser());
 
         user.setCurrentProjectId(0);
-        removeAll();
-        BasePanel.removeAll();
-        basePanel();
-        BasePanel.revalidate();
-        BasePanel.repaint();
+        resetView();
       }
     }
   }
