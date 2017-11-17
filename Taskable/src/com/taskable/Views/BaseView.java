@@ -8,6 +8,7 @@ import com.taskable.model.User;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -31,6 +32,10 @@ public class BaseView extends JPanel implements ActionListener {
   private JButton addNewProjectButton, profileButton;
   private User user;
   private ProjectOverview projectOverview;
+  private ArrayList<ArrayList> allProjectButtons;
+  private ArrayList<Integer> allProjectButtonsId;
+  private Boolean updateButtons;
+  private String currentView = "tasks";
 
   //empty constructor
   public BaseView(User u) {
@@ -190,56 +195,85 @@ public class BaseView extends JPanel implements ActionListener {
                 JButton projectButton = new JButton(p.getProjectName());
                 projectButton.setUI(new CustomizedButtonUI(
                         new Color(176, 190, 197), new Color(220, 227, 230),
-                        new Color(144, 164, 174), new Font("Arial", Font.BOLD, 14),
+                        new Color(144, 164, 174), new Font("Arial", Font.PLAIN, 14),
                         new Color(50, 55, 56), Color.WHITE, new Color(50, 55, 56), null));
                 JButton projectOverview = new JButton("Overview");
                 JButton allTasks = new JButton("Tasks");
 
                 projectOverview.setUI(new CustomizedButtonUI(
                         new Color(220, 227, 230), new Color(231, 236, 238),
-                        new Color(176, 190, 197), new Font("Arial", Font.BOLD, 14),
+                        new Color(176, 190, 197), new Font("Arial", Font.PLAIN, 14),
                         new Color(50, 55, 56), Color.WHITE, new Color(50, 55, 56), null));
 
                 allTasks.setUI(new CustomizedButtonUI(
                         new Color(220, 227, 230), new Color(231, 236, 238),
-                        new Color(176, 190, 197), new Font("Arial", Font.BOLD, 14),
+                        new Color(176, 190, 197), new Font("Arial", Font.PLAIN, 14),
                         new Color(50, 55, 56), Color.WHITE, new Color(50, 55, 56), null));
+
+                projectButton.setPreferredSize(new Dimension(150,30));
+                projectOverview.setPreferredSize(new Dimension(100,30));
+                allTasks.setPreferredSize(new Dimension(100,30));
 
                 if(p.getProjectFinished()){
                     projectButton.setUI(new CustomizedButtonUI(
                             new Color(30, 190, 165),
                             new Color(106, 213, 196),
-                            new Color(6, 139, 121), new Font("Arial", Font.BOLD, 14),
+                            new Color(6, 139, 121), new Font("Arial", Font.PLAIN, 14),
                             Color.WHITE, Color.WHITE, Color.WHITE, null));
                 }
+
+                if(user.getCurrentProjectIdForUser() == p.getProjectId() && currentView == "overview") {
+                    updateButtons = true;
+                    projectButton.setFont( new Font("Arial", Font.BOLD, 14));
+                    projectOverview.setFont( new Font("Arial", Font.BOLD, 14));
+                    allTasks.setFont( new Font("Arial", Font.PLAIN, 14));
+                } else if(user.getCurrentProjectIdForUser() == p.getProjectId() && currentView == "tasks") {
+                    updateButtons = true;
+                    projectButton.setFont( new Font("Arial", Font.BOLD, 14));
+                    projectOverview.setFont( new Font("Arial", Font.PLAIN, 14));
+                    allTasks.setFont( new Font("Arial", Font.BOLD, 14));
+                } else {
+                    updateButtons = false;
+                    projectButton.setFont( new Font("Arial", Font.PLAIN, 14));
+                    projectOverview.setFont( new Font("Arial", Font.PLAIN, 14));
+                    allTasks.setFont( new Font("Arial", Font.PLAIN, 14));
+                }
+
+                System.out.println(baseRight.getComponents());
 
                 JPanel buttonPanel = new JPanel();
                 GridLayout buttonPanelLayout = new GridLayout(2, 1);
                 buttonPanel.setLayout(buttonPanelLayout);
                 buttonPanel.add(projectOverview);
                 buttonPanel.add(allTasks);
-                if(user.getCurrentProjectIdForUser() == p.getProjectId()) {
-                    buttonPanel.setVisible(true);
-                } else {
-                    buttonPanel.setVisible(false);
-                }
                 buttonPanel.setBorder( new EmptyBorder(0,15, 0, 0));
+
+                ArrayList<JButton> buttons = new ArrayList<>();
+                buttons.add(projectButton);
+                buttons.add(projectOverview);
+                buttons.add(allTasks);
+
+                System.out.println("project id: " + p.getProjectId());
+                allProjectButtonsId = new ArrayList<>();
+                allProjectButtons = new ArrayList<>();
+                allProjectButtonsId.add(0, p.getProjectId());
+                allProjectButtons.add(0, buttons);
 
                 singleProject.add(buttonPanel, BorderLayout.SOUTH);
 
                 projectButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        if(buttonPanel.isVisible()){
-                            buttonPanel.setVisible(false);
-                        } else {
-                            buttonPanel.setVisible(true);
-                        }
                         user.setCurrentProjectId(p.getProjectId());
+                        currentView = "overview";
                         baseRight.removeAll();
                         baseRight.add(new ProjectOverview(user, p, new BaseView(user)).getProjectOverviewPanel());
                         baseRight.revalidate();
                         baseRight.repaint();
+                        baseLeft.removeAll();
+                        baseLeft.add(getProjectPanel());
+                        baseLeft.revalidate();
+                        baseLeft.repaint();
                     }
                 });
 
@@ -247,10 +281,15 @@ public class BaseView extends JPanel implements ActionListener {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         user.setCurrentProjectId(p.getProjectId());
+                        currentView = "overview";
                         baseRight.removeAll();
                         baseRight.add(new ProjectOverview(user, p, new BaseView(user)).getProjectOverviewPanel());
                         baseRight.revalidate();
                         baseRight.repaint();
+                        baseLeft.removeAll();
+                        baseLeft.add(getProjectPanel());
+                        baseLeft.revalidate();
+                        baseLeft.repaint();
                     }
                 });
 
@@ -258,10 +297,15 @@ public class BaseView extends JPanel implements ActionListener {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         user.setCurrentProjectId(p.getProjectId());
+                        currentView = "tasks";
                         baseRight.removeAll();
                         baseRight.add(new AllTasksView(user, p).getAllTasksPanel());
                         baseRight.revalidate();
                         baseRight.repaint();
+                        baseLeft.removeAll();
+                        baseLeft.add(getProjectPanel());
+                        baseLeft.revalidate();
+                        baseLeft.repaint();
                     }
                 });
 
@@ -291,6 +335,7 @@ public class BaseView extends JPanel implements ActionListener {
       basePanel();
       BasePanel.revalidate();
       BasePanel.repaint();
+      currentView = "tasks";
     }
     if (src == projectOverview.getDelete()) {
       Object[] options = {"Cancel",
