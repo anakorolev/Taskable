@@ -276,9 +276,9 @@ public class projectModalView extends JFrame implements KeyListener{
                 dispose();
                 Project p = updateProject(project);
                 if (dialog.getTitle().equals("Edit Project")){
-                    new memberModalView(p, "Edit Members");
+                    new memberModalView(p, "Edit Members", user);
                 } else {
-                    new memberModalView(p, "Add Members");
+                    new memberModalView(p, "Add Members", user);
                 }
 
             }
