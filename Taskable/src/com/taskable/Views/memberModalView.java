@@ -1,7 +1,9 @@
 package com.taskable.Views;
 
 import com.taskable.Vendor.CustomizedButtonUI;
+import com.taskable.model.IProject;
 import com.taskable.model.Project;
+import com.taskable.model.User;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -18,12 +20,14 @@ import javax.swing.border.EmptyBorder;
  */
 public class memberModalView extends JFrame implements KeyListener {
     private final Project project;
+    private final User user;
     private final JDialog dialog = new JDialog(this, "", Dialog.ModalityType.APPLICATION_MODAL);
     private ArrayList<JTextField> textFields = new ArrayList<JTextField>();
 
-    public memberModalView(Project proj, String title) {
+    public memberModalView(Project proj, String title, User user) {
         this.project = proj;
         this.dialog.setTitle(title);
+        this.user = user;
         showMemberDialog();
     }
 
@@ -168,6 +172,15 @@ public class memberModalView extends JFrame implements KeyListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
+                Project currentProj = (Project)user.getProjectsForUser().get(0);
+                int currentId = project.getProjectId();
+                for (IProject p : user.getProjectsForUser()) {
+                    Project proj = (Project)p;
+                    if (proj.getProjectId() == currentId) {
+                        currentProj = proj;
+                    }
+                }
+                user.getProjectsForUser().remove(currentProj);
             }
         });
         nextStepButton.addActionListener(new ActionListener()
