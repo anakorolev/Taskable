@@ -7,15 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdc3a836-580f-44ef-98b5-4036be5c27f3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Taskable.jar" afterPath="$PROJECT_DIR$/Taskable.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$1.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$2.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$3.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/memberModalView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView$2.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/projectModalView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/taskModalView.class" afterPath="$PROJECT_DIR$/out/production/Taskable/com/taskable/Views/taskModalView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java" afterPath="$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +34,7 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
+            <state relative-caret-position="810">
               <caret line="63" column="58" lean-forward="false" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -69,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="taskModalView.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="taskModalView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2715">
-              <caret line="194" column="39" lean-forward="false" selection-start-line="194" selection-start-column="39" selection-end-line="194" selection-end-column="39" />
+            <state relative-caret-position="277">
+              <caret line="86" column="53" lean-forward="false" selection-start-line="86" selection-start-column="53" selection-end-line="86" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -82,8 +76,8 @@
       <file leaf-file-name="AllTasksView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/AllTasksView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="274" column="24" lean-forward="true" selection-start-line="274" selection-start-column="24" selection-end-line="274" selection-end-column="24" />
+            <state relative-caret-position="3885">
+              <caret line="274" column="24" lean-forward="false" selection-start-line="274" selection-start-column="24" selection-end-line="274" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,7 +88,7 @@
       <file leaf-file-name="memberModalView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/memberModalView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2205">
+            <state relative-caret-position="2340">
               <caret line="171" column="21" lean-forward="false" selection-start-line="171" selection-start-column="21" selection-end-line="171" selection-end-column="21" />
               <folding />
             </state>
@@ -121,12 +115,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="projectModalView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="projectModalView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="44" column="47" lean-forward="true" selection-start-line="44" selection-start-column="47" selection-end-line="44" selection-end-column="47" />
-              <folding />
+            <state relative-caret-position="217">
+              <caret line="83" column="53" lean-forward="false" selection-start-line="83" selection-start-column="53" selection-end-line="83" selection-end-column="53" />
+              <folding>
+                <element signature="e#821#832#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,8 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>remind</find>
-      <find>member</find>
       <find>footer</find>
       <find>memberedit</find>
       <find>editmem</find>
@@ -173,6 +167,8 @@
       <find>addtask</find>
       <find>rem</find>
       <find>setFields</find>
+      <find>listener</find>
+      <find>keylistener</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/com/taskable/Views</dir>
@@ -210,9 +206,9 @@
         <option value="$PROJECT_DIR$/src/com/taskable/Views/ProjectOverview.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/Views/TaskOverview.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/Views/BaseView.java" />
-        <option value="$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/Views/AllTasksView.java" />
         <option value="$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java" />
+        <option value="$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java" />
       </list>
     </option>
   </component>
@@ -226,9 +222,8 @@
       
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
     <option name="width" value="1280" />
-    <option name="height" value="774" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -245,8 +240,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -316,6 +309,8 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -328,6 +323,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -667,25 +663,25 @@
       
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="774" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32258064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3219178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22873901" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22739726" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29321486" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3029079" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -813,7 +809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -928,7 +923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1008,7 +1002,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
+        <state relative-caret-position="810">
           <caret line="63" column="58" lean-forward="false" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1032,14 +1026,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2715">
-          <caret line="194" column="39" lean-forward="false" selection-start-line="194" selection-start-column="39" selection-end-line="194" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/ProjectOverview.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
@@ -1050,8 +1036,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/AllTasksView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="274" column="24" lean-forward="true" selection-start-line="274" selection-start-column="24" selection-end-line="274" selection-end-column="24" />
+        <state relative-caret-position="3885">
+          <caret line="274" column="24" lean-forward="false" selection-start-line="274" selection-start-column="24" selection-end-line="274" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1060,7 +1046,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/memberModalView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2205">
+        <state relative-caret-position="2340">
           <caret line="171" column="21" lean-forward="false" selection-start-line="171" selection-start-column="21" selection-end-line="171" selection-end-column="21" />
           <folding />
         </state>
@@ -1068,8 +1054,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/projectModalView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="44" column="47" lean-forward="true" selection-start-line="44" selection-start-column="47" selection-end-line="44" selection-end-column="47" />
+        <state relative-caret-position="217">
+          <caret line="83" column="53" lean-forward="false" selection-start-line="83" selection-start-column="53" selection-end-line="83" selection-end-column="53" />
+          <folding>
+            <element signature="e#821#832#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taskable/Views/taskModalView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="86" column="53" lean-forward="false" selection-start-line="86" selection-start-column="53" selection-end-line="86" selection-end-column="53" />
           <folding />
         </state>
       </provider>

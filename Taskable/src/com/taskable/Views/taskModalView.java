@@ -85,7 +85,6 @@ public class taskModalView extends JFrame implements KeyListener {
         titleInput.setMaximumSize(new Dimension(100, 20));
 
         JTextArea descriptionInput = new JTextArea();
-        descriptionInput.addKeyListener(this);
 
         JComboBox assigneeSelect = new JComboBox();
         assigneeSelect.addKeyListener(this);

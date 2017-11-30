@@ -82,7 +82,6 @@ public class projectModalView extends JFrame implements KeyListener{
         titleInput.setMaximumSize(new Dimension(100, 20));
 
         JTextArea descriptionInput = new JTextArea();
-        descriptionInput.addKeyListener(this);
 
         JPanel dueDateDropDowns = new JPanel();
         JComboBox monthSelect = new JComboBox();
